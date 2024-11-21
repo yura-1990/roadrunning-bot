@@ -16,7 +16,7 @@ const LanguageSwitcher = () => {
     };
 
     return (
-        <div className="dropdown">
+        <div className="dropdown bg-theme text-theme">
             <button 
                 className="btn btn-body border dropdown-toggle" 
                 type="button" id="dropdownMenuButton" 

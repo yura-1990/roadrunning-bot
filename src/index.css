@@ -8,3 +8,11 @@ body{
   background: var(--tg-theme-bg-color) !important;
   color: var(--tg-theme-text-color) !important;
 }
+
+.text-theme{
+  color: var(--tg-theme-text-color) !important;
+}
+
+.bg-theme{
+  background: var(--tg-theme-bg-color) !important;
+}

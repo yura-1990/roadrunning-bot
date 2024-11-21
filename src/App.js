@@ -3,6 +3,8 @@ import useTelegram from './hooks/useTelegram';
 import { initI18n } from './i18n';
 import Header from "./components/header";
 import Home from "./pages/home";
+import { Route, Routes } from 'react-router-dom';
+import Cart from './components/cart';
 
 
 const App = () => {
@@ -24,7 +26,10 @@ const App = () => {
     return (
         <div className='container'>
             <Header />
-            <Home />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/cart" element={<Cart />} />
+            </Routes>
         </div>
     );
 }
