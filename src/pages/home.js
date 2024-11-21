@@ -20,18 +20,18 @@ const  Home = () => {
                 loop={true}
             >
                 <SwiperSlide>
-                    <div className="card card-cover h-100">
+                    <div className="card  bg-theme-bot card-cover h-100">
                         <div className='card-header'>
-                            <h2 className='card-title'>Event 1</h2>
+                            <h2 className='card-title text-theme-bot'>Event 1</h2>
                         </div>
 
                         <div className="card-body">
-                            <h2 className='card-title'>from 12 to 18 october 2024</h2>
+                            <h2 className='card-title text-theme-bot'>from 12 to 18 october 2024</h2>
                             <span>Address: Tashkent</span>
                         </div>
 
                         <div className='card-footer'>
-                            <button className='btn bg-theme text-theme float-end border'>More <i class="bi bi-arrow-right"></i></button>
+                            <button className='btn bg-theme text-theme text-white float-end border'>More <i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </SwiperSlide>
