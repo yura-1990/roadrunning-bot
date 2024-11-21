@@ -16,20 +16,20 @@ const LanguageSwitcher = () => {
     };
 
     return (
-        <div className="dropdown bg-theme text-theme">
+        <div className="dropdown bg-theme-bot rounded-3 text-theme-bot">
             <button 
-                className="btn btn-body border dropdown-toggle" 
+                className="btn btn-body border dropdown-toggle " 
                 type="button" id="dropdownMenuButton" 
                 data-bs-toggle="dropdown" 
                 aria-expanded="false"
             >
                 { i18n.language }
             </button>
-            <ul className="dropdown-menu">
+            <ul className="dropdown-menu bg-theme-bot">
                 {
                     languages.filter(lang=>lang!==i18n.language).map((lang, index) => (
                         <li onClick={(e) => handleLanguageChange(lang)} key={index} >
-                            <span className="dropdown-item" >{ lang }</span>
+                            <span className="dropdown-item text-theme-bot" >{ lang }</span>
                         </li>
                     ))
                 }

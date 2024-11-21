@@ -4,17 +4,26 @@
   box-sizing: border-box;
 }
 
+
 body{
-  background: var(--tg-theme-bg-color) !important;
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+}
+
+.text-theme-bot{
   color: var(--tg-theme-text-color) !important;
 }
 
 .text-theme{
-  color: var(--tg-theme-text-color) !important;
+  color: #0B904F !important;
+}
+
+.bg-theme-bot{
+  background: var(--tg-theme-bg-color) !important;
 }
 
 .bg-theme{
-  background: var(--tg-theme-bg-color) !important;
+  background: #0B904F !important;
 }
 
 .swiper {
@@ -22,4 +31,6 @@ body{
   border-radius: 15px;
   margin-top: 20px;
 }
+
+
 
