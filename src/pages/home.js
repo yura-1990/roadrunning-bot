@@ -31,7 +31,7 @@ function Home () {
 
             <div className="col">
                 <div className="card card-cover h-100 overflow-hidden rounded-5 shadow-lg">
-                    <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <div className="d-flex flex-column h-100 p-5 pb-3  text-shadow-1">
                         <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to
                             multiple lines</h2>
                         <ul className="d-flex list-unstyled mt-auto">
