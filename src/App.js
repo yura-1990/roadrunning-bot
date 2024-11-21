@@ -19,7 +19,7 @@ const App = () => {
     }, [isReady, language]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>Loading the web mini app...</div>;
     }
 
     return (
