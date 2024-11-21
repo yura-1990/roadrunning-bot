@@ -1,11 +1,11 @@
 import React from 'react';
 import LanguageSwitcher from './languageSwitcher'
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+// import { useTranslation } from 'react-i18next';
+// import { Link } from 'react-router-dom';
 
 
 function Header () {
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
 
     return (
         <div class="bd-header py-3 border-bottom border-dark">
