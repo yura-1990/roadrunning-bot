@@ -29,7 +29,7 @@ const LanguageSwitcher = () => {
                 {
                     languages.filter(lang=>lang!==i18n.language).map((lang, index) => (
                         <li onClick={(e) => handleLanguageChange(lang)} key={index} >
-                            <a  className="dropdown-item" href="/">{ lang }</a>
+                            <span className="dropdown-item" >{ lang }</span>
                         </li>
                     ))
                 }
