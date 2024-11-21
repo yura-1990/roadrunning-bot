@@ -7,8 +7,7 @@ import Home from "./pages/home";
 
 const App = () => {
 
-    const { isReady, language } = useTelegram();  // Get the language from Telegram hook
-
+    const { isReady, language } = useTelegram();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

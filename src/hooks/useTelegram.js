@@ -21,8 +21,14 @@ const useTelegram = () => {
       updateTheme();
       tg.onEvent('themeChanged', updateTheme);
 
-      // Set the Telegram user's language (or default to 'en' if not available)
-      const userLanguage = tg.initDataUnsafe?.user?.language || 'en';
+      let userLanguage = tg.initDataUnsafe?.user?.language || 'en';
+
+      if(localStorage.getItem('web-language')){
+        userLanguage = localStorage.getItem('web-language')
+      } else {
+        localStorage.setItem('web-language', userLanguage)
+      }
+      
       setLanguage(userLanguage);
 
       return () => {
