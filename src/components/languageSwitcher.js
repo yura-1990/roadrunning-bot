@@ -16,9 +16,9 @@ const LanguageSwitcher = () => {
     };
 
     return (
-        <div className="dropdown bg-theme-bot rounded-3 text-theme-bot">
+        <div className="dropdown bg-theme-bot rounded-3">
             <button 
-                className="btn btn-body border dropdown-toggle " 
+                className="btn btn-body text-theme-bot border dropdown-toggle " 
                 type="button" id="dropdownMenuButton" 
                 data-bs-toggle="dropdown" 
                 aria-expanded="false"
