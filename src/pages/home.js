@@ -4,8 +4,8 @@ function Home () {
     return (
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
             <div className="col">
-                <div className="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
-                    <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <div className="card card-cover h-100 overflow-hidden  rounded-5 shadow-lg">
+                    <div className="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                         <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
                         <ul className="d-flex list-unstyled mt-auto">
                             <li className="me-auto">
@@ -30,7 +30,7 @@ function Home () {
             </div>
 
             <div className="col">
-                <div className="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                <div className="card card-cover h-100 overflow-hidden rounded-5 shadow-lg">
                     <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                         <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to
                             multiple lines</h2>
@@ -57,7 +57,7 @@ function Home () {
             </div>
 
             <div className="col">
-                <div className="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                <div className="card card-cover h-100 overflow-hidden  rounded-5 shadow-lg">
                     <div className="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                         <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs
                             here</h2>
