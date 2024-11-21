@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/yura-1990/roadrunning-bot/static/css/main.57b265f0.css",
-    "main.js": "/yura-1990/roadrunning-bot/static/js/main.9ed9e8ea.js",
-    "static/media/bootstrap-icons.woff?": "/yura-1990/roadrunning-bot/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
-    "static/media/bootstrap-icons.woff2?": "/yura-1990/roadrunning-bot/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
-    "index.html": "/yura-1990/roadrunning-bot/index.html",
-    "main.57b265f0.css.map": "/yura-1990/roadrunning-bot/static/css/main.57b265f0.css.map",
-    "main.9ed9e8ea.js.map": "/yura-1990/roadrunning-bot/static/js/main.9ed9e8ea.js.map"
+    "main.css": "/roadrunning-bot/static/css/main.6dd9c8eb.css",
+    "main.js": "/roadrunning-bot/static/js/main.9ed9e8ea.js",
+    "static/media/bootstrap-icons.woff?": "/roadrunning-bot/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/roadrunning-bot/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "index.html": "/roadrunning-bot/index.html",
+    "main.6dd9c8eb.css.map": "/roadrunning-bot/static/css/main.6dd9c8eb.css.map",
+    "main.9ed9e8ea.js.map": "/roadrunning-bot/static/js/main.9ed9e8ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.57b265f0.css",
+    "static/css/main.6dd9c8eb.css",
     "static/js/main.9ed9e8ea.js"
   ]
 }
