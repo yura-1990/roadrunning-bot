@@ -16,3 +16,10 @@ body{
 .bg-theme{
   background: var(--tg-theme-bg-color) !important;
 }
+
+.swiper {
+  box-shadow: 1px 1px 10px #0000005d;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
