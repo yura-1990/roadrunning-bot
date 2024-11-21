@@ -8,27 +8,39 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      # Step 2: Setup credentials to access private repositories using your Personal Access Token (PAT)
+      - name: Setup credentials to access private repositories
+        run: git config --global url.https://${{ secrets.MY_PATH }}@github.com/.insteadOf https://github.com/
+
+      # Step 3: Set Git user identity (this is required for the gh-pages deployment)
       - name: Set Git user identity
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
+      # Step 4: Set up Node.js (ensure the version is correct for your project)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '23'
 
+      # Step 5: Install Dependencies
       - name: Install Dependencies
         run: npm install
 
+      # Step 6: Build the React app
       - name: Build React app
         run: npm run build
 
+      # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: |
+          npm run deploy
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # GitHub Token
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # GitHub Token for gh-pages deployment
