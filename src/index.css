@@ -27,10 +27,20 @@ body{
 }
 
 .swiper {
-  box-shadow: 1px 1px 10px #0000005d;
+  box-shadow: 1px 1px 10px #000000a2;
   border-radius: 15px;
   margin-top: 20px;
 }
 
+.card-header{
+  border-bottom: var(--tg-theme-text-color);
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+}
 
+.card-footer{
+  border-top: var(--tg-theme-text-color);
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+}
 

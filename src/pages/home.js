@@ -15,7 +15,7 @@ const  Home = () => {
                 slidesPerView={1}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 5000,
+                    delay: 50000,
                     disableOnInteraction: false,
                 }}
                 loop={true}
