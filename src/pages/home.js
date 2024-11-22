@@ -9,52 +9,59 @@ import { Link } from 'react-router-dom';
 const  Home = () => {
     return (
         <>
-            <h2 class="pb-2 border-bottom">Events</h2>
-            <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={10}
-                slidesPerView={1}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 50000,
-                    disableOnInteraction: false,
-                }}
-                className='event-swiper'
-                loop={true}
-            >
-                <SwiperSlide>
-                    <div className="card bg-transparent border-0 rounded-3  card-cover h-100">
-                        <div className='card-header bg-transparent'>
-                            <h2 className='card-title text-white multi-line-ellipsis'>Event 1</h2>
-                        </div>
+            <div>
+                <div className='pb-2 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
+                    <h2 class="">Events</h2>
+                    <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/events'}>All <i class="bi bi-arrow-right"></i></Link>
+                </div>
+                
+                <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 50000,
+                        disableOnInteraction: false,
+                    }}
+                    className='event-swiper'
+                    loop={true}
+                >
+                    <SwiperSlide>
+                        <div className="card bg-transparent border-0 rounded-3  card-cover h-100">
+                            <div className='card-header bg-transparent'>
+                                <h2 className='card-title text-white multi-line-ellipsis'>Event 1</h2>
+                            </div>
 
-                        <div className="card-body bg-transparent">
-                            <h2 className='card-title text-white multi-line-ellipsis'>from 12 to 18 october 2024</h2>
-                            <span className="text-white">Address: Tashkent</span>
-                        </div>
+                            <div className="card-body bg-transparent">
+                                <h2 className='card-title text-white multi-line-ellipsis'>from 12 to 18 october 2024</h2>
+                                <span className="text-white">Address: Tashkent</span>
+                            </div>
 
-                        <div className='card-footer bg-transparent'>
-                            <Link to={'event/1'} className='btn bg-theme text-white float-end shadow'>More <i class="bi bi-arrow-right"></i></Link>
+                            <div className='card-footer bg-transparent'>
+                                <Link to={'event/1'} className='btn bg-theme text-white float-end shadow'>More <i class="bi bi-arrow-right"></i></Link>
+                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
-                        <div className='card-header bg-transparent'>
-                            <h2 className='card-title text-white multi-line-ellipsis'>Event 1</h2>
-                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
+                            <div className='card-header bg-transparent'>
+                                <h2 className='card-title text-white multi-line-ellipsis'>Event 1</h2>
+                            </div>
 
-                        <div className="card-body bg-transparent">
-                            <h2 className='card-title text-white multi-line-ellipsis'>From 12 October to 18 November 2024</h2>
-                            <span>Address: Tashkent</span>
-                        </div>
+                            <div className="card-body bg-transparent">
+                                <h2 className='card-title text-white multi-line-ellipsis'>From 12 October to 18 November 2024</h2>
+                                <span>Address: Tashkent</span>
+                            </div>
 
-                        <div className='card-footer bg-transparent'>
-                            <Link to={'event/2'} className='btn bg-theme text-white float-end shadow'>More <i class="bi bi-arrow-right"></i></Link>
+                            <div className='card-footer bg-transparent'>
+                                <Link to={'event/2'} className='btn bg-theme text-white float-end shadow'>More <i class="bi bi-arrow-right"></i></Link>
+                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-            </Swiper>
+                    </SwiperSlide>
+                </Swiper>
+            </div>
+            
 
             <h2 class="pb-2 border-bottom mt-3">Marathon Types</h2>
             <Swiper
@@ -70,7 +77,7 @@ const  Home = () => {
                 loop={true}
             >
                 <SwiperSlide>
-                    <div className="card bg-transparent border-0 rounded-3 bg-theme-bot card-cover h-100">
+                    <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
                         <div className='card-header bg-transparent'>
                             <h2 className='card-title text-white'>10Ks</h2>
                         </div>
@@ -86,7 +93,7 @@ const  Home = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card bg-transparent border-0 rounded-3 bg-theme-bot card-cover h-100">
+                    <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
                         <div className='card-header bg-transparent'>
                             <h2 className='card-title text-white'>Marathons</h2>
                         </div>
@@ -116,7 +123,7 @@ const  Home = () => {
                 loop={true}
             >
                 <SwiperSlide>
-                    <div className="card border-0 bg-transparent  rounded-3 bg-theme-bot card-cover h-100">
+                    <div className="card border-0 bg-transparent rounded-3 card-cover h-100">
                         <div className='card-header bg-transparent'>
                             <h2 className='card-title text-white'>Simple</h2>
                         </div>
@@ -132,7 +139,7 @@ const  Home = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card bg-transparent border-0 rounded-3 bg-theme-bot card-cover h-100">
+                    <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
                         <div className='card-header'>
                             <h2 className='card-title text-white'>Gold</h2>
                         </div>
@@ -148,7 +155,7 @@ const  Home = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card bg-transparent border-0 rounded-3 bg-theme-bot card-cover h-100">
+                    <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
                         <div className='card-header bg-transparent'>
                             <h2 className='card-title text-white'>Plantium</h2>
                         </div>
