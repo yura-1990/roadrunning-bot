@@ -4,7 +4,8 @@ import { initI18n } from './i18n';
 import Header from "./components/header";
 import Home from "./pages/home";
 import { Route, Routes } from 'react-router-dom';
-import Cart from './components/cart';
+import Cart from './pages/cart';
+import Breadcrumb from './components/breadcrumb';
 
 
 const App = () => {
@@ -26,6 +27,9 @@ const App = () => {
     return (
         <div className='container'>
             <Header />
+
+            <Breadcrumb />
+
             <Routes>
                 <Route path="/roadrunning-bot" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />

@@ -5,7 +5,7 @@ const useTelegram = () => {
   const [theme, setTheme] = useState({});
   const [user, setUser] = useState(null);
   const [initData, setInitData] = useState(null);
-  const [language, setLanguage] = useState('en'); // Default language set to 'en'
+  const [language, setLanguage] = useState('en');
 
   useEffect(() => {
     if (window.Telegram?.WebApp) {

@@ -20,7 +20,7 @@ const  Home = () => {
                 loop={true}
             >
                 <SwiperSlide>
-                    <div className="card  bg-theme-bot card-cover h-100">
+                    <div className="card border bg-theme-bot card-cover h-100">
                         <div className='card-header'>
                             <h2 className='card-title text-theme-bot'>Event 1</h2>
                         </div>
@@ -36,7 +36,7 @@ const  Home = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card  bg-theme-bot card-cover h-100">
+                    <div className="card border bg-theme-bot card-cover h-100">
                         <div className='card-header'>
                             <h2 className='card-title text-theme-bot'>Event 1</h2>
                         </div>
