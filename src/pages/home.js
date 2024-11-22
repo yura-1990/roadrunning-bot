@@ -31,7 +31,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer'>
-                            <button className='btn bg-theme text-theme text-white float-end border'>More <i class="bi bi-arrow-right"></i></button>
+                            <button className='btn bg-theme text-white float-end border'>More <i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </SwiperSlide>
