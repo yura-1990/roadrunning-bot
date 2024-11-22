@@ -30,7 +30,7 @@ const  Home = () => {
                     <SwiperSlide>
                         <div className="card bg-transparent border-0 rounded-3  card-cover h-100">
                             <div className='card-header bg-transparent'>
-                                <h2 className='card-title text-white multi-line-ellipsis'>Event 1</h2>
+                                <h2 className='card-title text-white'>Event 1</h2>
                             </div>
 
                             <div className="card-body bg-transparent">
@@ -46,7 +46,7 @@ const  Home = () => {
                     <SwiperSlide>
                         <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
                             <div className='card-header bg-transparent'>
-                                <h2 className='card-title text-white multi-line-ellipsis'>Event 2</h2>
+                                <h2 className='card-title text-white'>Event 2</h2>
                             </div>
 
                             <div className="card-body bg-transparent">
