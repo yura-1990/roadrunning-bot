@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import Cart from './pages/cart';
 import Breadcrumb from './components/breadcrumb';
 import SingleEvent from './pages/singleEvent';
+import Footer from './components/footer';
 
 
 const App = () => {
@@ -36,6 +37,8 @@ const App = () => {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/event/:id" element={<SingleEvent />} />
             </Routes>
+
+            <Footer />
         </div>
     );
 }

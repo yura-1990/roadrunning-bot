@@ -10,8 +10,8 @@ function Header () {
     return (
         <div class="bd-header py-3">
             <div class="d-flex align-items-center justify-content-between">
-                <Link class="navbar-brand" to="/roadrunning-bot">
-                    <img src="/roadrunning-bot/assets/images/image.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
+                <Link class="navbar-brand border rounded-pill" to="/roadrunning-bot">
+                    <img src="/roadrunning-bot/assets/images/logo_itog.png" alt="Logo" width="50"  class="d-inline-block align-text-top" />
                 </Link>
                 <div className='d-flex align-items-center gap-3'>
                     <Link to="/roadrunning-bot/cart" type="button" class="btn border bg-theme-bot text-theme-bot position-relative">
