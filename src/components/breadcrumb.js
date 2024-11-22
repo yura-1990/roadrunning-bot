@@ -14,10 +14,10 @@ const Breadcrumb = () => {
     return (
         <div>
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
+                <ol className="breadcrumb">
                     {urls.map((el, i)=>(
-                        <li class={ urls.length-1 === i ? 'breadcrumb-item text-theme active fw-bold text-uppercase' :  'breadcrumb-item fw-bold text-uppercase'}>
-                            {urls.length-1 === i ? el : <Link to={'/'+el}>{el}</Link>}
+                        <li key={i} className={ urls.length-1 === i ? 'breadcrumb-item text-theme active fw-bold text-uppercase' :  'breadcrumb-item fw-bold text-uppercase'}>
+                            {urls.length-1 === i ? el : <Link to={'roadrunning-bot' === el ? el : '/roadrunning-bot/'+el}>{el}</Link>}
                         </li>
                     ))}
                 </ol>

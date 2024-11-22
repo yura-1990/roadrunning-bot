@@ -8,6 +8,7 @@ import Cart from './pages/cart';
 import Breadcrumb from './components/breadcrumb';
 import SingleEvent from './pages/singleEvent';
 import Footer from './components/footer';
+import Events from './pages/events';
 
 
 const App = () => {
@@ -25,20 +26,24 @@ const App = () => {
     if (loading) {
         return <div>Loading the web mini app...</div>;
     }
+    
 
     return (
-        <div className='container'>
+        <div>
             <Header />
+            <div className='custom-mt container'>
 
-            <Breadcrumb />
+                <Breadcrumb />
 
-            <Routes>
-                <Route path="/roadrunning-bot" element={<Home />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/event/:id" element={<SingleEvent />} />
-            </Routes>
+                <Routes>
+                    <Route path="/roadrunning-bot" element={<Home />} />
+                    <Route path="/roadrunning-bot/cart" element={<Cart />} />
+                    <Route path="/roadrunning-bot/events/:id" element={<SingleEvent />} />
+                    <Route path="/roadrunning-bot/events" element={<Events />} />
+                </Routes>
 
-            <Footer />
+                <Footer />
+            </div>
         </div>
     );
 }

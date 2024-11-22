@@ -11,8 +11,8 @@ const  Home = () => {
         <>
             <div>
                 <div className='pb-2 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
-                    <h2 class="">Events</h2>
-                    <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/events'}>All <i class="bi bi-arrow-right"></i></Link>
+                    <h2 className="">Events</h2>
+                    <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/events'}>All <i className="bi bi-arrow-right"></i></Link>
                 </div>
                 
                 <Swiper
@@ -39,14 +39,14 @@ const  Home = () => {
                             </div>
 
                             <div className='card-footer bg-transparent'>
-                                <Link to={'event/1'} className='btn bg-theme text-white float-end shadow'>More <i class="bi bi-arrow-right"></i></Link>
+                                <Link to={'/roadrunning-bot/events/1'} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
                             <div className='card-header bg-transparent'>
-                                <h2 className='card-title text-white multi-line-ellipsis'>Event 1</h2>
+                                <h2 className='card-title text-white multi-line-ellipsis'>Event 2</h2>
                             </div>
 
                             <div className="card-body bg-transparent">
@@ -55,7 +55,7 @@ const  Home = () => {
                             </div>
 
                             <div className='card-footer bg-transparent'>
-                                <Link to={'event/2'} className='btn bg-theme text-white float-end shadow'>More <i class="bi bi-arrow-right"></i></Link>
+                                <Link to={'/roadrunning-bot/events/2'} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -63,7 +63,7 @@ const  Home = () => {
             </div>
             
 
-            <h2 class="pb-2 border-bottom mt-3">Marathon Types</h2>
+            <h2 className="pb-2 border-bottom mt-3">Marathon Types</h2>
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={10}
@@ -88,7 +88,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/marathon-type/1'} className='btn bg-theme text-white float-end'>More <i class="bi bi-arrow-right"></i></Link>
+                            <Link to={'/roadrunning-bot/marathon-type/1'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -104,12 +104,12 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/marathon-type/2'} className='btn bg-theme text-white float-end'>More <i class="bi bi-arrow-right"></i></Link>
+                            <Link to={'/roadrunning-bot/marathon-type/2'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
             </Swiper>
-            <h2 class="pb-2 border-bottom mt-3">Number Types</h2>
+            <h2 className="pb-2 border-bottom mt-3">Number Types</h2>
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={10}
@@ -134,13 +134,13 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/number-type/1'} className='btn bg-theme text-white float-end'>More <i class="bi bi-arrow-right"></i></Link>
+                            <Link to={'/roadrunning-bot/number-type/1'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
-                        <div className='card-header'>
+                        <div className='card-header bg-transparent'>
                             <h2 className='card-title text-white'>Gold</h2>
                         </div>
 
@@ -150,7 +150,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/marathon-type/2'} className='btn bg-theme text-white float-end'>More <i class="bi bi-arrow-right"></i></Link>
+                            <Link to={'/roadrunning-bot/marathon-type/2'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -166,7 +166,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/marathon-type/3'} className='btn bg-theme text-white float-end'>More <i class="bi bi-arrow-right"></i></Link>
+                            <Link to={'/roadrunning-bot/marathon-type/3'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
