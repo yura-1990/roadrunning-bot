@@ -8,6 +8,7 @@ import 'swiper/css/pagination';
 const  Home = () => {
     return (
         <>
+            <h2 class="pb-2 border-bottom">Custom cards</h2>
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={10}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Breadcrumb = () => {
     const location = useLocation();
@@ -17,11 +17,9 @@ const Breadcrumb = () => {
                 <ol class="breadcrumb">
                     {urls.map((el, i)=>(
                         <li class={ urls.length-1 === i ? 'breadcrumb-item text-theme active fw-bold text-uppercase' :  'breadcrumb-item fw-bold text-uppercase'}>
-                            {urls.length-1 === i ? el : <a href={'/'+el}>{el}</a>}
-                            
+                            {urls.length-1 === i ? el : <Link to={'/'+el}>{el}</Link>}
                         </li>
                     ))}
-                    
                 </ol>
             </nav>
         </div>

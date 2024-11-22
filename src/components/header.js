@@ -8,7 +8,7 @@ function Header () {
     // const { t } = useTranslation();
 
     return (
-        <div class="bd-header py-3 border-bottom border-dark">
+        <div class="bd-header py-3">
             <div class="d-flex align-items-center justify-content-between">
                 <Link class="navbar-brand" to="/roadrunning-bot">
                     <img src="/roadrunning-bot/assets/images/image.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
