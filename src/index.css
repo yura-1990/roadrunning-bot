@@ -112,12 +112,13 @@ body{
 }
 
 .multi-line-ellipsis {
-  max-height: 90px;
-  overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;  /* Limit to 4 lines */
+  -webkit-box-orient: vertical;  /* Vertical box for the lines */
+  overflow: hidden;  /* Hide overflow */
+  text-overflow: ellipsis;  /* Add ellipsis (...) when text overflows */
+  line-height: 1.5;  /* Adjust line height to control text height */
+  height: calc(1.5em * 4);
 }
 
 .event-bg{
