@@ -28,7 +28,7 @@ body{
 
 .swiper {
   box-shadow: 1px 1px 10px #000000a2;
-  border-radius: 15px;
+  border-radius: 8px;
   margin-top: 20px;
 }
 
@@ -42,5 +42,15 @@ body{
   border-top: var(--tg-theme-text-color);
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
+}
+
+.multi-line-ellipsis {
+  height: 90px;
+  max-height: 90px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 

@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import { Route, Routes } from 'react-router-dom';
 import Cart from './pages/cart';
 import Breadcrumb from './components/breadcrumb';
+import SingleEvent from './pages/singleEvent';
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
             <Routes>
                 <Route path="/roadrunning-bot" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/event/:id" element={<SingleEvent />} />
             </Routes>
         </div>
     );
