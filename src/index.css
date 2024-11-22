@@ -26,11 +26,78 @@ body{
   background: #0B904F !important;
 }
 
-.swiper {
+.swiper.event-swiper {
   box-shadow: 1px 1px 10px #000000a2;
   border-radius: 8px;
   margin-top: 20px;
+  background-image: url(../public/assets/images/bg.jpg);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
+
+
+.swiper.event-swiper::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0000005d;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+
+.swiper.marathon-type-swiper {
+  box-shadow: 1px 1px 10px #000000a2;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-image: url(../public/assets/images/typebg.webp);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.swiper.marathon-type-swiper::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0000005d;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.swiper.number-type-swiper {
+  box-shadow: 1px 1px 10px #000000a2;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-image: url(../public/assets/images/number.jpg);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.swiper.number-type-swiper::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0000005d;
+}
+
 
 .card-header{
   border-bottom: var(--tg-theme-text-color);
@@ -45,7 +112,6 @@ body{
 }
 
 .multi-line-ellipsis {
-  height: 90px;
   max-height: 90px;
   overflow: hidden;
   display: -webkit-box;
@@ -53,4 +119,12 @@ body{
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 }
+
+.event-bg{
+  background-image: url(../public/assets/images/runners-running.webp);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
 
