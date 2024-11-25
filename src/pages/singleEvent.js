@@ -16,7 +16,7 @@ const SingleEvent = () => {
       </div>
 
       <div>
-        <div className='pb-2 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
+        <div className='pb-2 mb-3 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
           <h2 className="">12 October 2024 </h2>
           <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/marathons'}>All <i className="bi bi-arrow-right"></i></Link>
         </div>
@@ -28,7 +28,7 @@ const SingleEvent = () => {
               <p>2 500 000 sum</p>
               <div className='d-flex justify-content-between align-items-center flex-wrap '>
                 <span className="text-theme fw-bold btn btn-outline-success">Time: 10:00</span>
-                <Link class="btn bg-theme text-white  shadow" to={''} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
+                <Link class="btn bg-theme text-white  shadow" to={'/roadrunning-bot/participate/1'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ const SingleEvent = () => {
               <p>2 500 000 sum</p>
               <div className='d-flex justify-content-between align-items-center flex-wrap '>
                 <span className="text-theme fw-bold btn btn-outline-success">Time: 15:00</span>
-                <Link class="btn bg-theme text-white shadow" to={''} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
+                <Link class="btn bg-theme text-white shadow" to={'/roadrunning-bot/participate/2'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@ const SingleEvent = () => {
       </div>
 
       <div>
-        <div className='pb-2 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
+        <div className='pb-2 mb-3 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
           <h2 className="">13 October 2024 </h2>
           <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/marathons'}>All <i className="bi bi-arrow-right"></i></Link>
         </div>
@@ -59,7 +59,7 @@ const SingleEvent = () => {
               <p>2 500 000 sum</p>
               <div className='d-flex justify-content-between align-items-center flex-wrap'>
                 <span className="text-theme fw-bold btn btn-outline-success">Time: 10:00</span>
-                <Link class="btn bg-theme text-white  shadow" to={''} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
+                <Link class="btn bg-theme text-white  shadow" to={'/roadrunning-bot/participate/3'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ const SingleEvent = () => {
               <p>2 500 000 sum</p>
               <div className='d-flex justify-content-between align-items-center flex-wrap'>
                 <span className="text-theme fw-bold btn btn-outline-success">Time: 17:00</span>
-                <Link class="btn bg-theme text-white shadow" to={''} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
+                <Link class="btn bg-theme text-white shadow" to={'/roadrunning-bot/participate/4'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
               </div>
             </div>
           </div>

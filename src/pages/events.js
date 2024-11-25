@@ -7,7 +7,7 @@ const Events = () => {
         <>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item flex-grow-1" role="presentation">
-                    <button class="nav-link active w-100" id="life-tab" data-bs-toggle="tab" data-bs-target="#life-tab-pane" type="button" role="tab" aria-controls="life-tab-pane" aria-selected="true">Life</button>
+                    <button class="nav-link active w-100" id="life-tab" data-bs-toggle="tab" data-bs-target="#life-tab-pane" type="button" role="tab" aria-controls="life-tab-pane" aria-selected="true">Live</button>
                 </li>
                 <li class="nav-item flex-grow-1" role="presentation">
                     <button class="nav-link w-100" id="archive-tab" data-bs-toggle="tab" data-bs-target="#archive-tab-pane" type="button" role="tab" aria-controls="archive-tab-pane" aria-selected="false">Archive</button>
@@ -21,7 +21,7 @@ const Events = () => {
                         </div>
 
                         <div className="card-body bg-transparent">
-                            <h2 className='card-title text-white multi-line-ellipsis'>from 12 to 18 october 2024</h2>
+                            <h2 className='card-title text-white multi-line-ellipsis'>From 12 to 18 october 2024</h2>
                             <span className="text-white">Address: Tashkent</span>
                         </div>
 

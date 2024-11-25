@@ -9,6 +9,8 @@ import Breadcrumb from './components/breadcrumb';
 import SingleEvent from './pages/singleEvent';
 import Footer from './components/footer';
 import Events from './pages/events';
+import Participate from './pages/participate';
+import TimerProgress from './components/timeProgress';
 
 
 const App = () => {
@@ -40,8 +42,9 @@ const App = () => {
                     <Route path="/roadrunning-bot/cart" element={<Cart />} />
                     <Route path="/roadrunning-bot/events/:id" element={<SingleEvent />} />
                     <Route path="/roadrunning-bot/events" element={<Events />} />
+                    <Route path="/roadrunning-bot/participate/:id" element={<Participate />} />
                 </Routes>
-
+                <TimerProgress />
                 <Footer />
             </div>
         </div>

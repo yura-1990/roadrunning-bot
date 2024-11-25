@@ -7,14 +7,17 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './index.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { initI18n } from './i18n';
+import { TimerProvider } from "./components/timerContext";
 
 initI18n('en');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <TimerProvider>
+      <Router>
+        <App />
+      </Router>
+    </TimerProvider>
   </React.StrictMode>
 );
