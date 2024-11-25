@@ -51,6 +51,14 @@ const Participate = () => {
     console.log("company", company);
     console.log("number", number);
     console.log("uniform", uniform);
+    console.log("parent", parent);
+    console.log("name", name);
+    console.log("email", email);
+    console.log("phone", phone);
+    console.log("gender", gender);
+    console.log("region", region);
+    console.log("address", address);
+    console.log("birth", birth);
     startTimer()
   };
 
