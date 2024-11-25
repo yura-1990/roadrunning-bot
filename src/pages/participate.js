@@ -90,7 +90,7 @@ const Participate = () => {
               placeholder="example@gmail.com"
               onInput={(e)=>setEmail(e.target.value)}
             />
-            <div className="invalid-feedback">
+            <div className="invalid-feedback ">
               Please enter a valid email address for shipping updates.
             </div>
           </div>
@@ -110,7 +110,7 @@ const Participate = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="name">{t("gender")}</label>
+            <span htmlFor="name">{t("gender")}</span>
             <div className="d-flex justify-content-between">
               <div className="custom-control custom-radio flex-grow-1">
                 <input
@@ -276,7 +276,7 @@ const Participate = () => {
                     : "mx-2 custom-control fw-bold text-black p-2 col border border-theme d-flex justify-content-center align-items-center custom-radio rounded"
                 }
               >
-                <span>LG</span>
+                <span className="text-theme-bot">LG</span>
               </div>
               <div
                 onClick={() => setUniform("SM")}
@@ -286,7 +286,7 @@ const Participate = () => {
                     : "mx-2 custom-control fw-bold text-black p-2 col border border-theme d-flex justify-content-center align-items-center custom-radio rounded"
                 }
               >
-                <span>SM</span>
+                <span className="text-theme-bot">SM</span>
               </div>
               <div
                 onClick={() => setUniform("XXL")}
@@ -296,7 +296,7 @@ const Participate = () => {
                     : "mx-2 custom-control fw-bold text-black p-2 col border border-theme d-flex justify-content-center align-items-center custom-radio rounded"
                 }
               >
-                <span>XXL</span>
+                <span className="text-theme-bot">XXL</span>
               </div>
             </div>
           </div>
@@ -321,7 +321,7 @@ const Participate = () => {
                       : "m-2 custom-control fw-bold text-black p-2  col border border-theme d-flex justify-content-center align-items-center custom-radio rounded"
                   }
                 >
-                  <span>0</span>
+                  <span className="text-theme-bot">0</span>
                 </div>
               </div>
             </div>
@@ -343,7 +343,7 @@ const Participate = () => {
                       : "m-2 custom-control fw-bold text-black p-2  col border border-theme d-flex justify-content-center align-items-center custom-radio rounded"
                   }
                 >
-                  <span>0</span>
+                  <span className="text-theme-bot">0</span>
                 </div>
                 <div
                   onClick={() => setNumber(2)}
@@ -353,7 +353,7 @@ const Participate = () => {
                       : "m-2 custom-control fw-bold text-black p-2  col border border-theme d-flex justify-content-center align-items-center custom-radio rounded"
                   }
                 >
-                  <span>0</span>
+                  <span className="text-theme-bot">0</span>
                 </div>
               </div>
             </div>
