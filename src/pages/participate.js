@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 import Autocomplete from "../components/autocomplete";
 import { TimerContext } from "../components/timerContext";
 
 const Participate = () => {
   const { t } = useTranslation();
   const { startTimer } = useContext(TimerContext);
+  const { id } = useParams();
   const [ifChild, setIfChaild] = useState(false);
   const [parent, setParent] = useState("");
   const [organization, setOrganization] = useState("");
@@ -60,6 +62,25 @@ const Participate = () => {
     console.log("address", address);
     console.log("birth", birth);
     startTimer()
+
+    const data = {
+      number: number,
+      marathon_id: id,
+      number_type_id: number,
+      participant_name: name,
+      participant_email: email,
+      participant_phone: phone,
+      gender_id: gender,
+      participant_region_id: region,
+      participant_address: address,
+      participant_birth: birth,
+      participant_parent_name: parent,
+      participant_organization_id: organization,
+      participant_category_id: company,
+      participant_uniform_id: uniform,
+    }
+
+    localStorage.setItem('cart', JSON.stringify(data))
   };
 
   return (

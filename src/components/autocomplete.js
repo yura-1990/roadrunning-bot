@@ -41,7 +41,7 @@ const Autocomplete = ({ suggestions, getValue }) => {
         placeholder={t('type_or_choose')}
       />
       {showSuggestions && (
-        <ul className="list-group position-absolute w-100 z-index-1">
+        <ul className="list-group position-absolute w-100 z-index-9">
           {filteredSuggestions.length > 0 ? (
             filteredSuggestions.map((suggestion, index) => (
               <li
