@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { create } from 'zustand'
 
 const useCart = create((set, get) => ({
