@@ -27,7 +27,6 @@ const useStore = create((set) => ({
     fetchBears: async () => {
         set({loading: true, error: false});
 
-
         try {
             const res = await axios.get()
             set({data: res.data, loading: false, error: false});

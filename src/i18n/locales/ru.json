@@ -118,5 +118,6 @@
     "paid_with": "Оплачено с помощью",
     "paid": "Оплачено",
     "not_paid": "Не оплачено",
-    "payment_composition": "Состав платежа"
+    "payment_composition": "Состав платежа",
+    "uniform": "Форма"
   }

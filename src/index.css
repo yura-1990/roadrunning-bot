@@ -233,3 +233,24 @@ body{
   transform: translate(50%, -50%);
   font-size: 16px;
 }
+
+.invoice-header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-bottom: 2px solid #dee2e6;
+}
+.invoice-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+.invoice-table th, .invoice-table td {
+  text-align: center;
+}
+.table-summary td {
+  font-weight: bold;
+}
+
+.delete-cart{
+  bottom: 10px;
+  right: 10px;
+}

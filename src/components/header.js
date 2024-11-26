@@ -2,26 +2,34 @@ import React, { useEffect, useState } from 'react';
 import LanguageSwitcher from './languageSwitcher'
 // import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import useCart from '../zustand/cart';
 
 
 function Header () {
     // const { t } = useTranslation();
-
-    const [headerBg, setHeaderBg] = useState(false); // Initial background color
+    const [headerBg, setHeaderBg] = useState(false);
+    const carts = useCart((state) => state.state.carts)
+    const getCarts = useCart((state) => state.getCarts)
+    const [allCarts, setAllCarts] = useState([])
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             setHeaderBg(scrollPosition > 100)
-            
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);       
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, []);   
+    
+    useEffect(()=>{
+        setAllCarts(carts)
+        getCarts()
+    }, [allCarts])
+
 
     return (
         <div className={headerBg ? 'bg-theme w-100 header-fixed' : ' w-100 header-fixed'}>
@@ -34,7 +42,7 @@ function Header () {
                         <Link to="/roadrunning-bot/cart" type="button" className="btn border bg-theme-bot text-theme-bot position-relative">
                             <i className={"bi bi-cart-plus"}></i>
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme shadow border">
-                                0
+                                {allCarts ? allCarts?.length : 0 }
                             </span>
                         </Link>
                         <LanguageSwitcher />

@@ -11,17 +11,20 @@ import Footer from './components/footer';
 import Events from './pages/events';
 import Participate from './pages/participate';
 import TimerProgress from './components/timeProgress';
+import useCart from './zustand/cart';
 
 
 const App = () => {
 
     const { isReady, language } = useTelegram();
     const [loading, setLoading] = useState(true);
+    const getCarts = useCart((state) => state.getCarts)
 
     useEffect(() => {
         if (isReady && language) {
             initI18n(language);
             setLoading(false);
+            getCarts()
         }
     }, [isReady, language]);
 

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useCallback } from "react";
+import useCart from "../zustand/cart";
 
 export const TimerContext = createContext();
 

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import Autocomplete from "../components/autocomplete";
 import { TimerContext } from "../components/timerContext";
+import useCart from "../zustand/cart";
 
 const Participate = () => {
   const { t } = useTranslation();
@@ -21,6 +22,7 @@ const Participate = () => {
   const [region, setRegion] = useState("");
   const [address, setAddress] = useState("");
   const [birth, setBirth] = useState("");
+  const addToCart = useCart((state) => state.addToCart)
 
   const organs = [
     "Apple",
@@ -45,24 +47,9 @@ const Participate = () => {
   ];
 
   // submit
-
   const submit = async (e) => {
     e.preventDefault();
-
-    console.log("organization", organization);
-    console.log("company", company);
-    console.log("number", number);
-    console.log("uniform", uniform);
-    console.log("parent", parent);
-    console.log("name", name);
-    console.log("email", email);
-    console.log("phone", phone);
-    console.log("gender", gender);
-    console.log("region", region);
-    console.log("address", address);
-    console.log("birth", birth);
-    startTimer()
-
+    
     const data = {
       number: number,
       marathon_id: id,
@@ -80,7 +67,8 @@ const Participate = () => {
       participant_uniform_id: uniform,
     }
 
-    localStorage.setItem('cart', JSON.stringify(data))
+    addToCart(data)
+    startTimer()
   };
 
   return (
