@@ -70,11 +70,11 @@ const Cart = () => {
                           <tbody>
                             <tr>
                               <td>{ t('total') }</td>
-                              <td className="text-end">$125.00</td>
+                              <td className="text-end fw-bold">$125.00</td>
                             </tr>
                           </tbody>
                       </table>
-                      <button className="btn btn-primary w-100">Proceed to Payment</button>
+                      <button className="btn bg-theme text-white fw-medium w-100">Proceed to Payment</button>
                   </div>
               </div>
           </div>
