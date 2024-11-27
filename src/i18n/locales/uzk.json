@@ -122,5 +122,6 @@
     "uniform": "Форма",
     "empty": "Бўш",
     "proceed_to_payment": "Тўловга ўтиш",
-    "check": "Текшириш"
+    "check": "Текшириш",
+    "verification_code_submitted": "Тасдиқлаш коди юборилди"
   }

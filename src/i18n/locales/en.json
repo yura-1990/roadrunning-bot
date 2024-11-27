@@ -122,5 +122,6 @@
     "uniform": "Uniform",
     "empty": "Empty",
     "proceed_to_payment": "Proceed to Payment",
-    "check": "Check"
+    "check": "Check",
+    "verification_code_submitted": "Verification code submitted"
   }

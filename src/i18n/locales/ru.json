@@ -122,5 +122,6 @@
   "uniform": "Форма",
   "empty": "Пусто",
   "proceed_to_payment": "Перейти к оплате",
-  "check": "Проверить"
+  "check": "Проверить",
+  "verification_code_submitted": "Код подтверждения отправлен"
 }

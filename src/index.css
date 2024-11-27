@@ -234,11 +234,6 @@ body{
   font-size: 16px;
 }
 
-.invoice-header {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-bottom: 2px solid #dee2e6;
-}
 .invoice-title {
   font-size: 1.75rem;
   font-weight: bold;
@@ -253,4 +248,19 @@ body{
 .delete-cart{
   bottom: 10px;
   right: 10px;
+}
+
+.otp-input {
+  width: 33px;
+  height: 33px;
+  font-size: 16px;
+  text-align: center;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+.otp-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
 }

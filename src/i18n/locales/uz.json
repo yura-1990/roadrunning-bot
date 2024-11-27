@@ -122,5 +122,6 @@
     "uniform": "Forma",
     "empty": "Bo'sh",
     "proceed_to_payment": "To'lovga o'tish",
-    "check": "Tekshirish"
+    "check": "Tekshirish",
+    "verification_code_submitted": "Tasdiqlash kodi yuborildi"
   }
