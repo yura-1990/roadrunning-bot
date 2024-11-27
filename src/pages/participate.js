@@ -4,24 +4,28 @@ import { useParams } from "react-router-dom";
 import Autocomplete from "../components/autocomplete";
 import { TimerContext } from "../components/timerContext";
 import useCart from "../zustand/cart";
+import InputMask from "react-input-mask";
 
 const Participate = () => {
   const { t } = useTranslation();
   const { startTimer } = useContext(TimerContext);
   const { id } = useParams();
-  const [ifChild, setIfChaild] = useState(false);
+  const [ifChild, setIfChild] = useState(false);
   const [parent, setParent] = useState("");
   const [organization, setOrganization] = useState("");
   const [company, setCompany] = useState("");
   const [number, setNumber] = useState(0);
-  const [uniform, setUniform] = useState("");
+  const [uniform, setUniform] = useState("SM");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [errorEmail, setErrorEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [errorPhone, setErrorPhone] = useState("");
   const [gender, setGender] = useState("");
   const [region, setRegion] = useState("");
   const [address, setAddress] = useState("");
   const [birth, setBirth] = useState("");
+  const [checkForm, setCheckForm] = useState(false)
   const addToCart = useCart((state) => state.addToCart)
 
   const organs = [
@@ -46,36 +50,84 @@ const Participate = () => {
     "Pineapple",
   ];
 
+
   // submit
   const submit = async (e) => {
     e.preventDefault();
-    
-    const data = {
-      number: number,
-      marathon_id: id,
-      number_type_id: number,
-      participant_name: name,
-      participant_email: email,
-      participant_phone: phone,
-      gender_id: gender,
-      participant_region_id: region,
-      participant_address: address,
-      participant_birth: birth,
-      participant_parent_name: parent,
-      participant_organization_id: organization,
-      participant_category_id: company,
-      participant_uniform_id: uniform,
-    }
+    setCheckForm(true)
 
-    addToCart(data)
-    startTimer()
+    if ( name !== "" && errorPhone === "" && errorEmail === "" && gender !== "" && region !== "" && address !== "" && birth !== "" ) {
+      const data = {
+        number: number,
+        marathon_id: id,
+        number_type_id: number,
+        participant_name: name,
+        participant_email: email,
+        participant_phone: phone,
+        gender_id: gender,
+        participant_region_id: region,
+        participant_address: address,
+        participant_birth: birth,
+        participant_parent_name: ifChild ? parent : "",
+        participant_organization_id: organization,
+        participant_category_id: company,
+        participant_uniform_id: uniform,
+      };
+      if (!ifChild || parent !== "") {
+        startTimer();
+        addToCart(data);
+
+        setIfChild(false)
+        setParent("")
+        setOrganization("")
+        setCompany("")
+        setNumber(0)
+        setUniform("SM")
+        setName("")
+        setEmail("")
+        setErrorEmail("")
+        setPhone("")
+        setErrorPhone("")
+        setGender("")
+        setRegion("")
+        setAddress("")
+        setBirth("")
+        setCheckForm(false)
+      }
+    }
+    
   };
+
+  const handlePhoneChange = (event) => {
+    const {value} = event.target;
+    setPhone(value);
+    const isValid = validatePhoneNumber(value);
+    setErrorPhone(isValid ? "" : "Invalid phone number");
+  };
+
+  const validatePhoneNumber = (value) => {
+    const phoneRegex = /^\+\d{3} \(\d{2}\) \d{3} \d{2} \d{2}$/;
+    return phoneRegex.test(value);
+  };
+
+  const handleEmailChange = (event) => {
+    const {value} = event.target;
+    setEmail(value);
+    const isValid = validateEmail(value);
+    setErrorEmail(isValid ? "" : "Invalid email address");
+  };
+
+  const validateEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(value);
+  };
+
 
   return (
     <div className="row">
       <div className="col-12 order-md-1">
         <h4 className="mb-3">{t("personal_info")}</h4>
-        <form onSubmit={submit} className="needs-validation" noValidate>
+        <form onSubmit={submit} className={checkForm ? "needs-validation was-validated" : 'needs-validation'} noValidate>
           <div className="mb-3">
             <label htmlFor="name">Name</label>
             <input
@@ -84,7 +136,9 @@ const Participate = () => {
               id="name"
               placeholder="Habib Muslomov"
               onInput={(e)=>setName(e.target.value)}
+              required
             />
+            
             <div className="invalid-feedback">
               Please enter a valid name address for shipping updates.
             </div>
@@ -97,8 +151,10 @@ const Participate = () => {
               className="form-control"
               id="email"
               placeholder="example@gmail.com"
-              onInput={(e)=>setEmail(e.target.value)}
+              onChange={handleEmailChange}
+              required
             />
+            {errorEmail && <p style={{ color: "red" }}>{errorEmail}</p>}
             <div className="invalid-feedback ">
               Please enter a valid email address for shipping updates.
             </div>
@@ -106,13 +162,22 @@ const Participate = () => {
 
           <div className="mb-3">
             <label htmlFor="phone">{t("home_number")}</label>
-            <input
-              type="text"
+            <InputMask
+              mask="+999 (99) 999 99 99"
+              placeholder="+000 (00) 000 00 00"
               className="form-control"
-              id="phone"
-              placeholder="+998 (00) 000-00-00"
-              onInput={(e)=>setPhone(e.target.value)}
-            />
+              value={phone}
+              onChange={handlePhoneChange}
+              required
+            >
+              {(inputProps) => (
+              <input
+                {...inputProps}
+                type="text"
+              />
+            )}
+            </InputMask>
+            {errorPhone && <p style={{ color: "red" }}>{errorPhone}</p>}
             <div className="invalid-feedback">
               Please enter a valid email address for shipping updates.
             </div>
@@ -128,6 +193,7 @@ const Participate = () => {
                   type="radio"
                   className="custom-control-input me-2"
                   onChange={(e)=>setGender('man')}
+                  required
                 />
                 <label className="custom-control-label" htmlFor="man">
                   Man
@@ -140,6 +206,7 @@ const Participate = () => {
                   type="radio"
                   className="custom-control-input me-2"
                   onChange={(e)=>setGender('woman')}
+                  required
                 />
                 <label className="custom-control-label" htmlFor="woman">
                   Woman
@@ -150,7 +217,7 @@ const Participate = () => {
 
           <div className="col-12  pb-3">
             <label htmlFor="regions">{t("regions")}</label>
-            <select  onChange={(e)=>setRegion(e.target.value)} className="form-control custom-select" id="regions">
+            <select onChange={(e)=>setRegion(e.target.value)} className="form-control custom-select" id="regions" required>
               <option className="text-white bg-warning">Choose a region</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -214,6 +281,7 @@ const Participate = () => {
               id="address"
               placeholder={t("address1")}
               onInput={(e)=>setAddress(e.target.value)}
+              required
             />
             <div className="invalid-feedback">
               Please enter a valid email address for shipping updates.
@@ -228,6 +296,7 @@ const Participate = () => {
               id="birth"
               placeholder="DD-MM-YYYY"
               onInput={(e)=>setBirth(e.target.value)}
+              required
             />
             <div className="invalid-feedback">
               Please enter a valid email address for shipping updates.
@@ -238,7 +307,7 @@ const Participate = () => {
             <div className="form-check">
               <input
                 className="form-check-input"
-                onChange={() => setIfChaild(!ifChild)}
+                onChange={() => setIfChild(!ifChild)}
                 checked={ifChild}
                 type="checkbox"
                 id="if-child"
@@ -255,6 +324,7 @@ const Participate = () => {
                   id="parent_name"
                   placeholder="Muslim"
                   onInput={(e)=>setParent(e.target.value)}
+                  required={ifChild}
                 />
                 <div className="invalid-feedback">
                   Please enter a valid name address for shipping updates.
@@ -265,12 +335,12 @@ const Participate = () => {
 
           <div className="mb-3">
             <label htmlFor="birth">{t("organization")}</label>
-            <Autocomplete suggestions={organs} getValue={setOrganization} />
+            <Autocomplete suggestions={organs} getValue={setOrganization} value={organization} />
           </div>
 
           <div className="mb-3">
             <label htmlFor="birth">{t("category")}</label>
-            <Autocomplete suggestions={category} getValue={setCompany} />
+            <Autocomplete suggestions={category} getValue={setCompany} value={company} />
           </div>
 
           <div className="mb-3">

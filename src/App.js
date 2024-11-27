@@ -12,6 +12,7 @@ import Events from './pages/events';
 import Participate from './pages/participate';
 import TimerProgress from './components/timeProgress';
 import useCart from './zustand/cart';
+import Invoices from './pages/invoices';
 
 
 const App = () => {
@@ -46,7 +47,8 @@ const App = () => {
                     <Route path="/roadrunning-bot/events/:id" element={<SingleEvent />} />
                     <Route path="/roadrunning-bot/events" element={<Events />} />
                     <Route path="/roadrunning-bot/participate/:id" element={<Participate />} />
-                </Routes>
+                    <Route path="/roadrunning-bot/invoice" element={<Invoices />} />
+                </Routes>   
                 <TimerProgress />
                 <Footer />
             </div>

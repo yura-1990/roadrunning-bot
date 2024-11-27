@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const Autocomplete = ({ suggestions, getValue }) => {
+const Autocomplete = ({ suggestions, getValue, value }) => {
   const { t } = useTranslation();
-  const [inputValue, setInputValue] = useState("");
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const handleChange = (e) => {
-    const value = e.target.value;
-    setInputValue(value);
+    getValue(e.target.value)
 
     if (value.trim() === "") {
       setShowSuggestions(false);
@@ -22,11 +20,11 @@ const Autocomplete = ({ suggestions, getValue }) => {
 
     setFilteredSuggestions(filtered);
     setShowSuggestions(true);
-    getValue(value)
+    
   };
 
   const handleSelect = (suggestion) => {
-    setInputValue(suggestion);
+    getValue(suggestion)
     setShowSuggestions(false);
   };
 
@@ -36,7 +34,7 @@ const Autocomplete = ({ suggestions, getValue }) => {
       <input
         type="text"
         className="form-control"
-        value={inputValue}
+        value={value}
         onChange={handleChange}
         placeholder={t('type_or_choose')}
       />
@@ -54,7 +52,7 @@ const Autocomplete = ({ suggestions, getValue }) => {
               </li>
             ))
           ) : (
-            <li className="list-group-item text-muted">No suggestions found</li>
+            ''
           )}
         </ul>
       )}

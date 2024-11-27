@@ -119,5 +119,8 @@
     "paid": "da to'langan",
     "not_paid": "To'lanmagan",
     "payment_composition": "To'lov tarkibi",
-    "uniform": "Forma"
+    "uniform": "Forma",
+    "empty": "Bo'sh",
+    "proceed_to_payment": "To'lovga o'tish",
+    "check": "Tekshirish"
   }

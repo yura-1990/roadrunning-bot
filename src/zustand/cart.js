@@ -33,6 +33,11 @@ const useCart = create((set, get) => ({
     deleteCart: (cart)=>{
         set({ state: { carts: cart } });
         localStorage.setItem('cart', JSON.stringify(cart))
+    }, 
+
+    deleteAllCarts: ()=>{
+        set({ state: { carts: [] } });
+        localStorage.setItem('cart', JSON.stringify([]))
     }
 }))
 
