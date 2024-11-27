@@ -124,5 +124,15 @@
     "proceed_to_payment": "Proceed to Payment",
     "check": "Check",
     "verification_code_submitted": "Verification code submitted",
-    "enter_verification_code": "Please enter the complete verification code"
+    "enter_verification_code": "Please enter the complete verification code",
+    "invoice_details": "Invoice Details",
+    "purchases": "Purchases",
+    "bill_to": "Bill To",
+    "card_number": "Card Number",
+    "expiration_date": "Expiration Date",
+    "valid_card_number": "Please enter a valid card number.",
+    "enter_expiration_date": "Please enter expiration date of the card.",
+    "invalid_card_date": "Invalid card date",
+    "invalid_card_number": "Invalid card number",
+    "thank_you": "Thank you for your business!"
   }

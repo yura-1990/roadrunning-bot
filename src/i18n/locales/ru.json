@@ -124,5 +124,15 @@
   "proceed_to_payment": "Перейти к оплате",
   "check": "Проверить",
   "verification_code_submitted": "Код подтверждения отправлен",
-  "enter_verification_code": "Пожалуйста, введите полный код подтверждения"
+  "enter_verification_code": "Пожалуйста, введите полный код подтверждения",
+  "invoice_details": "Детали счета",
+  "purchases": "Покупки",
+  "bill_to": "Счет на имя",
+  "card_number": "Номер карты",
+  "expiration_date": "Срок действия",
+  "valid_card_number": "Пожалуйста, введите правильный номер карты.",
+  "enter_expiration_date": "Пожалуйста, введите срок действия карты.",
+  "invalid_card_date": "Неверная дата карты",
+  "invalid_card_number": "Неверный номер карты",
+  "thank_you": "Спасибо за ваш бизнес!"
 }

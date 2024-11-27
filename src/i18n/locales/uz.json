@@ -124,5 +124,15 @@
     "proceed_to_payment": "To'lovga o'tish",
     "check": "Tekshirish",
     "verification_code_submitted": "Tasdiqlash kodi yuborildi",
-    "enter_verification_code": "Iltimos, to'liq tasdiqlash kodini kiriting"
+    "enter_verification_code": "Iltimos, to'liq tasdiqlash kodini kiriting",
+    "invoice_details": "Hisob-faktura tafsilotlari",
+    "purchases": "Xaridlar",
+    "bill_to": "Hisobni kimga",
+    "card_number": "Karta raqami",
+    "expiration_date": "Amal qilish muddati",
+    "valid_card_number": "Iltimos, to'g'ri karta raqamini kiriting.",
+    "enter_expiration_date": "Iltimos, kartaning amal qilish muddatini kiriting.",
+    "invalid_card_date": "Noto'g'ri karta muddati",
+    "invalid_card_number": "Noto'g'ri karta raqami",
+    "thank_you": "Biznesingiz uchun rahmat!"
   }

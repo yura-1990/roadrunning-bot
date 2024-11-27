@@ -124,5 +124,15 @@
     "proceed_to_payment": "Тўловга ўтиш",
     "check": "Текшириш",
     "verification_code_submitted": "Тасдиқлаш коди юборилди",
-    "enter_verification_code": "Илтимос, тўлиқ тасдиқлаш кодини киритинг"
+    "enter_verification_code": "Илтимос, тўлиқ тасдиқлаш кодини киритинг",
+    "invoice_details": "Ҳисоб-фактура тафсилотлари",
+    "purchases": "Харидлар",
+    "bill_to": "Ҳисобни кимга",
+    "card_number": "Карта рақами",
+    "expiration_date": "Амал қилиш муддати",
+    "valid_card_number": "Илтимос, тўғри карта рақамини киритинг.",
+    "enter_expiration_date": "Илтимос, картанинг амал қилиш муддатини киритинг.",
+    "invalid_card_date": "Нотоғри карта муддати",
+    "invalid_card_number": "Нотоғри карта рақами",
+    "thank_you": "Бизнесингиз учун раҳмат!"
   }

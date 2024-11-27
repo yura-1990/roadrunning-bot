@@ -54,7 +54,7 @@ const Invoices = () => {
     const {value} = event.target;
 
     const digitsCount = value.replace(/\s/g, '').length;
-    setCardNumberError(digitsCount <= 15 ? 'Invalid card number' : '')
+    setCardNumberError(digitsCount <= 15 ? t('invalid_card_number') : '')
     setCardNumber(maskCreditCard(value));
     
   };
@@ -75,7 +75,7 @@ const Invoices = () => {
     const {value} = event.target;
 
     const cardDate = value.replace(/\s/g, '').length;
-    setCardDateError(cardDate <= 4 ? 'Invalid card date' : '')
+    setCardDateError(cardDate <= 4 ? t('invalid_card_date') : '')
     setCardDate(formatExpirationDate(value))
   }
 
@@ -160,26 +160,25 @@ const Invoices = () => {
     <div>
       <div className="container my-2">
         <div className="text-center p-2 border-bottom border-secondary">
-          <h1 className="invoice-title">Invoice</h1>
+          <h1 className="invoice-title">{t('invoice_info')}</h1>
         </div>
 
         <div className="row mt-4">
-          <div className="col d-flex justify-content-between">
-            <h5>Bill To:</h5>
+          <div className="col-12 d-flex justify-content-between">
+            <h5>{t('bill_to')}</h5>
             <p>Tg user name</p>
           </div>
 
-          <div className="col-md-6 text-md-end">
-            <h5>Invoice Details:</h5>
+          <div className="col-12 text-end">
+            <h5>{t('invoice_details')}</h5>
             <p>
-                Invoice #: 001<br/>
-                Date: 2024-11-26<br/>
-                Due Date: 2024-12-01
+              {t('invoice_number')} #: 001<br/>
+              {t('date')}: 2024-11-26<br/>
             </p>
           </div>
         </div>
 
-        <h4 className="mb-3">Purchases</h4>
+        <h4 className="mb-3">{t('purchases')}</h4>
         
         <div className="shadow p-2 rounded">
           <div className='d-flex justify-content-between border-bottom border-theme'>
@@ -201,23 +200,22 @@ const Invoices = () => {
         </div>
 
         <div className="row">
-            <div className="col-md-6"></div>
-            <div className="col-md-6">
+            <div className="col-12">
                 <table className="table table-borderless table-summary">
                     <tbody>
                         <tr>
-                            <td>Total:</td>
+                            <td>{t('total')}:</td>
                             <td className="text-end">5 000 000 sum</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <hr/>
+        
         <div className="payment-form">
-          <form onSubmit={submit} className={checkCartForm ? "needs-validation was-validated" : "needs-validation"} noValidate>
+          <form onSubmit={submit} className={checkCartForm ? "needs-validation was-validated border p-2 rounded" : "needs-validation border p-2 rounded"} noValidate>
             <div className="mb-3">
-              <label htmlFor="name">Card Number</label>
+              <label htmlFor="name">{t('card_number')}</label>
               <input
                 type="text"
                 className="form-control"
@@ -228,13 +226,11 @@ const Invoices = () => {
                 required
               />
               {cardNumberError && <p style={{ color: "red" }}>{cardNumberError}</p>}
-              <div className="invalid-feedback">
-                Please enter a valid name address for shipping updates.
-              </div>
+              <div className="invalid-feedback"> {t('valid_card_number')} </div>
             </div>
 
             <div className="mb-3">
-              <label htmlFor="cardDate">{t("birth")}</label>
+              <label htmlFor="cardDate">{t("expiration_date")}</label>
               <input
                 type="text"
                 className="form-control"
@@ -245,9 +241,7 @@ const Invoices = () => {
                 required
               />
               {cardDateError && <p style={{ color: "red" }}>{cardDateError}</p>}
-              <div className="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
+              <div className="invalid-feedback"> {t('enter_expiration_date')} </div>
             </div>
 
             <div className="mb-3">
@@ -316,8 +310,8 @@ const Invoices = () => {
 
         </div>
         <div className="text-center mt-4">
-          <p>Thank you for your business!</p>
-          <p>If you have any questions, feel free to contact us at contact@yourcompany.com.</p>
+          <p>{t('thank_you')}</p>
+          <p>{t('contact_us')}  roadrunning@info.uz</p>
         </div>
       </div>
     </div>

@@ -62,7 +62,7 @@ const Cart = () => {
               </div>
           </div>
 
-          <div className="col-md-4 mt-md-0 mt-4">
+          <div className="col-12 mt-md-0 mt-4">
               <div className="card">
                   <div className="card-body">
                     {
