@@ -123,5 +123,6 @@
     "empty": "Empty",
     "proceed_to_payment": "Proceed to Payment",
     "check": "Check",
-    "verification_code_submitted": "Verification code submitted"
+    "verification_code_submitted": "Verification code submitted",
+    "enter_verification_code": "Please enter the complete verification code"
   }

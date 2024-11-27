@@ -13,6 +13,8 @@ const Invoices = () => {
   const [timer, setTimer] = useState(120);
   const [isExpired, setIsExpired] = useState(false);
   const [showCode, setShowCode] = useState(false)
+  const [checkCartForm, setCheckCartForm] = useState(false)
+
 
   useEffect(()=>{
     getCarts()
@@ -121,9 +123,11 @@ const Invoices = () => {
 
   const submit=(e)=>{
     e.preventDefault() 
-
-    setShowCode(true)
-    setTimer(120)
+    setCheckCartForm(true)
+    if (cardNumberError === "" && cardDateError === "") {
+      setShowCode(true)
+      setTimer(120)
+    }
   }
 
   const verifyCode = (e) =>{
@@ -131,7 +135,7 @@ const Invoices = () => {
 
     const verificationCode = code.join("");
     if (verificationCode.length < 6) {
-      setError("Please enter the complete verification code.");
+      setError(t("enter_verification_code"));
       return;
     }
 
@@ -211,7 +215,7 @@ const Invoices = () => {
         </div>
         <hr/>
         <div className="payment-form">
-          <form onSubmit={submit} className={"needs-validation was-validated"} noValidate>
+          <form onSubmit={submit} className={checkCartForm ? "needs-validation was-validated" : "needs-validation"} noValidate>
             <div className="mb-3">
               <label htmlFor="name">Card Number</label>
               <input
@@ -295,7 +299,7 @@ const Invoices = () => {
                 isExpired 
                   ? <div className="text-center">
                       <h5 className="text-danger mb-3">Time's Up!</h5>
-                      <button className="btn btn-warning" onClick={handleReset}>
+                      <button type='button' className="btn btn-warning" onClick={handleReset}>
                         Reset
                       </button>
                     </div>

@@ -123,5 +123,6 @@
   "empty": "Пусто",
   "proceed_to_payment": "Перейти к оплате",
   "check": "Проверить",
-  "verification_code_submitted": "Код подтверждения отправлен"
+  "verification_code_submitted": "Код подтверждения отправлен",
+  "enter_verification_code": "Пожалуйста, введите полный код подтверждения"
 }

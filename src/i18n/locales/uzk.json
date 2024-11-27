@@ -123,5 +123,6 @@
     "empty": "Бўш",
     "proceed_to_payment": "Тўловга ўтиш",
     "check": "Текшириш",
-    "verification_code_submitted": "Тасдиқлаш коди юборилди"
+    "verification_code_submitted": "Тасдиқлаш коди юборилди",
+    "enter_verification_code": "Илтимос, тўлиқ тасдиқлаш кодини киритинг"
   }

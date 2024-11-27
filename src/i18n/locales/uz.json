@@ -123,5 +123,6 @@
     "empty": "Bo'sh",
     "proceed_to_payment": "To'lovga o'tish",
     "check": "Tekshirish",
-    "verification_code_submitted": "Tasdiqlash kodi yuborildi"
+    "verification_code_submitted": "Tasdiqlash kodi yuborildi",
+    "enter_verification_code": "Iltimos, to'liq tasdiqlash kodini kiriting"
   }
