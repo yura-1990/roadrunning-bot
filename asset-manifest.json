@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/roadrunning-bot/static/css/main.d10e1b4b.css",
-    "main.js": "/roadrunning-bot/static/js/main.4fd1789e.js",
-    "static/media/single-event.webp": "/roadrunning-bot/static/media/single-event.458728f41da20c5528dd.webp",
+    "main.css": "/roadrunning-bot/static/css/main.bc2867a9.css",
+    "main.js": "/roadrunning-bot/static/js/main.4fcafa26.js",
     "static/media/bootstrap-icons.woff?": "/roadrunning-bot/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/bootstrap-icons.woff2?": "/roadrunning-bot/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/bg.jpg": "/roadrunning-bot/static/media/bg.45d8fdc4881caedad018.jpg",
+    "static/media/single-event.webp": "/roadrunning-bot/static/media/single-event.5c0be374c49f1429af74.webp",
     "static/media/typebg.webp": "/roadrunning-bot/static/media/typebg.d42c839ea690d48ec967.webp",
-    "static/media/bg.jpg": "/roadrunning-bot/static/media/bg.6c6442e8e7128beace18.jpg",
     "static/media/number.jpg": "/roadrunning-bot/static/media/number.2c41acf5d644c949c60f.jpg",
     "static/media/marathon.jpg": "/roadrunning-bot/static/media/marathon.07eca4b7db55d71b0ac5.jpg",
     "static/media/events-bg.jpg": "/roadrunning-bot/static/media/events-bg.fc2b89f92c64d27f7bcf.jpg",
     "index.html": "/roadrunning-bot/index.html",
-    "main.d10e1b4b.css.map": "/roadrunning-bot/static/css/main.d10e1b4b.css.map",
-    "main.4fd1789e.js.map": "/roadrunning-bot/static/js/main.4fd1789e.js.map"
+    "main.bc2867a9.css.map": "/roadrunning-bot/static/css/main.bc2867a9.css.map",
+    "main.4fcafa26.js.map": "/roadrunning-bot/static/js/main.4fcafa26.js.map"
   },
   "entrypoints": [
-    "static/css/main.d10e1b4b.css",
-    "static/js/main.4fd1789e.js"
+    "static/css/main.bc2867a9.css",
+    "static/js/main.4fcafa26.js"
   ]
 }
