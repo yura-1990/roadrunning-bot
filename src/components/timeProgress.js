@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { TimerContext } from "./timerContext";
+import useCart from "../zustand/cart";
+
 
 const Countdown = () => {
   const { remainingTime, isRunning, getProgressPercentage } = useContext(TimerContext);

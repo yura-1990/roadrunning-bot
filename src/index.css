@@ -34,6 +34,7 @@ body{
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -47,9 +48,9 @@ body{
   right: 0;
   bottom: 0;
   left: 0;
-  background: #0000005d;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: #000000a4;
+  /* backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); */
   z-index: -1;
 
 }
@@ -146,10 +147,10 @@ body{
   right: 0;
   bottom: 0;
   left: 0;
-  background: #0000006c;
+  background: #00000093;
   z-index: -1;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
 }
 
 .header-fixed{
@@ -209,7 +210,7 @@ body{
   right: 0;
   bottom: 0;
   left: 0;
-  background: #0000006c;
+  background: #00000063;
   z-index: -1;
 }
 

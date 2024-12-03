@@ -1,39 +1,97 @@
 import { create } from 'zustand'
-import axios from "axios";
+import axios from "../axios/index";
 
-const useStore = create((set) => ({
-    events: {
-        data: [
-            {
-                id: 1, name: 'Event 1', event_dates:[
-                    {
-                        id: 1, time: '10-10-2024', marathons: [
-                            {
-                                id: 1, name: 'Marathon 1', start_time: '15:00', end_time: '18:00', marathon_type: { name: '10km', price: 200000 },
-                            },
-                            {
-                                id: 2, name: 'Marathon 2', start_time: '18:00', end_time: '20:00', marathon_type: { name: '3km', price: 205000 },
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
+const useEvent = create((set) => ({
+    state: {
+        events: [],
+        singleEvent: {},
         loading: false,
         error: false,
     },
 
-
-    fetchBears: async () => {
+    getEvents: async (language = 'ru', paginate = 25) => {
         set({loading: true, error: false});
 
         try {
-            const res = await axios.get()
-            set({data: res.data, loading: false, error: false});
+            const response = await axios.get('/event/all', {
+                params: {
+                  language, paginate
+                }
+            })
+
+            set({state: {events: response.data}, loading: false, error: false});
+
         }catch (err) {
             set({loading: false, error: true, message: err.message});
         }
-    }
+    },
+
+    getOneEvent: async (language = 'ru', id) => {
+        set({loading: true, error: false});
+
+        try {
+            const response = await axios.get(`/event/show/${id}`, {
+                params: {
+                  language
+                }
+            })
+
+            console.log(response.data);
+            
+
+            set({state: {singleEvent: response.data}, loading: false, error: false});
+
+        }catch (err) {
+            set({loading: false, error: true, message: err.message});
+        }
+    },
+
+    formatEventDateRange: (marathons, t) => {
+        if (!marathons || marathons.length === 0) return 'Upcoming events'
+
+        const startDateString = marathons[0].date_event
+        const endDateString = marathons[marathons.length - 1].date_event
+
+        const startDate = new Date(startDateString)
+        const endDate = new Date(endDateString)
+
+        const formatDate = (date, includeYear = true) => {
+            const day = date.getDate().toString().padStart(2, '0')
+            const month = t(date.toLocaleString('en', { month: 'long' }).toLowerCase())
+            const year = date.getFullYear()
+            return includeYear ? `${day} ${month} ${year}` : `${day} ${month}`
+        }
+
+        const sameMonth = startDate.getMonth() === endDate.getMonth()
+        const sameYear = startDate.getFullYear() === endDate.getFullYear()
+
+        let formattedStartDate = formatDate(startDate, !sameYear)
+        const formattedEndDate = formatDate(endDate)
+
+        if (sameMonth && sameYear) {
+            formattedStartDate = startDate.getDate().toString().padStart(2, '0')
+        }
+
+        return `${formattedStartDate} - ${formattedEndDate}`
+    },
+
+    formatDate: (dateString, t)=> {
+      const date = new Date(dateString)
+
+      const formatDate = (date) => {
+        const day = date.getDate().toString().padStart(2, '0')
+        const monthKey = date.toLocaleString('en', { month: 'long' }).toLowerCase()
+        const year = date.getFullYear()
+
+        const month = t(`${monthKey}`)
+
+        return `${day} ${month} ${year}`
+      }
+
+      return formatDate(date)
+    },
+
+
 }))
 
-export default useStore;
+export default useEvent;

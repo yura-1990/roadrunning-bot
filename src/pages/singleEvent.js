@@ -1,81 +1,66 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import useEvent from '../zustand/events'
+import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const SingleEvent = () => {
+  const { t, i18n } = useTranslation();
+  const singleEvent = useEvent((state) => state.state.singleEvent)
+  const getEvents = useEvent((state) => state.getOneEvent)
+  const formatEventDateRange = useEvent((state) => state.formatEventDateRange)
+  const formatDate = useEvent((state) => state.formatDate)
+  const { id } = useParams();
+
+  useEffect(()=>{
+    getEvents(i18n.language, id)
+  }, [i18n.language])
     
   return (
-    <div class="py-4">
-      <div class="mb-4 single-event-bg shadow-lg rounded-3 overflow-hidden">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 text-white fw-bold">Event 1</h1>
-          <p class="col-md-8 text-white fs-4 ">
-            12-18 October 2024 
+    <div className="py-4">
+      <div className="mb-4 single-event-bg shadow-lg rounded-3 overflow-hidden">
+        <div className="container-fluid py-5">
+          <h1 className="display-5 text-white fw-bold">{ singleEvent?.name }</h1>
+          <p className="col-md-8 text-white fs-4 ">
+          { formatEventDateRange(singleEvent?.event_has_marathons, t) }
           </p>
-          <span className="text-white">Address: Tashkent</span>
+          <span className="text-white">{t('address')}: {singleEvent?.address}</span>
         </div>
       </div>
 
-      <div>
-        <div className='pb-2 mb-3 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
-          <h2 className="">12 October 2024 </h2>
-          <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/marathons'}>All <i className="bi bi-arrow-right"></i></Link>
-        </div>
-        <div class="row align-items-md-stretch">
-          <div class="col-md-6  mb-4 ">
-            <div class="h-100 text-white p-3 marathon-bg overflow-hidden shadow-lg rounded-3">
-              <h2>Marathon Type 10kms</h2>
-              <p>Address info</p>
-              <p>2 500 000 sum</p>
-              <div className='d-flex justify-content-between align-items-center flex-wrap '>
-                <span className="text-theme fw-bold btn btn-outline-success">Time: 10:00</span>
-                <Link class="btn bg-theme text-white  shadow" to={'/roadrunning-bot/participate/1'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
-              </div>
+      {
+        singleEvent?.event_has_marathons?.map((single, index)=>(
+          <div>
+            <div className='pb-2 mb-3 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
+              <h2 className="">{ formatDate(single.date_event, t) }</h2>
+              <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/marathons'}>{t('all')} <i className="bi bi-arrow-right"></i></Link>
+            </div>
+            <div className="row align-items-md-stretch">
+              {
+                single?.marathons.map((marathon, marathonIndex)=>(
+                  <div className="col-md-6  mb-4 ">
+                    <div className="h-100 text-white p-3 marathon-bg overflow-hidden shadow-lg rounded-3">
+                      <div className='d-flex align-items-center justify-content-between'>
+                        <h2>{ marathon?.marathon_type.name } </h2>
+                        <p className='text-white fw-medium '>{ new Intl.NumberFormat('fr-FR').format(marathon?.price) } UZS</p>
+                      </div>
+                      
+                      <p className='fw-500'>{t('address')}: <spam className="border px-2 rounded border-theme">{ marathon?.address }</spam></p>
+                      <p>{t('gender')}: <span className="border px-2 rounded border-theme">{ marathon?.gender?.type }</span></p>
+                      <div className='d-flex justify-content-between align-items-center flex-wrap '>
+                        <span className="text-white fw-bold btn btn-outline-success">{t('time')}: {marathon?.datetime_from} - {marathon?.datetime_to}</span>
+                        <Link className="btn bg-theme text-white  shadow" to={'/roadrunning-bot/participate/1'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
             </div>
           </div>
-          <div class="col-md-6  mb-4 ">
-            <div class="h-100 text-white p-3 marathon-bg overflow-hidden shadow-lg rounded-3">
-              <h2>Marathon Type 3kms</h2>
-              <p>Address info</p>
-              <p>2 500 000 sum</p>
-              <div className='d-flex justify-content-between align-items-center flex-wrap '>
-                <span className="text-theme fw-bold btn btn-outline-success">Time: 15:00</span>
-                <Link class="btn bg-theme text-white shadow" to={'/roadrunning-bot/participate/2'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        ))
+      }
+      
 
-      <div>
-        <div className='pb-2 mb-3 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
-          <h2 className="">13 October 2024 </h2>
-          <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/marathons'}>All <i className="bi bi-arrow-right"></i></Link>
-        </div>
-        <div class="row align-items-md-stretch">
-          <div class="col-md-6  mb-4 ">
-            <div class="h-100 p-3 text-white marathon-bg overflow-hidden shadow-lg rounded-3">
-              <h2>Marathon Type 10kms</h2>
-              <p>Address info</p>
-              <p>2 500 000 sum</p>
-              <div className='d-flex justify-content-between align-items-center flex-wrap'>
-                <span className="text-theme fw-bold btn btn-outline-success">Time: 10:00</span>
-                <Link class="btn bg-theme text-white  shadow" to={'/roadrunning-bot/participate/3'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6  mb-4 ">
-            <div class="h-100 p-3 text-white marathon-bg overflow-hidden shadow-lg rounded-3">
-              <h2>Marathon Type 3kms</h2>
-              <p>Address info</p>
-              <p>2 500 000 sum</p>
-              <div className='d-flex justify-content-between align-items-center flex-wrap'>
-                <span className="text-theme fw-bold btn btn-outline-success">Time: 17:00</span>
-                <Link class="btn bg-theme text-white shadow" to={'/roadrunning-bot/participate/4'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

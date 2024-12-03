@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import useEvent from '../zustand/events'
 
 const useCart = create((set, get) => ({
     state: {
@@ -6,7 +7,7 @@ const useCart = create((set, get) => ({
     },
 
 
-    getCarts: () => {
+    getCarts: async () => {
         if (localStorage.getItem('cart')) {
             const getCart = JSON.parse(localStorage.getItem('cart'))
             localStorage.setItem('cart', JSON.stringify(getCart))

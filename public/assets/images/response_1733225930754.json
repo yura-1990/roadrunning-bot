@@ -1,0 +1,2395 @@
+{
+  "table": {
+    "current_page": 1,
+    "data": [
+      {
+        "id": 1,
+        "peace_id": 1,
+        "war_id": null,
+        "naimenovanie_voinskoy_chasti": "00001",
+        "nomer_shata": "01/001",
+        "kod_podrazdeleniya": null,
+        "naimenovanie_podrazdeleniya": "Молия хизмати",
+        "kod_pervoy_doljnosti": null,
+        "kod_vtoroy_doljnosti": null,
+        "naimenovaniya_doljnosti": "хизмат бошлиги",
+        "vus": "1000000",
+        "tarifnie_razryad": "7.2",
+        "code_voinskoe_zvanie": "300",
+        "naimenovanie_voinskoe_zvanie": null,
+        "code_voinskoe_zvanie_po_shtatu": "300",
+        "naimenovanie_voinskoe_zvanie_po_shtatu": null,
+        "status": null,
+        "created_at": "2024-11-20 19:05:42",
+        "updated_at": "2024-11-20 19:05:42",
+        "deleted_at": null,
+        "kategoriya_voennoslujashix_id": 1,
+        "code_kategoriya_voennoslujashix": null
+      }
+    ],
+    "first_page_url": "http://localhost:8000/api/menu/show/544?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http://localhost:8000/api/menu/show/544?page=1",
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "http://localhost:8000/api/menu/show/544?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": null,
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "next_page_url": null,
+    "path": "http://localhost:8000/api/menu/show/544",
+    "per_page": 15,
+    "prev_page_url": null,
+    "to": 1,
+    "total": 1
+  },
+  "columns": [
+    {
+      "id": 4812,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "pinfl",
+      "column_type": "text",
+      "column_translation": {
+        "en": "pinfl",
+        "ru": "pinfl",
+        "uz": "pinfl",
+        "uzk": "pinfl"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4813,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "naimenovanie_voinskoy_chasti",
+      "column_type": "text",
+      "column_translation": {
+        "en": "naimenovanie_voinskoy_chasti",
+        "ru": "naimenovanie_voinskoy_chasti",
+        "uz": "naimenovanie_voinskoy_chasti",
+        "uzk": "naimenovanie_voinskoy_chasti"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4814,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_shata",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_shata",
+        "ru": "nomer_shata",
+        "uz": "nomer_shata",
+        "uzk": "nomer_shata"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4815,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "kod_podrazdeleniya",
+      "column_type": "text",
+      "column_translation": {
+        "en": "kod_podrazdeleniya",
+        "ru": "kod_podrazdeleniya",
+        "uz": "kod_podrazdeleniya",
+        "uzk": "kod_podrazdeleniya"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4816,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "kod_doljnosti",
+      "column_type": "text",
+      "column_translation": {
+        "en": "at duty",
+        "ru": "на службе",
+        "uz": "navbatchilikda",
+        "uzk": "навбатчиликда"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4817,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "vus",
+      "column_type": "text",
+      "column_translation": {
+        "en": "vus",
+        "ru": "vus",
+        "uz": "vus",
+        "uzk": "vus"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4818,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "tarifnie_razryad",
+      "column_type": "text",
+      "column_translation": {
+        "en": "tarifnie_razryad",
+        "ru": "tarifnie_razryad",
+        "uz": "tarifnie_razryad",
+        "uzk": "tarifnie_razryad"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4819,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "voinskoe_zvanie",
+      "column_type": "text",
+      "column_translation": {
+        "en": "military rank",
+        "ru": "воинское звание",
+        "uz": "harbiy unvon",
+        "uzk": "харбий унвон"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4820,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_naznachenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_naznachenii",
+        "ru": "nomer_prikaza_naznachenii",
+        "uz": "nomer_prikaza_naznachenii",
+        "uzk": "nomer_prikaza_naznachenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4821,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_naznachenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_naznachenii",
+        "ru": "data_prikaza_naznachenii",
+        "uz": "data_prikaza_naznachenii",
+        "uzk": "data_prikaza_naznachenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4822,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "tip_naznachenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "tip_naznachenii",
+        "ru": "tip_naznachenii",
+        "uz": "tip_naznachenii",
+        "uzk": "tip_naznachenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4823,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_zachislenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_zachislenii",
+        "ru": "nomer_prikaza_zachislenii",
+        "uz": "nomer_prikaza_zachislenii",
+        "uzk": "nomer_prikaza_zachislenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4824,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_zachislenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_zachislenii",
+        "ru": "data_prikaza_zachislenii",
+        "uz": "data_prikaza_zachislenii",
+        "uzk": "data_prikaza_zachislenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4825,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "tip_zachislenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "tip_zachislenii",
+        "ru": "tip_zachislenii",
+        "uz": "tip_zachislenii",
+        "uzk": "tip_zachislenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4826,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_isklyuchenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_isklyuchenii",
+        "ru": "nomer_prikaza_isklyuchenii",
+        "uz": "nomer_prikaza_isklyuchenii",
+        "uzk": "nomer_prikaza_isklyuchenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4827,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_isklyuchenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_isklyuchenii",
+        "ru": "data_prikaza_isklyuchenii",
+        "uz": "data_prikaza_isklyuchenii",
+        "uzk": "data_prikaza_isklyuchenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4828,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "tip_isklyuchenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "tip_isklyuchenii",
+        "ru": "tip_isklyuchenii",
+        "uz": "tip_isklyuchenii",
+        "uzk": "tip_isklyuchenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4829,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_rasporyajenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_rasporyajenii",
+        "ru": "nomer_prikaza_rasporyajenii",
+        "uz": "nomer_prikaza_rasporyajenii",
+        "uzk": "nomer_prikaza_rasporyajenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4830,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_rasporyajenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_rasporyajenii",
+        "ru": "data_prikaza_rasporyajenii",
+        "uz": "data_prikaza_rasporyajenii",
+        "uzk": "data_prikaza_rasporyajenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4831,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "tip_rasporyajenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "tip_rasporyajenii",
+        "ru": "tip_rasporyajenii",
+        "uz": "tip_rasporyajenii",
+        "uzk": "tip_rasporyajenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4832,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "",
+      "column_type": "text",
+      "column_translation": {
+        "uzk": ""
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4833,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "",
+      "column_type": "text",
+      "column_translation": {
+        "uzk": ""
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4834,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_prisvoenii_lishenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_prisvoenii_lishenii",
+        "ru": "nomer_prikaza_prisvoenii_lishenii",
+        "uz": "nomer_prikaza_prisvoenii_lishenii",
+        "uzk": "nomer_prikaza_prisvoenii_lishenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4835,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "",
+      "column_type": "text",
+      "column_translation": {
+        "uzk": ""
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4836,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_yavka_v_odo",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_yavka_v_odo",
+        "ru": "nomer_prikaza_yavka_v_odo",
+        "uz": "nomer_prikaza_yavka_v_odo",
+        "uzk": "nomer_prikaza_yavka_v_odo"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4837,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_yavka_v_odo",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_yavka_v_odo",
+        "ru": "data_prikaza_yavka_v_odo",
+        "uz": "data_prikaza_yavka_v_odo",
+        "uzk": "data_prikaza_yavka_v_odo"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4838,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_ubitiya_v_obucheniyu",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_ubitiya_v_obucheniyu",
+        "ru": "nomer_prikaza_ubitiya_v_obucheniyu",
+        "uz": "nomer_prikaza_ubitiya_v_obucheniyu",
+        "uzk": "nomer_prikaza_ubitiya_v_obucheniyu"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4839,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_ubitiya_v_obucheniyu",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_ubitiya_v_obucheniyu",
+        "ru": "data_prikaza_ubitiya_v_obucheniyu",
+        "uz": "data_prikaza_ubitiya_v_obucheniyu",
+        "uzk": "data_prikaza_ubitiya_v_obucheniyu"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4840,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_pribtiya_v_obucheniyu",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_pribtiya_v_obucheniyu",
+        "ru": "nomer_prikaza_pribtiya_v_obucheniyu",
+        "uz": "nomer_prikaza_pribtiya_v_obucheniyu",
+        "uzk": "nomer_prikaza_pribtiya_v_obucheniyu"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4841,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_pribitiya_v_obucheniyu",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_pribitiya_v_obucheniyu",
+        "ru": "data_prikaza_pribitiya_v_obucheniyu",
+        "uz": "data_prikaza_pribitiya_v_obucheniyu",
+        "uzk": "data_prikaza_pribitiya_v_obucheniyu"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4842,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "kontrakt_zaklyucheniyaokonchaniya",
+      "column_type": "text",
+      "column_translation": {
+        "en": "kontrakt_zaklyucheniyaokonchaniya",
+        "ru": "kontrakt_zaklyucheniyaokonchaniya",
+        "uz": "kontrakt_zaklyucheniyaokonchaniya",
+        "uzk": "kontrakt_zaklyucheniyaokonchaniya"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4843,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_zaklyuchenii_kontrakt",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_zaklyuchenii_kontrakt",
+        "ru": "nomer_prikaza_zaklyuchenii_kontrakt",
+        "uz": "nomer_prikaza_zaklyuchenii_kontrakt",
+        "uzk": "nomer_prikaza_zaklyuchenii_kontrakt"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4844,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_zaklyuchenii_kontrakta",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_zaklyuchenii_kontrakta",
+        "ru": "data_prikaza_zaklyuchenii_kontrakta",
+        "uz": "data_prikaza_zaklyuchenii_kontrakta",
+        "uzk": "data_prikaza_zaklyuchenii_kontrakta"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4845,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_prikaza_okonchaniya_kontrakta",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_prikaza_okonchaniya_kontrakta",
+        "ru": "nomer_prikaza_okonchaniya_kontrakta",
+        "uz": "nomer_prikaza_okonchaniya_kontrakta",
+        "uzk": "nomer_prikaza_okonchaniya_kontrakta"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4846,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_okonchaniya_kontrakta",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_okonchaniya_kontrakta",
+        "ru": "data_prikaza_okonchaniya_kontrakta",
+        "uz": "data_prikaza_okonchaniya_kontrakta",
+        "uzk": "data_prikaza_okonchaniya_kontrakta"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4847,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "seriya_kontrakta",
+      "column_type": "text",
+      "column_translation": {
+        "en": "seriya_kontrakta",
+        "ru": "seriya_kontrakta",
+        "uz": "seriya_kontrakta",
+        "uzk": "seriya_kontrakta"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4848,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_kontrakta",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_kontrakta",
+        "ru": "nomer_kontrakta",
+        "uz": "nomer_kontrakta",
+        "uzk": "nomer_kontrakta"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4849,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "optsiya",
+      "column_type": "text",
+      "column_translation": {
+        "en": "optsiya",
+        "ru": "optsiya",
+        "uz": "optsiya",
+        "uzk": "optsiya"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4850,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "status",
+      "column_type": "text",
+      "column_translation": {
+        "en": "status",
+        "ru": "status",
+        "uz": "status",
+        "uzk": "status"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4879,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "peace_id",
+      "column_type": "text",
+      "column_translation": {
+        "en": "peace_id",
+        "ru": "peace_id",
+        "uz": "peace_id",
+        "uzk": "peace_id"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4880,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "war_id",
+      "column_type": "text",
+      "column_translation": {
+        "en": "war_id",
+        "ru": "war_id",
+        "uz": "war_id",
+        "uzk": "war_id"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4881,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_prikaza_prisvoenii_lishenii",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_prikaza_prisvoenii_lishenii",
+        "ru": "data_prikaza_prisvoenii_lishenii",
+        "uz": "data_prikaza_prisvoenii_lishenii",
+        "uzk": "data_prikaza_prisvoenii_lishenii"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4882,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "kod_pervoy_doljnosti",
+      "column_type": "text",
+      "column_translation": {
+        "en": "kod_pervoy_doljnosti",
+        "ru": "kod_pervoy_doljnosti",
+        "uz": "kod_pervoy_doljnosti",
+        "uzk": "kod_pervoy_doljnosti"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4883,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "kod_vtoroy_doljnosti",
+      "column_type": "text",
+      "column_translation": {
+        "en": "kod_vtoroy_doljnosti",
+        "ru": "kod_vtoroy_doljnosti",
+        "uz": "kod_vtoroy_doljnosti",
+        "uzk": "kod_vtoroy_doljnosti"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4884,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "code_voinskoe_zvanie",
+      "column_type": "text",
+      "column_translation": {
+        "en": "code_voinskoe_zvanie",
+        "ru": "code_voinskoe_zvanie",
+        "uz": "code_voinskoe_zvanie",
+        "uzk": "code_voinskoe_zvanie"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4885,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "naimenovaniya_voinskoe_zvanie",
+      "column_type": "text",
+      "column_translation": {
+        "en": "naimenovaniya_voinskoe_zvanie",
+        "ru": "naimenovaniya_voinskoe_zvanie",
+        "uz": "naimenovaniya_voinskoe_zvanie",
+        "uzk": "naimenovaniya_voinskoe_zvanie"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4886,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "nomer_vstupleniya_v_doljnost",
+      "column_type": "text",
+      "column_translation": {
+        "en": "nomer_vstupleniya_v_doljnost",
+        "ru": "nomer_vstupleniya_v_doljnost",
+        "uz": "nomer_vstupleniya_v_doljnost",
+        "uzk": "nomer_vstupleniya_v_doljnost"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4887,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_vstupleniya_v_doljnost",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_vstupleniya_v_doljnost",
+        "ru": "data_vstupleniya_v_doljnost",
+        "uz": "data_vstupleniya_v_doljnost",
+        "uzk": "data_vstupleniya_v_doljnost"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4888,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "srok_kontrakta",
+      "column_type": "text",
+      "column_translation": {
+        "en": "srok_kontrakta",
+        "ru": "srok_kontrakta",
+        "uz": "srok_kontrakta",
+        "uzk": "srok_kontrakta"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4889,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "data_okonchaniya_kontrakta",
+      "column_type": "text",
+      "column_translation": {
+        "en": "data_okonchaniya_kontrakta",
+        "ru": "data_okonchaniya_kontrakta",
+        "uz": "data_okonchaniya_kontrakta",
+        "uzk": "data_okonchaniya_kontrakta"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4890,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "naimenovaniya_podrazdeleniya",
+      "column_type": "text",
+      "column_translation": {
+        "en": "naimenovaniya_podrazdeleniya",
+        "ru": "naimenovaniya_podrazdeleniya",
+        "uz": "naimenovaniya_podrazdeleniya",
+        "uzk": "naimenovaniya_podrazdeleniya"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4891,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "naimenovaniya_doljnosti",
+      "column_type": "text",
+      "column_translation": {
+        "en": "naimenovaniya_doljnosti",
+        "ru": "naimenovaniya_doljnosti",
+        "uz": "naimenovaniya_doljnosti",
+        "uzk": "naimenovaniya_doljnosti"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4995,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "naimenovanie_podrazdeleniya",
+      "column_type": "text",
+      "column_translation": {
+        "en": "naimenovanie_podrazdeleniya",
+        "ru": "naimenovanie_podrazdeleniya",
+        "uz": "naimenovanie_podrazdeleniya",
+        "uzk": "naimenovanie_podrazdeleniya"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4996,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "naimenovanie_voinskoe_zvanie",
+      "column_type": "text",
+      "column_translation": {
+        "en": "naimenovanie_voinskoe_zvanie",
+        "ru": "naimenovanie_voinskoe_zvanie",
+        "uz": "naimenovanie_voinskoe_zvanie",
+        "uzk": "naimenovanie_voinskoe_zvanie"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4997,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "code_voinskoe_zvanie_po_shtatu",
+      "column_type": "text",
+      "column_translation": {
+        "en": "code_voinskoe_zvanie_po_shtatu",
+        "ru": "code_voinskoe_zvanie_po_shtatu",
+        "uz": "code_voinskoe_zvanie_po_shtatu",
+        "uzk": "code_voinskoe_zvanie_po_shtatu"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4998,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "naimenovanie_voinskoe_zvanie_po_shtatu",
+      "column_type": "text",
+      "column_translation": {
+        "en": "naimenovanie_voinskoe_zvanie_po_shtatu",
+        "ru": "naimenovanie_voinskoe_zvanie_po_shtatu",
+        "uz": "naimenovanie_voinskoe_zvanie_po_shtatu",
+        "uzk": "naimenovanie_voinskoe_zvanie_po_shtatu"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 4999,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "kategoriya_voennoslujashix_id",
+      "column_type": "text",
+      "column_translation": {
+        "en": "kategoriya_voennoslujashix_id",
+        "ru": "kategoriya_voennoslujashix_id",
+        "uz": "kategoriya_voennoslujashix_id",
+        "uzk": "kategoriya_voennoslujashix_id"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    },
+    {
+      "id": 5000,
+      "table_info_id": 417,
+      "user_id": 1,
+      "column_name": "code_kategoriya_voennoslujashix",
+      "column_type": "text",
+      "column_translation": {
+        "en": "code_kategoriya_voennoslujashix",
+        "ru": "code_kategoriya_voennoslujashix",
+        "uz": "code_kategoriya_voennoslujashix",
+        "uzk": "code_kategoriya_voennoslujashix"
+      },
+      "column_visibility": {
+        "read": true,
+        "create": true,
+        "delete": true,
+        "update": true
+      },
+      "column_requirement": null
+    }
+  ],
+  "table_name": {
+    "id": 544,
+    "code": null,
+    "menu_name": {
+      "en": "Kadyrova information",
+      "ru": "kadirovoy svideny",
+      "uz": "Qodirova ma'lumotlari",
+      "uzk": "Қодирова ма'лумотлари"
+    },
+    "view_name": "kadirovoy_svideny",
+    "table": "kadirovoy_svidenies",
+    "parent_id": "556",
+    "position": 0,
+    "created_at": "2024-09-17T09:25:19.000000Z",
+    "updated_at": "2024-11-28T10:35:43.000000Z",
+    "deleted_at": null,
+    "table_infos": {
+      "id": 417,
+      "user_id": 1,
+      "table_name": "kadirovoy_svidenies",
+      "table_translation": {
+        "en": "Kadyrov's meeting",
+        "ru": "kadirovoy svidenies",
+        "uz": "Qodirovning uchrashuvi",
+        "uzk": "Қодировнинг учрашуви"
+      },
+      "created_at": "2024-09-17T09:25:20.000000Z",
+      "updated_at": "2024-09-17T09:25:20.000000Z",
+      "deleted_at": null,
+      "column_infos": [
+        {
+          "id": 4812,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "pinfl",
+          "column_type": "text",
+          "column_translation": {
+            "en": "pinfl",
+            "ru": "pinfl",
+            "uz": "pinfl",
+            "uzk": "pinfl"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4813,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "naimenovanie_voinskoy_chasti",
+          "column_type": "text",
+          "column_translation": {
+            "en": "naimenovanie_voinskoy_chasti",
+            "ru": "naimenovanie_voinskoy_chasti",
+            "uz": "naimenovanie_voinskoy_chasti",
+            "uzk": "naimenovanie_voinskoy_chasti"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4814,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_shata",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_shata",
+            "ru": "nomer_shata",
+            "uz": "nomer_shata",
+            "uzk": "nomer_shata"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4815,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "kod_podrazdeleniya",
+          "column_type": "text",
+          "column_translation": {
+            "en": "kod_podrazdeleniya",
+            "ru": "kod_podrazdeleniya",
+            "uz": "kod_podrazdeleniya",
+            "uzk": "kod_podrazdeleniya"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4816,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "kod_doljnosti",
+          "column_type": "text",
+          "column_translation": {
+            "en": "at duty",
+            "ru": "на службе",
+            "uz": "navbatchilikda",
+            "uzk": "навбатчиликда"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4817,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "vus",
+          "column_type": "text",
+          "column_translation": {
+            "en": "vus",
+            "ru": "vus",
+            "uz": "vus",
+            "uzk": "vus"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4818,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "tarifnie_razryad",
+          "column_type": "text",
+          "column_translation": {
+            "en": "tarifnie_razryad",
+            "ru": "tarifnie_razryad",
+            "uz": "tarifnie_razryad",
+            "uzk": "tarifnie_razryad"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4819,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "voinskoe_zvanie",
+          "column_type": "text",
+          "column_translation": {
+            "en": "military rank",
+            "ru": "воинское звание",
+            "uz": "harbiy unvon",
+            "uzk": "харбий унвон"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4820,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_naznachenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_naznachenii",
+            "ru": "nomer_prikaza_naznachenii",
+            "uz": "nomer_prikaza_naznachenii",
+            "uzk": "nomer_prikaza_naznachenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4821,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_naznachenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_naznachenii",
+            "ru": "data_prikaza_naznachenii",
+            "uz": "data_prikaza_naznachenii",
+            "uzk": "data_prikaza_naznachenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4822,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "tip_naznachenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "tip_naznachenii",
+            "ru": "tip_naznachenii",
+            "uz": "tip_naznachenii",
+            "uzk": "tip_naznachenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4823,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_zachislenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_zachislenii",
+            "ru": "nomer_prikaza_zachislenii",
+            "uz": "nomer_prikaza_zachislenii",
+            "uzk": "nomer_prikaza_zachislenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4824,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_zachislenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_zachislenii",
+            "ru": "data_prikaza_zachislenii",
+            "uz": "data_prikaza_zachislenii",
+            "uzk": "data_prikaza_zachislenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4825,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "tip_zachislenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "tip_zachislenii",
+            "ru": "tip_zachislenii",
+            "uz": "tip_zachislenii",
+            "uzk": "tip_zachislenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4826,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_isklyuchenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_isklyuchenii",
+            "ru": "nomer_prikaza_isklyuchenii",
+            "uz": "nomer_prikaza_isklyuchenii",
+            "uzk": "nomer_prikaza_isklyuchenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4827,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_isklyuchenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_isklyuchenii",
+            "ru": "data_prikaza_isklyuchenii",
+            "uz": "data_prikaza_isklyuchenii",
+            "uzk": "data_prikaza_isklyuchenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4828,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "tip_isklyuchenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "tip_isklyuchenii",
+            "ru": "tip_isklyuchenii",
+            "uz": "tip_isklyuchenii",
+            "uzk": "tip_isklyuchenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4829,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_rasporyajenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_rasporyajenii",
+            "ru": "nomer_prikaza_rasporyajenii",
+            "uz": "nomer_prikaza_rasporyajenii",
+            "uzk": "nomer_prikaza_rasporyajenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4830,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_rasporyajenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_rasporyajenii",
+            "ru": "data_prikaza_rasporyajenii",
+            "uz": "data_prikaza_rasporyajenii",
+            "uzk": "data_prikaza_rasporyajenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4831,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "tip_rasporyajenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "tip_rasporyajenii",
+            "ru": "tip_rasporyajenii",
+            "uz": "tip_rasporyajenii",
+            "uzk": "tip_rasporyajenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4832,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "",
+          "column_type": "text",
+          "column_translation": {
+            "uzk": ""
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4833,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "",
+          "column_type": "text",
+          "column_translation": {
+            "uzk": ""
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4834,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_prisvoenii_lishenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_prisvoenii_lishenii",
+            "ru": "nomer_prikaza_prisvoenii_lishenii",
+            "uz": "nomer_prikaza_prisvoenii_lishenii",
+            "uzk": "nomer_prikaza_prisvoenii_lishenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4835,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "",
+          "column_type": "text",
+          "column_translation": {
+            "uzk": ""
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4836,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_yavka_v_odo",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_yavka_v_odo",
+            "ru": "nomer_prikaza_yavka_v_odo",
+            "uz": "nomer_prikaza_yavka_v_odo",
+            "uzk": "nomer_prikaza_yavka_v_odo"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4837,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_yavka_v_odo",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_yavka_v_odo",
+            "ru": "data_prikaza_yavka_v_odo",
+            "uz": "data_prikaza_yavka_v_odo",
+            "uzk": "data_prikaza_yavka_v_odo"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4838,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_ubitiya_v_obucheniyu",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_ubitiya_v_obucheniyu",
+            "ru": "nomer_prikaza_ubitiya_v_obucheniyu",
+            "uz": "nomer_prikaza_ubitiya_v_obucheniyu",
+            "uzk": "nomer_prikaza_ubitiya_v_obucheniyu"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4839,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_ubitiya_v_obucheniyu",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_ubitiya_v_obucheniyu",
+            "ru": "data_prikaza_ubitiya_v_obucheniyu",
+            "uz": "data_prikaza_ubitiya_v_obucheniyu",
+            "uzk": "data_prikaza_ubitiya_v_obucheniyu"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4840,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_pribtiya_v_obucheniyu",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_pribtiya_v_obucheniyu",
+            "ru": "nomer_prikaza_pribtiya_v_obucheniyu",
+            "uz": "nomer_prikaza_pribtiya_v_obucheniyu",
+            "uzk": "nomer_prikaza_pribtiya_v_obucheniyu"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4841,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_pribitiya_v_obucheniyu",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_pribitiya_v_obucheniyu",
+            "ru": "data_prikaza_pribitiya_v_obucheniyu",
+            "uz": "data_prikaza_pribitiya_v_obucheniyu",
+            "uzk": "data_prikaza_pribitiya_v_obucheniyu"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4842,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "kontrakt_zaklyucheniyaokonchaniya",
+          "column_type": "text",
+          "column_translation": {
+            "en": "kontrakt_zaklyucheniyaokonchaniya",
+            "ru": "kontrakt_zaklyucheniyaokonchaniya",
+            "uz": "kontrakt_zaklyucheniyaokonchaniya",
+            "uzk": "kontrakt_zaklyucheniyaokonchaniya"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4843,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_zaklyuchenii_kontrakt",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_zaklyuchenii_kontrakt",
+            "ru": "nomer_prikaza_zaklyuchenii_kontrakt",
+            "uz": "nomer_prikaza_zaklyuchenii_kontrakt",
+            "uzk": "nomer_prikaza_zaklyuchenii_kontrakt"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4844,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_zaklyuchenii_kontrakta",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_zaklyuchenii_kontrakta",
+            "ru": "data_prikaza_zaklyuchenii_kontrakta",
+            "uz": "data_prikaza_zaklyuchenii_kontrakta",
+            "uzk": "data_prikaza_zaklyuchenii_kontrakta"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4845,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_prikaza_okonchaniya_kontrakta",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_prikaza_okonchaniya_kontrakta",
+            "ru": "nomer_prikaza_okonchaniya_kontrakta",
+            "uz": "nomer_prikaza_okonchaniya_kontrakta",
+            "uzk": "nomer_prikaza_okonchaniya_kontrakta"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4846,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_okonchaniya_kontrakta",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_okonchaniya_kontrakta",
+            "ru": "data_prikaza_okonchaniya_kontrakta",
+            "uz": "data_prikaza_okonchaniya_kontrakta",
+            "uzk": "data_prikaza_okonchaniya_kontrakta"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4847,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "seriya_kontrakta",
+          "column_type": "text",
+          "column_translation": {
+            "en": "seriya_kontrakta",
+            "ru": "seriya_kontrakta",
+            "uz": "seriya_kontrakta",
+            "uzk": "seriya_kontrakta"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4848,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_kontrakta",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_kontrakta",
+            "ru": "nomer_kontrakta",
+            "uz": "nomer_kontrakta",
+            "uzk": "nomer_kontrakta"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4849,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "optsiya",
+          "column_type": "text",
+          "column_translation": {
+            "en": "optsiya",
+            "ru": "optsiya",
+            "uz": "optsiya",
+            "uzk": "optsiya"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4850,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "status",
+          "column_type": "text",
+          "column_translation": {
+            "en": "status",
+            "ru": "status",
+            "uz": "status",
+            "uzk": "status"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4879,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "peace_id",
+          "column_type": "text",
+          "column_translation": {
+            "en": "peace_id",
+            "ru": "peace_id",
+            "uz": "peace_id",
+            "uzk": "peace_id"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4880,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "war_id",
+          "column_type": "text",
+          "column_translation": {
+            "en": "war_id",
+            "ru": "war_id",
+            "uz": "war_id",
+            "uzk": "war_id"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4881,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_prikaza_prisvoenii_lishenii",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_prikaza_prisvoenii_lishenii",
+            "ru": "data_prikaza_prisvoenii_lishenii",
+            "uz": "data_prikaza_prisvoenii_lishenii",
+            "uzk": "data_prikaza_prisvoenii_lishenii"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4882,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "kod_pervoy_doljnosti",
+          "column_type": "text",
+          "column_translation": {
+            "en": "kod_pervoy_doljnosti",
+            "ru": "kod_pervoy_doljnosti",
+            "uz": "kod_pervoy_doljnosti",
+            "uzk": "kod_pervoy_doljnosti"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4883,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "kod_vtoroy_doljnosti",
+          "column_type": "text",
+          "column_translation": {
+            "en": "kod_vtoroy_doljnosti",
+            "ru": "kod_vtoroy_doljnosti",
+            "uz": "kod_vtoroy_doljnosti",
+            "uzk": "kod_vtoroy_doljnosti"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4884,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "code_voinskoe_zvanie",
+          "column_type": "text",
+          "column_translation": {
+            "en": "code_voinskoe_zvanie",
+            "ru": "code_voinskoe_zvanie",
+            "uz": "code_voinskoe_zvanie",
+            "uzk": "code_voinskoe_zvanie"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4885,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "naimenovaniya_voinskoe_zvanie",
+          "column_type": "text",
+          "column_translation": {
+            "en": "naimenovaniya_voinskoe_zvanie",
+            "ru": "naimenovaniya_voinskoe_zvanie",
+            "uz": "naimenovaniya_voinskoe_zvanie",
+            "uzk": "naimenovaniya_voinskoe_zvanie"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4886,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "nomer_vstupleniya_v_doljnost",
+          "column_type": "text",
+          "column_translation": {
+            "en": "nomer_vstupleniya_v_doljnost",
+            "ru": "nomer_vstupleniya_v_doljnost",
+            "uz": "nomer_vstupleniya_v_doljnost",
+            "uzk": "nomer_vstupleniya_v_doljnost"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4887,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_vstupleniya_v_doljnost",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_vstupleniya_v_doljnost",
+            "ru": "data_vstupleniya_v_doljnost",
+            "uz": "data_vstupleniya_v_doljnost",
+            "uzk": "data_vstupleniya_v_doljnost"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4888,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "srok_kontrakta",
+          "column_type": "text",
+          "column_translation": {
+            "en": "srok_kontrakta",
+            "ru": "srok_kontrakta",
+            "uz": "srok_kontrakta",
+            "uzk": "srok_kontrakta"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4889,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "data_okonchaniya_kontrakta",
+          "column_type": "text",
+          "column_translation": {
+            "en": "data_okonchaniya_kontrakta",
+            "ru": "data_okonchaniya_kontrakta",
+            "uz": "data_okonchaniya_kontrakta",
+            "uzk": "data_okonchaniya_kontrakta"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4890,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "naimenovaniya_podrazdeleniya",
+          "column_type": "text",
+          "column_translation": {
+            "en": "naimenovaniya_podrazdeleniya",
+            "ru": "naimenovaniya_podrazdeleniya",
+            "uz": "naimenovaniya_podrazdeleniya",
+            "uzk": "naimenovaniya_podrazdeleniya"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4891,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "naimenovaniya_doljnosti",
+          "column_type": "text",
+          "column_translation": {
+            "en": "naimenovaniya_doljnosti",
+            "ru": "naimenovaniya_doljnosti",
+            "uz": "naimenovaniya_doljnosti",
+            "uzk": "naimenovaniya_doljnosti"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4995,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "naimenovanie_podrazdeleniya",
+          "column_type": "text",
+          "column_translation": {
+            "en": "naimenovanie_podrazdeleniya",
+            "ru": "naimenovanie_podrazdeleniya",
+            "uz": "naimenovanie_podrazdeleniya",
+            "uzk": "naimenovanie_podrazdeleniya"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4996,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "naimenovanie_voinskoe_zvanie",
+          "column_type": "text",
+          "column_translation": {
+            "en": "naimenovanie_voinskoe_zvanie",
+            "ru": "naimenovanie_voinskoe_zvanie",
+            "uz": "naimenovanie_voinskoe_zvanie",
+            "uzk": "naimenovanie_voinskoe_zvanie"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4997,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "code_voinskoe_zvanie_po_shtatu",
+          "column_type": "text",
+          "column_translation": {
+            "en": "code_voinskoe_zvanie_po_shtatu",
+            "ru": "code_voinskoe_zvanie_po_shtatu",
+            "uz": "code_voinskoe_zvanie_po_shtatu",
+            "uzk": "code_voinskoe_zvanie_po_shtatu"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4998,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "naimenovanie_voinskoe_zvanie_po_shtatu",
+          "column_type": "text",
+          "column_translation": {
+            "en": "naimenovanie_voinskoe_zvanie_po_shtatu",
+            "ru": "naimenovanie_voinskoe_zvanie_po_shtatu",
+            "uz": "naimenovanie_voinskoe_zvanie_po_shtatu",
+            "uzk": "naimenovanie_voinskoe_zvanie_po_shtatu"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 4999,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "kategoriya_voennoslujashix_id",
+          "column_type": "text",
+          "column_translation": {
+            "en": "kategoriya_voennoslujashix_id",
+            "ru": "kategoriya_voennoslujashix_id",
+            "uz": "kategoriya_voennoslujashix_id",
+            "uzk": "kategoriya_voennoslujashix_id"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        },
+        {
+          "id": 5000,
+          "table_info_id": 417,
+          "user_id": 1,
+          "column_name": "code_kategoriya_voennoslujashix",
+          "column_type": "text",
+          "column_translation": {
+            "en": "code_kategoriya_voennoslujashix",
+            "ru": "code_kategoriya_voennoslujashix",
+            "uz": "code_kategoriya_voennoslujashix",
+            "uzk": "code_kategoriya_voennoslujashix"
+          },
+          "column_visibility": {
+            "read": true,
+            "create": true,
+            "delete": true,
+            "update": true
+          },
+          "column_requirement": null
+        }
+      ]
+    }
+  }
+}

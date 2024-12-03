@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
 import useCart from '../zustand/cart';
+import useEvent from '../zustand/events'
 import { Link } from 'react-router-dom';
 import { TimerContext } from "../components/timerContext";
 
@@ -9,20 +10,22 @@ const Cart = () => {
   const { t } = useTranslation();
   const carts = useCart((state) => state.state.carts)
   const deleteCart = useCart((state) => state.deleteCart)
+ 
   const {stopTimer} = useContext(TimerContext)
 
   const destroyCart=(index)=>{
     if (window.confirm(t('are_you_sure_you_want_to_delete'))) {
       const allCarts = carts.filter((_,i)=>i!==index)
       deleteCart(allCarts)
-      console.log(allCarts);
-      
+            
       if (allCarts.length === 0) {
         stopTimer()
       }
       
     }
   }
+
+  
 
   return (
     <div>
