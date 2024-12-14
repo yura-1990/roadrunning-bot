@@ -15,7 +15,8 @@ const SingleEvent = () => {
   useEffect(()=>{
     getEvents(i18n.language, id)
   }, [i18n.language])
-    
+
+
   return (
     <div className="py-4">
       <div className="mb-4 single-event-bg shadow-lg rounded-3 overflow-hidden">
@@ -30,7 +31,7 @@ const SingleEvent = () => {
 
       {
         singleEvent?.event_has_marathons?.map((single, index)=>(
-          <div>
+          <div key={index}>
             <div className='pb-2 mb-3 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
               <h2 className="">{ formatDate(single.date_event, t) }</h2>
               <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/marathons'}>{t('all')} <i className="bi bi-arrow-right"></i></Link>
@@ -38,7 +39,7 @@ const SingleEvent = () => {
             <div className="row align-items-md-stretch">
               {
                 single?.marathons.map((marathon, marathonIndex)=>(
-                  <div className="col-md-6  mb-4 ">
+                  <div key={marathonIndex} className="col-md-6  mb-4 ">
                     <div className="h-100 text-white p-3 marathon-bg overflow-hidden shadow-lg rounded-3">
                       <div className='d-flex align-items-center justify-content-between'>
                         <h2>{ marathon?.marathon_type.name } </h2>

@@ -134,5 +134,6 @@
     "enter_expiration_date": "Iltimos, kartaning amal qilish muddatini kiriting.",
     "invalid_card_date": "Noto'g'ri karta muddati",
     "invalid_card_number": "Noto'g'ri karta raqami",
-    "thank_you": "Biznesingiz uchun rahmat!"
+    "thank_you": "Biznesingiz uchun rahmat!",
+    "time": "Vaqt"
   }

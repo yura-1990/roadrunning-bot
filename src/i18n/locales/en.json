@@ -134,5 +134,6 @@
     "enter_expiration_date": "Please enter expiration date of the card.",
     "invalid_card_date": "Invalid card date",
     "invalid_card_number": "Invalid card number",
-    "thank_you": "Thank you for your business!"
+    "thank_you": "Thank you for your business!",
+    "time": "Time"
   }
