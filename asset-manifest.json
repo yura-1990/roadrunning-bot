@@ -1,21 +1,36 @@
 {
   "files": {
-    "main.css": "/roadrunning-bot/static/css/main.bc2867a9.css",
-    "main.js": "/roadrunning-bot/static/js/main.e8775d45.js",
+    "main.css": "/roadrunning-bot/static/css/main.21d2d0e0.css",
+    "main.js": "/roadrunning-bot/static/js/main.3389687f.js",
+    "static/media/fa-thin-100.ttf": "/roadrunning-bot/static/media/fa-thin-100.0a47aa7e321124fcf3db.ttf",
+    "static/media/fa-duotone-900.ttf": "/roadrunning-bot/static/media/fa-duotone-900.51e0d0b4ccb2c378f296.ttf",
+    "static/media/fa-light-300.ttf": "/roadrunning-bot/static/media/fa-light-300.ce0419e0f8c3dd1805f4.ttf",
+    "static/media/fa-regular-400.ttf": "/roadrunning-bot/static/media/fa-regular-400.29d1fde45ef39c1b3dad.ttf",
+    "static/media/fa-solid-900.ttf": "/roadrunning-bot/static/media/fa-solid-900.2d99ae018a4f5c959473.ttf",
+    "static/media/RubikDistressed-Regular.ttf": "/roadrunning-bot/static/media/RubikDistressed-Regular.904e9380e0b728a433d7.ttf",
+    "static/media/fa-thin-100.woff2": "/roadrunning-bot/static/media/fa-thin-100.800307764ab47bb5ff90.woff2",
+    "static/media/fa-light-300.woff2": "/roadrunning-bot/static/media/fa-light-300.f9cc51465bdd7848ff0f.woff2",
+    "static/media/fa-duotone-900.woff2": "/roadrunning-bot/static/media/fa-duotone-900.804040a68f33d2deab8e.woff2",
+    "static/media/fa-regular-400.woff2": "/roadrunning-bot/static/media/fa-regular-400.e4a5b5ac3a379f0607ab.woff2",
+    "static/media/fa-solid-900.woff2": "/roadrunning-bot/static/media/fa-solid-900.3f6fd07cb87b49c10930.woff2",
+    "static/media/fa-brands-400.ttf": "/roadrunning-bot/static/media/fa-brands-400.0373982bfe19645ddef3.ttf",
     "static/media/bootstrap-icons.woff?": "/roadrunning-bot/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/bootstrap-icons.woff2?": "/roadrunning-bot/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/fa-brands-400.woff2": "/roadrunning-bot/static/media/fa-brands-400.667aaa6b319469a7eda7.woff2",
     "static/media/bg.jpg": "/roadrunning-bot/static/media/bg.45d8fdc4881caedad018.jpg",
     "static/media/single-event.webp": "/roadrunning-bot/static/media/single-event.5c0be374c49f1429af74.webp",
     "static/media/typebg.webp": "/roadrunning-bot/static/media/typebg.d42c839ea690d48ec967.webp",
     "static/media/number.jpg": "/roadrunning-bot/static/media/number.2c41acf5d644c949c60f.jpg",
     "static/media/marathon.jpg": "/roadrunning-bot/static/media/marathon.07eca4b7db55d71b0ac5.jpg",
     "static/media/events-bg.jpg": "/roadrunning-bot/static/media/events-bg.fc2b89f92c64d27f7bcf.jpg",
+    "static/media/fa-v4compatibility.ttf": "/roadrunning-bot/static/media/fa-v4compatibility.b758a66dd3edaf7b0fa7.ttf",
+    "static/media/fa-v4compatibility.woff2": "/roadrunning-bot/static/media/fa-v4compatibility.eb46de062d5842b7068e.woff2",
     "index.html": "/roadrunning-bot/index.html",
-    "main.bc2867a9.css.map": "/roadrunning-bot/static/css/main.bc2867a9.css.map",
-    "main.e8775d45.js.map": "/roadrunning-bot/static/js/main.e8775d45.js.map"
+    "main.21d2d0e0.css.map": "/roadrunning-bot/static/css/main.21d2d0e0.css.map",
+    "main.3389687f.js.map": "/roadrunning-bot/static/js/main.3389687f.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc2867a9.css",
-    "static/js/main.e8775d45.js"
+    "static/css/main.21d2d0e0.css",
+    "static/js/main.3389687f.js"
   ]
 }
