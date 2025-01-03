@@ -135,5 +135,11 @@
     "invalid_card_date": "Invalid card date",
     "invalid_card_number": "Invalid card number",
     "thank_you": "Thank you for your business!",
-    "time": "Time"
+    "time": "Time",
+    "result": "Result",
+    "all": "All",
+    "1st": "1st",
+    "2nd": "2nd",
+    "3rd": "3rd",
+    "participants_list": "List of participants"
   }

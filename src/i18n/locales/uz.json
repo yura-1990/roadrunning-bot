@@ -135,5 +135,11 @@
     "invalid_card_date": "Noto'g'ri karta muddati",
     "invalid_card_number": "Noto'g'ri karta raqami",
     "thank_you": "Biznesingiz uchun rahmat!",
-    "time": "Vaqt"
+    "time": "Vaqt",
+    "result": "Natija",
+    "all": "Hammasi",
+    "1st": "1-chi",
+    "2nd": "2-chi",
+    "3rd": "3-chi",
+    "participants_list": "Ishtirok etganlar ro'yxati"
   }

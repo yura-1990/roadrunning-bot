@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'SpicyRice';
+  src: url('./assets/fonts/RubikDistressed-Regular.ttf');
+}
 
 body{
   background: var(--tg-theme-bg-color);
@@ -260,8 +264,162 @@ body{
   border-radius: 0.25rem;
   border: 1px solid #ced4da;
 }
+
 .otp-input:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   border-color: #007bff;
 }
+
+.result{
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 400px;
+  gap: 1px;
+}
+
+.result-item{
+  position: relative;
+  flex: 1;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.first-place{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(120deg, #0B904F 40%, #007bff);
+}
+
+.second-place{
+  height: 80%;
+  width: 100%;
+  background: linear-gradient(110deg, #007bff 10%, #0B904F 90%);
+}
+
+.third-place{
+  height: 60%;
+  width: 100%;
+  background: linear-gradient(120deg, #007bff 10%, #0B904F);
+}
+
+.result-icon{
+  font-size: 80px;
+}
+
+.result-item-bg{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.text-gold{
+  color: #D4AF37;
+}
+
+.text-silver{
+  color: #c18585;
+}
+
+.result-third-position{
+  position: absolute;
+  top: -25%;
+  font-size: 40px;
+  font-family: 'SpicyRice', serif;
+}
+
+.result-first-position{
+  position: absolute;
+  top: -15%;
+  font-size: 40px;
+  font-family: 'SpicyRice', serif;
+}
+
+.result-second-position{
+  position: absolute;
+  top: -20%;
+  font-size: 40px;
+  font-family: 'SpicyRice', serif;
+}
+
+.result-participant{
+  text-shadow: 1px 1px 10px #fff;
+}
+
+@media (max-width: 767px) {
+  .result{
+    height: 200px;
+  }
+
+  .result-icon{
+    font-size: 50px;
+  }
+
+  .result-third-position{
+    font-size: 30px;
+    top: -35%;
+  }
+
+  .result-first-position{
+    font-size: 30px;
+    top: -20%;
+
+  }
+
+  .result-second-position{
+    font-size: 30px;
+    top: -25%;
+  }
+
+  .result-participant{
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 576px){
+  .result{
+    flex-direction: column;
+    gap: 50px;
+    height: auto;
+  }
+
+  .result-third-position{
+    font-size: 30px;
+    top: -40%;
+
+  }
+
+  .result-first-position{
+    font-size: 30px;
+    top: -40%;
+  }
+
+  .result-second-position{
+    font-size: 30px;
+    top: -40%;
+  }
+
+  .first-place{
+    order: -1;
+  }
+
+  .result-participant{
+    font-size: 20px;
+  }
+
+}
+
+

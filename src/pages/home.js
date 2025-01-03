@@ -1,20 +1,30 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Link } from 'react-router-dom';
+import {useTranslation} from "react-i18next";
+import useEvent from "../zustand/events";
 
 const  Home = () => {
+    const { t, i18n } = useTranslation();
+    const events = useEvent((state) => state.state.events)
+    const getEvents = useEvent((state) => state.getEvents)
+    const formatEventDateRange = useEvent((state) => state.formatEventDateRange)
+
+    useEffect(() => {
+        getEvents(i18n.language)
+    }, [i18n.language]);
+
     return (
         <>
             <div>
                 <div className='pb-2 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
-                    <h2 className="">Events</h2>
-                    <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/events'}>All <i className="bi bi-arrow-right"></i></Link>
+                    <h2 className="">{ t('events') }</h2>
+                    <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/events'}>{ t('all') } <i className="bi bi-arrow-right"></i></Link>
                 </div>
-                
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={10}
@@ -27,41 +37,28 @@ const  Home = () => {
                     className='event-swiper'
                     loop={true}
                 >
-                    <SwiperSlide>
-                        <div className="card bg-transparent border-0 rounded-3  card-cover h-100">
-                            <div className='card-header bg-transparent'>
-                                <h2 className='card-title text-white'>Event 1</h2>
-                            </div>
+                    {events?.data?.map((event) =>
+                        <SwiperSlide>
+                            <div className="card bg-transparent border-0 rounded-3  card-cover h-100">
+                                <div className='card-header bg-transparent'>
+                                    <h2 className='card-title text-white'>{ event.name }</h2>
+                                </div>
 
-                            <div className="card-body bg-transparent">
-                                <h2 className='card-title text-white multi-line-ellipsis'>from 12 to 18 october 2024</h2>
-                                <span className="text-white">Address: Tashkent</span>
-                            </div>
+                                <div className="card-body bg-transparent">
+                                    <h2 className='card-title text-white multi-line-ellipsis'>{ formatEventDateRange(event.event_has_marathons, t) }</h2>
+                                    <span className="text-white">{t('address')}: { event.address }</span>
+                                </div>
 
-                            <div className='card-footer bg-transparent'>
-                                <Link to={'/roadrunning-bot/events/1'} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
+                                <div className='card-footer bg-transparent'>
+                                    <Link to={`/roadrunning-bot/events/${event.id}`}
+                                          className='btn bg-theme text-white float-end shadow'>{ t('more_about') } <i className="bi bi-arrow-right"></i>
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="card bg-transparent border-0 rounded-3 card-cover h-100">
-                            <div className='card-header bg-transparent'>
-                                <h2 className='card-title text-white'>Event 2</h2>
-                            </div>
-
-                            <div className="card-body bg-transparent">
-                                <h2 className='card-title text-white multi-line-ellipsis'>From 12 October to 18 November 2024</h2>
-                                <span>Address: Tashkent</span>
-                            </div>
-
-                            <div className='card-footer bg-transparent'>
-                                <Link to={'/roadrunning-bot/events/2'} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
+                        </SwiperSlide>
+                    )}
                 </Swiper>
             </div>
-            
 
             <h2 className="pb-2 border-bottom mt-3">Marathon Types</h2>
             <Swiper

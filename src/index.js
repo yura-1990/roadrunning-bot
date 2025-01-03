@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { initI18n } from './i18n';
 import { TimerProvider } from "./components/timerContext";
 initI18n('en');
+import './assets/css/all.min.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

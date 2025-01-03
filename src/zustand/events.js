@@ -15,13 +15,15 @@ const useEvent = create((set) => ({
         try {
             const response = await axios.get('/event/all', {
                 params: {
-                  language, paginate
+                    language, paginate
                 }
             })
 
+            console.log(response.data)
+
             set({state: {events: response.data}, loading: false, error: false});
 
-        }catch (err) {
+        } catch (err) {
             set({loading: false, error: true, message: err.message});
         }
     },
@@ -32,14 +34,13 @@ const useEvent = create((set) => ({
         try {
             const response = await axios.get(`/event/show/${id}`, {
                 params: {
-                  language
+                    language
                 }
             })
 
-            console.log(response.data);
-            
-
             set({state: {singleEvent: response.data}, loading: false, error: false});
+
+            console.log(language,response.data)
 
         }catch (err) {
             set({loading: false, error: true, message: err.message});

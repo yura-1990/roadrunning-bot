@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import useEvent from '../zustand/events'
 import { useParams } from 'react-router-dom';
@@ -15,7 +15,6 @@ const SingleEvent = () => {
   useEffect(()=>{
     getEvents(i18n.language, id)
   }, [i18n.language])
-
 
   return (
     <div className="py-4">
@@ -50,7 +49,11 @@ const SingleEvent = () => {
                       <p>{t('gender')}: <span className="border px-2 rounded border-theme">{ marathon?.gender?.type }</span></p>
                       <div className='d-flex justify-content-between align-items-center flex-wrap '>
                         <span className="text-white fw-bold btn btn-outline-success">{t('time')}: {marathon?.datetime_from} - {marathon?.datetime_to}</span>
-                        <Link className="btn bg-theme text-white  shadow" to={'/roadrunning-bot/participate/1'} type="button">Participant <i className="bi bi-arrow-right"></i></Link>
+                        {
+                          single?.status
+                              ? <Link className="btn bg-theme text-white  shadow" to={`/roadrunning-bot/participate/${marathon.id}`} type="button">{ t('participate') } <i className="bi bi-arrow-right"></i></Link>
+                              : <Link className="btn bg-theme text-white  shadow" to={`/roadrunning-bot/marathon/${marathon.id}`} type="button">{ t('result') } <i className="bi bi-arrow-right"></i></Link>
+                        }
                       </div>
                     </div>
                   </div>
