@@ -9,28 +9,35 @@ const Autocomplete = ({ suggestions, getValue, value }) => {
   const handleChange = (e) => {
     getValue(e.target.value)
 
-    if (value.trim() === "") {
-      setShowSuggestions(false);
-      return;
-    }
-
-    const filtered = suggestions.filter((suggestion) =>
-      suggestion.toLowerCase().includes(value.toLowerCase())
+    const filtered = suggestions.filter((suggestion) => suggestion?.hasOwnProperty("type")
+        ? suggestion?.type?.toLowerCase().includes(value?.toLowerCase())
+        : suggestion?.name?.toLowerCase().includes(value?.toLowerCase())
     );
 
     setFilteredSuggestions(filtered);
-    setShowSuggestions(true);
-    
+
+    if (e.target.value.length > 0){
+      setShowSuggestions(true );
+    } else {
+      setShowSuggestions(false);
+    }
+
   };
 
   const handleSelect = (suggestion) => {
-    getValue(suggestion)
+    if (suggestion?.hasOwnProperty("type")){
+      getValue(suggestion?.type)
+    } else {
+      getValue(suggestion?.name)
+    }
+
     setShowSuggestions(false);
   };
 
 
+
   return (
-    <div className="position-relative">
+    <div className="position-relative z-index-9">
       <input
         type="text"
         className="form-control"
@@ -40,7 +47,7 @@ const Autocomplete = ({ suggestions, getValue, value }) => {
       />
       {showSuggestions && (
         <ul className="list-group position-absolute w-100 z-index-9">
-          {filteredSuggestions.length > 0 ? (
+          { filteredSuggestions.length > 0 ? (
             filteredSuggestions.map((suggestion, index) => (
               <li
                 key={index}
@@ -48,7 +55,8 @@ const Autocomplete = ({ suggestions, getValue, value }) => {
                 onClick={() => handleSelect(suggestion)}
                 style={{ cursor: "pointer" }}
               >
-                {suggestion}
+                { suggestion?.name }
+                { suggestion?.type }
               </li>
             ))
           ) : (

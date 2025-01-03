@@ -18,7 +18,7 @@ const useMarathon = create((set) => ({
                     language
                 }
             })
-
+            console.log(response.data)
             set({state: {singleMarathon: response.data}, loading: false, error: false});
 
         }catch (err) {

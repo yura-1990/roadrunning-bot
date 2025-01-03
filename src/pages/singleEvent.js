@@ -52,7 +52,7 @@ const SingleEvent = () => {
                         {
                           single?.status
                               ? <Link className="btn bg-theme text-white  shadow" to={`/roadrunning-bot/participate/${marathon.id}`} type="button">{ t('participate') } <i className="bi bi-arrow-right"></i></Link>
-                              : <Link className="btn bg-theme text-white  shadow" to={`/roadrunning-bot/marathon/${marathon.id}`} type="button">{ t('result') } <i className="bi bi-arrow-right"></i></Link>
+                              : <Link className="btn bg-theme text-white  shadow" to={`/roadrunning-bot/marathons/${marathon.id}`} type="button">{ t('result') } <i className="bi bi-arrow-right"></i></Link>
                         }
                       </div>
                     </div>
