@@ -6,13 +6,16 @@ import { TimerContext } from "../components/timerContext";
 import useCart from "../zustand/cart";
 import InputMask from "react-input-mask";
 import useMarathon from "../zustand/marathons";
+import useNumber from "../zustand/numbers";
 
 const Participate = () => {
   const { t, i18n } = useTranslation();
   const getSingleMarathon = useMarathon(state=>state.getSingleMarathon)
   const singleMarathon = useMarathon(state=>state.state.singleMarathon)
-
   const addToCart = useCart((state) => state.addToCart)
+  const createNumberStatus = useNumber(state => state.createNumberStatus)
+  const loading = useNumber(state => state.state.loading)
+  const error = useNumber(state => state.state.error)
 
   const { startTimer } = useContext(TimerContext);
   const { id } = useParams();
@@ -22,43 +25,22 @@ const Participate = () => {
   const [organization, setOrganization] = useState("");
   const [company, setCompany] = useState("");
   const [number, setNumber] = useState(0);
-  const [uniform, setUniform] = useState("SM");
+  const [numberType, setNumberType] = useState(0);
+  const [uniform, setUniform] = useState('');
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [errorPhone, setErrorPhone] = useState("");
-  const [gender, setGender] = useState("");
-  const [region, setRegion] = useState("");
+  const [gender, setGender] = useState('');
+  const [region, setRegion] = useState('');
   const [address, setAddress] = useState("");
   const [birth, setBirth] = useState("");
   const [checkForm, setCheckForm] = useState(false)
-
-
-  const organs = [
-    "Apple",
-    "Banana",
-    "Cherry",
-    "Date",
-    "Grape",
-    "Mango",
-    "Orange",
-    "Pineapple",
-  ];
-
-  const category = [
-    "Apple",
-    "Banana",
-    "Cherry",
-    "Date",
-    "Grape",
-    "Mango",
-    "Orange",
-    "Pineapple",
-  ];
+  const [check, setCheck] = useState(false)
 
   useEffect(() => {
-    getSingleMarathon(i18n.language, id)
+     getSingleMarathon(i18n.language, id)
   }, [i18n.language])
 
   // submit
@@ -66,11 +48,11 @@ const Participate = () => {
     e.preventDefault();
     setCheckForm(true)
 
-    if ( name !== "" && errorPhone === "" && errorEmail === "" && gender !== "" && region !== "" && address !== "" && birth !== "" ) {
+    if ( name !== "" && errorPhone === "" && errorEmail === "" && gender && region && address !== "" && birth !== "" ) {
       const data = {
         number: number,
-        marathon_id: id,
-        number_type_id: number,
+        marathon_id: Number(id),
+        number_type_id: numberType,
         participant_name: name,
         participant_email: email,
         participant_phone: phone,
@@ -79,30 +61,37 @@ const Participate = () => {
         participant_address: address,
         participant_birth: birth,
         participant_parent_name: ifChild ? parent : "",
-        participant_organization_id: organization,
-        participant_category_id: company,
+        participant_organization_id: organization.toString(),
+        participant_category_id: company.toString(),
         participant_uniform_id: uniform,
       };
-      if (!ifChild || parent !== "") {
-        startTimer();
-        addToCart(data);
 
-        setIfChild(false)
-        setParent("")
-        setOrganization("")
-        setCompany("")
-        setNumber(0)
-        setUniform("SM")
-        setName("")
-        setEmail("")
-        setErrorEmail("")
-        setPhone("")
-        setErrorPhone("")
-        setGender("")
-        setRegion("")
-        setAddress("")
-        setBirth("")
-        setCheckForm(false)
+      if (!ifChild || parent !== "") {
+        await createNumberStatus(data)
+
+        if (!loading && !error){
+          await getSingleMarathon(i18n.language, id)
+          addToCart(data);
+          startTimer();
+          setIfChild(false)
+          setParent("")
+          setOrganization("")
+          setCompany("")
+          setNumber(0)
+          setUniform("")
+          setName("")
+          setEmail("")
+          setErrorEmail("")
+          setPhone("")
+          setErrorPhone("")
+          setGender("")
+          setRegion("")
+          setAddress("")
+          setBirth("")
+          setCheckForm(false)
+          setCheck(!check)
+        }
+
       }
     }
     
@@ -132,6 +121,10 @@ const Participate = () => {
     return emailRegex.test(value);
   };
 
+  const getNumber = (num, numTypeId) => {
+    setNumber(num)
+    setNumberType(numTypeId)
+  }
 
   return (
     <div className="row">
@@ -145,6 +138,7 @@ const Participate = () => {
                 className="form-control"
                 id="name"
                 placeholder="Habib Muslomov"
+                value={name}
                 onInput={(e) => setName(e.target.value)}
                 required
             />
@@ -163,6 +157,7 @@ const Participate = () => {
                 placeholder="example@gmail.com"
                 onChange={handleEmailChange}
                 required
+                value={email}
             />
             {errorEmail && <p style={{color: "red"}}>{errorEmail}</p>}
             <div className="invalid-feedback ">
@@ -203,9 +198,10 @@ const Participate = () => {
                         id={item.id}
                         name="gender"
                         type="radio"
-                        value={item.id}
+                        value={gender}
+                        checked={gender === item.id}
                         className="custom-control-input me-2"
-                        onChange={(e) => setGender('man')}
+                        onChange={() => setGender(item.id)}
                         required
                     />
                     <label className="custom-control-label" htmlFor={item.id}>
@@ -220,9 +216,8 @@ const Participate = () => {
 
           <div className="col-12  pb-3">
             <label htmlFor="regions">{t("regions")}</label>
-            <select onChange={(e) => setRegion(e.target.value)} className="form-control custom-select" id="regions"
-                    required>
-              <option hidden className="text-white bg-warning">Choose a region</option>
+            <select onChange={(e) => setRegion(e.target.value)} className="form-control custom-select" id="regions" required>
+              <option hidden className="text-white bg-warning">{ t('choose_a_region') }</option>
               {
                 singleMarathon?.regions?.map(item => <option key={item.id} value={item.id}>{item.name}</option>)
               }
@@ -238,6 +233,7 @@ const Participate = () => {
                 placeholder={t("address1")}
                 onInput={(e) => setAddress(e.target.value)}
                 required
+                value={address}
             />
             <div className="invalid-feedback">
               {t('address_is_required')}
@@ -253,6 +249,7 @@ const Participate = () => {
                 placeholder="DD-MM-YYYY"
                 onInput={(e) => setBirth(e.target.value)}
                 required
+                value={birth}
             />
             <div className="invalid-feedback">
               {t('birth_is_required')}
@@ -281,6 +278,7 @@ const Participate = () => {
                       placeholder="Muslim"
                       onInput={(e) => setParent(e.target.value)}
                       required={ifChild}
+                      value={parent}
                   />
                   <div className="invalid-feedback">
                     {t('parent_name_is_required')}
@@ -291,12 +289,12 @@ const Participate = () => {
 
           <div className="mb-3">
             <label htmlFor="birth">{t("organization")}</label>
-            <Autocomplete suggestions={singleMarathon.organizations} getValue={setOrganization} value={organization}/>
+            <Autocomplete suggestions={singleMarathon?.organizations} getValue={setOrganization} value={check} />
           </div>
 
           <div className="mb-3">
             <label htmlFor="birth">{t("category")}</label>
-            <Autocomplete suggestions={singleMarathon.participantCategories} getValue={setCompany} value={company}/>
+            <Autocomplete suggestions={singleMarathon?.participantCategories} getValue={setCompany} value={check} />
           </div>
 
           <div className="mb-3">
@@ -312,8 +310,7 @@ const Participate = () => {
                           : "custom-control fw-bold text-black py-2 col-sm-4 col-lg-3 col-6 gap-3 custom-radio rounded"
                     }
                 >
-                  <div
-                      className="border border-theme w-100 h-100 d-flex justify-content-center align-items-center rounded">
+                  <div className="border border-theme w-100 h-100 d-flex justify-content-center align-items-center rounded">
                     <span className="text-theme-bot">{item.type}</span>
                     <span className="text-theme-bot">{item.size}</span>
                   </div>
@@ -324,20 +321,18 @@ const Participate = () => {
           </div>
           <h4>{t("number")}</h4>
           <div className="mb-3 border border-theme rounded p-3">
-
             {
               singleMarathon?.marathon?.number_types.map(numberType => <div className="my-2">
                 <div className="d-flex justify-content-between flex-wrap py-2 border-bottom border-theme mb-2" >
                   <span className="fw-bold">{numberType?.type}</span>
-                  <span className="border px-2 rounded border-theme fw-bold">+ {numberType?.pivot?.price ? numberType?.pivot?.price : '0'}</span>
+                  <span className="border px-2 rounded border-theme fw-bold">+ {numberType?.pivot?.price ? numberType?.pivot?.price + ' UZS' : '0 UZS'}</span>
                 </div>
 
                 <div className="row">
                   {
-
                     numberType?.options?.filter(num => num === 0 || num >= singleMarathon?.marathon?.marathon_type?.number_order_from && num < singleMarathon?.marathon?.marathon_type?.number_order_to)?.map(num =>
                         !singleMarathon?.marathon?.number_status?.find((it) => it?.number == num) ? <div
-                            onClick={() => setNumber(num)}
+                            onClick={() => getNumber(num, numberType.id)}
                             className={
                               number === num
                                   ? "custom-control fw-bold bg-theme p-2 col-md-4 col-lg-3 col-6 text-white custom-radio rounded"
@@ -347,7 +342,6 @@ const Participate = () => {
                           <div className="border border-theme d-flex justify-content-center align-items-center rounded">
                             <span className="text-theme-bot">{num}</span>
                           </div>
-
                         </div> : '')
                   }
                 </div>
@@ -355,8 +349,13 @@ const Participate = () => {
             }
 
           </div>
-
-          <button type="submit" className="btn bg-theme text-white float-end">
+          { loading ? 1 : 0 }
+          <button disabled={loading} type="submit" className="btn bg-theme text-white float-end ">
+            {
+                loading && <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            }
             + {t("add_to_cart")}
           </button>
         </form>

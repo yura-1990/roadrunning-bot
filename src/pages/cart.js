@@ -21,11 +21,8 @@ const Cart = () => {
       if (allCarts.length === 0) {
         stopTimer()
       }
-      
     }
   }
-
-  
 
   return (
     <div>

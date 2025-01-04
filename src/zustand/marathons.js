@@ -10,7 +10,7 @@ const useMarathon = create((set) => ({
     },
 
     getSingleMarathon: async (language = 'ru', id) => {
-        set({loading: true, error: false});
+        set({state: {loading: true, error: false}});
 
         try {
             const response = await axios.get(`/marathon/show/${id}`, {
@@ -19,10 +19,10 @@ const useMarathon = create((set) => ({
                 }
             })
             console.log(response.data)
-            set({state: {singleMarathon: response.data}, loading: false, error: false});
+            set({state: {singleMarathon: response.data, loading: false, error: false}});
 
         }catch (err) {
-            set({loading: false, error: true, message: err.message});
+            set({state: {loading: false, error: true, message: err.message}});
         }
     },
 

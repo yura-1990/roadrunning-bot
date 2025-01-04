@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useTranslation } from "react-i18next";
 
 const Autocomplete = ({ suggestions, getValue, value }) => {
+  const [selected, setSelected] = useState('');
   const { t } = useTranslation();
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
+  useEffect(() => {
+    setSelected('')
+  }, [value])
+
   const handleChange = (e) => {
-    getValue(e.target.value)
+    setSelected(e.target.value)
 
     const filtered = suggestions.filter((suggestion) => suggestion?.hasOwnProperty("type")
-        ? suggestion?.type?.toLowerCase().includes(value?.toLowerCase())
-        : suggestion?.name?.toLowerCase().includes(value?.toLowerCase())
+        ? suggestion?.type?.toLowerCase().includes(selected?.toLowerCase())
+        : suggestion?.name?.toLowerCase().includes(selected?.toLowerCase())
     );
+
+    if (filtered.length === 0) {
+      getValue(e.target.value)
+    }
 
     setFilteredSuggestions(filtered);
 
@@ -26,10 +35,12 @@ const Autocomplete = ({ suggestions, getValue, value }) => {
 
   const handleSelect = (suggestion) => {
     if (suggestion?.hasOwnProperty("type")){
-      getValue(suggestion?.type)
+      setSelected(suggestion?.type)
     } else {
-      getValue(suggestion?.name)
+      setSelected(suggestion?.name)
     }
+
+    getValue(suggestion?.id.toString())
 
     setShowSuggestions(false);
   };
@@ -41,16 +52,16 @@ const Autocomplete = ({ suggestions, getValue, value }) => {
       <input
         type="text"
         className="form-control"
-        value={value}
+        value={selected}
         onChange={handleChange}
         placeholder={t('type_or_choose')}
       />
       {showSuggestions && (
         <ul className="list-group position-absolute w-100 z-index-9">
           { filteredSuggestions.length > 0 ? (
-            filteredSuggestions.map((suggestion, index) => (
+            filteredSuggestions.map((suggestion) => (
               <li
-                key={index}
+                key={suggestion.id}
                 className="list-group-item list-group-item-action"
                 onClick={() => handleSelect(suggestion)}
                 style={{ cursor: "pointer" }}
