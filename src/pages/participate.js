@@ -52,18 +52,18 @@ const Participate = () => {
       const data = {
         number: number,
         marathon_id: Number(id),
-        number_type_id: numberType,
+        number_type_id: numberType.id,
         participant_name: name,
         participant_email: email,
         participant_phone: phone,
-        gender_id: gender,
+        gender_id: gender.id,
         participant_region_id: region,
         participant_address: address,
         participant_birth: birth,
         participant_parent_name: ifChild ? parent : "",
         participant_organization_id: organization.toString(),
         participant_category_id: company.toString(),
-        participant_uniform_id: uniform,
+        participant_uniform_id: uniform.id,
       };
 
       if (!ifChild || parent !== "") {
@@ -71,7 +71,6 @@ const Participate = () => {
 
         if (!loading && !error){
           await getSingleMarathon(i18n.language, id)
-          addToCart(data);
           startTimer();
           setIfChild(false)
           setParent("")
@@ -199,9 +198,9 @@ const Participate = () => {
                         name="gender"
                         type="radio"
                         value={gender}
-                        checked={gender === item.id}
+                        checked={gender.id === item.id}
                         className="custom-control-input me-2"
-                        onChange={() => setGender(item.id)}
+                        onChange={() => setGender(item)}
                         required
                     />
                     <label className="custom-control-label" htmlFor={item.id}>
@@ -216,7 +215,9 @@ const Participate = () => {
 
           <div className="col-12  pb-3">
             <label htmlFor="regions">{t("regions")}</label>
-            <select onChange={(e) => setRegion(e.target.value)} className="form-control custom-select" id="regions" required>
+            <select onChange={(e) => setRegion(e.target.value)}
+                    className="form-control custom-select" id="regions" required
+            >
               <option hidden className="text-white bg-warning">{ t('choose_a_region') }</option>
               {
                 singleMarathon?.regions?.map(item => <option key={item.id} value={item.id}>{item.name}</option>)
@@ -303,9 +304,9 @@ const Participate = () => {
             <div className="row">
               {
                 singleMarathon?.uniforms?.map(item => <div
-                    onClick={() => setUniform(item.id)}
+                    onClick={() => setUniform(item)}
                     className={
-                      uniform === item.id
+                      uniform.id === item.id
                           ? "custom-control fw-bold bg-theme py-2 col-sm-4 col-lg-3 col-6 gap-3 text-white custom-radio rounded "
                           : "custom-control fw-bold text-black py-2 col-sm-4 col-lg-3 col-6 gap-3 custom-radio rounded"
                     }
@@ -332,7 +333,7 @@ const Participate = () => {
                   {
                     numberType?.options?.filter(num => num === 0 || num >= singleMarathon?.marathon?.marathon_type?.number_order_from && num < singleMarathon?.marathon?.marathon_type?.number_order_to)?.map(num =>
                         !singleMarathon?.marathon?.number_status?.find((it) => it?.number == num) ? <div
-                            onClick={() => getNumber(num, numberType.id)}
+                            onClick={() => getNumber(num, numberType)}
                             className={
                               number === num
                                   ? "custom-control fw-bold bg-theme p-2 col-md-4 col-lg-3 col-6 text-white custom-radio rounded"
@@ -349,7 +350,6 @@ const Participate = () => {
             }
 
           </div>
-          { loading ? 1 : 0 }
           <button disabled={loading} type="submit" className="btn bg-theme text-white float-end ">
             {
                 loading && <div className="spinner-border" role="status">

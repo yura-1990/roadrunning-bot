@@ -10,6 +10,7 @@ const SingleEvent = () => {
   const getEvents = useEvent((state) => state.getOneEvent)
   const formatEventDateRange = useEvent((state) => state.formatEventDateRange)
   const formatDate = useEvent((state) => state.formatDate)
+
   const { id } = useParams();
 
   useEffect(()=>{

@@ -358,6 +358,25 @@ body{
   text-shadow: 1px 1px 10px #fff;
 }
 
+.password-visibility{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-30%);
+  z-index: 1;
+}
+
+.logout{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 @media (max-width: 767px) {
   .result{
     height: 200px;

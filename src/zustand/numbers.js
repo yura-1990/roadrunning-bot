@@ -13,7 +13,16 @@ const useNumber = create((set) => ({
 
         try {
             const response = await axios.post(`/number-status/create`, data)
-            console.log(response.data)
+
+            if (localStorage.getItem('cart')) {
+                const getCart = JSON.parse(localStorage.getItem('cart'))
+                getCart.push(response.data)
+
+                localStorage.setItem('cart', JSON.stringify(getCart))
+            } else {
+                localStorage.setItem('cart', JSON.stringify([response.data]))
+            }
+
             set({state: {numberStatus: response.data, loading: false, error: false}, });
 
         } catch (err) {

@@ -1,9 +1,13 @@
 import { create } from 'zustand'
 import useEvent from '../zustand/events'
+import axios from "../axios";
 
 const useCart = create((set, get) => ({
     state: {
         carts: [],
+        loading: false,
+        error: false,
+        message: ''
     },
 
 
@@ -18,27 +22,48 @@ const useCart = create((set, get) => ({
         }     
     },
 
-    addToCart: (newCart)=>{
-        if (localStorage.getItem('cart')) {
-            const getCart = JSON.parse(localStorage.getItem('cart'))
-            getCart.push(newCart)
-      
-            localStorage.setItem('cart', JSON.stringify(getCart))
-        } else {
-            localStorage.setItem('cart', JSON.stringify([newCart]))
+    deleteCart: async (index)=>{
+        try {
+            const allCards = localStorage.getItem('cart');
+
+            if (allCards) {
+                const allCardsArray = JSON.parse(allCards);
+                const card = allCardsArray[index];
+                allCardsArray.splice(index, 1);
+                const response = await axios.delete(`/number-status/delete/${card.id}`)
+                localStorage.setItem('cart', JSON.stringify(allCardsArray))
+                console.log(response)
+            }
+        }
+        catch (err){
+            set({ state:{ loading: false, error: true, message: err.message }});
         }
 
-        set({ carts: [...get().state.carts, newCart] });    
-    },
 
-    deleteCart: (cart)=>{
-        set({ state: { carts: cart } });
-        localStorage.setItem('cart', JSON.stringify(cart))
     }, 
 
-    deleteAllCarts: ()=>{
-        set({ state: { carts: [] } });
-        localStorage.setItem('cart', JSON.stringify([]))
+    deleteAllCarts: async ()=>{
+        try {
+            const allCards = localStorage.getItem('cart');
+            if (allCards) {
+                const allCardsArray = JSON.parse(allCards);
+
+                await Promise.all(
+                    allCardsArray.map(card => axios.delete(`/number-status/delete/${card.id}`))
+                );
+
+                localStorage.setItem('cart', JSON.stringify([]));
+            }
+
+            set({ state: { carts: [],  loading: false, error: false} });
+        } catch (err) {
+            set({ state:{ loading: false, error: true, message: err.message }});
+        }
+    },
+
+    formatWithSpaces: (num) => {
+        const withCommas = new Intl.NumberFormat('en-US').format(num);
+        return withCommas.replace(/,/g, ' ');
     }
 }))
 
