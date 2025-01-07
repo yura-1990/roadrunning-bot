@@ -185,7 +185,7 @@ const Invoices = () => {
         <div className="row mt-4">
           <div className="col-12 d-flex justify-content-between">
             <h5>{t('bill_to')}</h5>
-            <p>{user?.first_name}</p>
+            <p>{user?.username}</p>
           </div>
 
           <div className="col-12 text-end">
