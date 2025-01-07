@@ -33,7 +33,7 @@ const useAuth = create((set) => ({
         try {
             const response = await axios.post(`/auth/forgot-password`, data)
 
-            set({state: {changePassword: response?.data?.status, loading: false, error: false}, });
+            set({state: {changePassword: response.data.status, loading: false, error: false} });
 
         } catch (err) {
             set({state: {loading: false, error: true, message: err.response.data.message}});
@@ -45,9 +45,9 @@ const useAuth = create((set) => ({
 
         try {
             const response = await axios.post(`/auth/set-new-password`, data)
-            console.log(response.data)
 
-            set({state: {message: response?.data?.message, changePassword: response?.data?.status, loading: false, error: false}});
+            set({state: {message: response?.data?.message, changePassword: response.data.status, loading: false, error: false}});
+
         } catch (err) {
             set({state: {loading: false, error: true, message: err.response.data.message}});
         }

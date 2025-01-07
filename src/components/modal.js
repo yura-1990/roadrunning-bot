@@ -1,4 +1,4 @@
-import { useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import useAuth from '../zustand/auth'
 import {useNavigate} from "react-router-dom";
 
@@ -15,6 +15,7 @@ const Modal = () => {
     const closeRegister = useRef(null);
     const getToken = useAuth((state) => state.getToken)
     const navigate = useNavigate()
+    const [openPassword, setOpenPassword] = useState(false)
 
     const authenticate = useAuth(state => state.login)
     const modifyPassword = useAuth(state => state.changePassword)
@@ -23,6 +24,12 @@ const Modal = () => {
     const loading = useAuth(state => state.state.loading)
     const message = useAuth(state => state.state.message)
     const password = useAuth(state => state.state.changePassword)
+
+    useEffect(()=>{
+        if (password) {
+            setOpenPassword(password)
+        }
+    }, [password])
 
     const submit = async (e) => {
         e.preventDefault()
@@ -51,7 +58,7 @@ const Modal = () => {
             }, 200)
 
         } else {
-            if (password){
+            if (changePassword.password !== "" && changePassword.passwordRepeat !== "" && changeEmail !== ""){
                 await setNewPassword({
                     password: changePassword.password,
                     password_confirmation: changePassword.passwordRepeat,
@@ -59,7 +66,6 @@ const Modal = () => {
                 })
 
                 passwordChange.current.click()
-
             } else {
                 await modifyPassword({email: changeEmail})
             }
@@ -179,7 +185,7 @@ const Modal = () => {
                             <label className="text-theme" htmlFor="floatingChangeEmail">Email address</label>
                         </div>
                         {
-                            password && <div>
+                            openPassword && <div>
                                 <div className="form-floating mb-3">
                                     <input onInput={handleChangePassword} type={passwordVisibility ? "text" : "password"}
                                            className="form-control"
