@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/roadrunning-bot/static/css/main.b4f15fc5.css",
-    "main.js": "/roadrunning-bot/static/js/main.cebadd5b.js",
+    "main.js": "/roadrunning-bot/static/js/main.5b2d84aa.js",
     "static/media/fa-thin-100.ttf": "/roadrunning-bot/static/media/fa-thin-100.0a47aa7e321124fcf3db.ttf",
     "static/media/fa-duotone-900.ttf": "/roadrunning-bot/static/media/fa-duotone-900.51e0d0b4ccb2c378f296.ttf",
     "static/media/fa-light-300.ttf": "/roadrunning-bot/static/media/fa-light-300.ce0419e0f8c3dd1805f4.ttf",
@@ -27,10 +27,10 @@
     "static/media/fa-v4compatibility.woff2": "/roadrunning-bot/static/media/fa-v4compatibility.eb46de062d5842b7068e.woff2",
     "index.html": "/roadrunning-bot/index.html",
     "main.b4f15fc5.css.map": "/roadrunning-bot/static/css/main.b4f15fc5.css.map",
-    "main.cebadd5b.js.map": "/roadrunning-bot/static/js/main.cebadd5b.js.map"
+    "main.5b2d84aa.js.map": "/roadrunning-bot/static/js/main.5b2d84aa.js.map"
   },
   "entrypoints": [
     "static/css/main.b4f15fc5.css",
-    "static/js/main.cebadd5b.js"
+    "static/js/main.5b2d84aa.js"
   ]
 }
