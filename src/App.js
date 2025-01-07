@@ -21,7 +21,7 @@ import GoBack from "./components/goBack";
 
 const App = () => {
 
-    const { isReady, language, user } = useTelegram();
+    const { isReady, language } = useTelegram();
     const [loading, setLoading] = useState(true);
     const getCarts = useCart((state) => state.getCarts)
     const getToken = useAuth((state) => state.getToken)

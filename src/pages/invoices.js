@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { useTranslation } from 'react-i18next';
 import InputMask from "react-input-mask";
 import useTelegram from "../hooks/useTelegram";
+import {initI18n} from "../i18n";
 
 const Invoices = () => {
   const { t } = useTranslation();
@@ -18,10 +19,15 @@ const Invoices = () => {
   const [checkCartForm, setCheckCartForm] = useState(false)
   const [phone, setPhone] = useState('')
   const [errorPhone, setErrorPhone] = useState("");
-  const { isReady, language, user } = useTelegram();
+  const { tgApp, user } = useTelegram();
+
+  useEffect(() => {
+    tgApp.ready()
+  }, []);
 
   useEffect(()=>{
     getCarts()
+
 
     const startTime = localStorage.getItem("verificationStartTime");
 
