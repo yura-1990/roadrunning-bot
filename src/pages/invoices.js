@@ -15,7 +15,6 @@ const Invoices = () => {
   const [showCode, setShowCode] = useState(false)
   const [checkCartForm, setCheckCartForm] = useState(false)
 
-
   useEffect(()=>{
     getCarts()
 

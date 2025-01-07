@@ -1,7 +1,8 @@
-import {useEffect, useRef, useState} from "react";
+import { useRef, useState} from "react";
 import useAuth from '../zustand/auth'
+import {useNavigate} from "react-router-dom";
 
-const Modal = ({button}) => {
+const Modal = () => {
     const [login, setLogin] = useState({ email: '', password: ''})
     const [register, setRegister] = useState({name: '', email: '', password: '', passwordRepeat: ''})
     const [changeEmail, setChangeEmail] = useState('')
@@ -12,6 +13,8 @@ const Modal = ({button}) => {
     const passwordChange = useRef(null);
     const closeLogin = useRef(null);
     const closeRegister = useRef(null);
+    const getToken = useAuth((state) => state.getToken)
+    const navigate = useNavigate()
 
     const authenticate = useAuth(state => state.login)
     const modifyPassword = useAuth(state => state.changePassword)
@@ -23,9 +26,16 @@ const Modal = ({button}) => {
 
     const submit = async (e) => {
         e.preventDefault()
+
         if (method === 'login'){
             await authenticate(login)
+
             closeLogin.current.click()
+
+            setTimeout(() => {
+                navigate('/roadrunning-bot/invoice')
+            }, 200)
+
         } else if (method === 'register'){
             await registerUser({
                 name: register.name,
@@ -35,6 +45,11 @@ const Modal = ({button}) => {
             })
 
             closeRegister.current.click()
+
+            setTimeout(() => {
+                navigate('/roadrunning-bot/invoice')
+            }, 200)
+
         } else {
             if (password){
                 await setNewPassword({
@@ -42,11 +57,15 @@ const Modal = ({button}) => {
                     password_confirmation: changePassword.passwordRepeat,
                     email: changeEmail
                 })
+
                 passwordChange.current.click()
+
             } else {
                 await modifyPassword({email: changeEmail})
             }
         }
+
+        await getToken()
     }
 
     const handleEmail = (e) => {
@@ -91,7 +110,7 @@ const Modal = ({button}) => {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h1 className="modal-title fs-5" id="loginModalClose">{message ? message : 'Login'}</h1>
-                        <button type="button" className="btn-close" ref={closeLogin} data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" className="btn-close" ref={closeLogin} data-bs-dismiss="modal" aria-label="Close" ></button>
                     </div>
                     <div className="modal-body">
                         <form onSubmit={submit} id="login" className={'needs-validation'} noValidate>
@@ -130,7 +149,7 @@ const Modal = ({button}) => {
                             <i className="fa-light me-2 fa-arrow-left"></i>
                             Register
                         </button>
-                        <button onClick={() => setMethod('login')} type="submit" form="login" className="btn bg-theme text-white">
+                        <button onClick={() => setMethod('login')} type="submit" form="login" className="btn bg-theme text-white" >
                             {
                                 loading && <div className="spinner-border" role="status">
                                     <span className="visually-hidden">Loading...</span>
@@ -290,9 +309,7 @@ const Modal = ({button}) => {
                 </div>
             </div>
         </div>
-        <button onClick={()=>setMethod('login')} className="btn btn-primary" data-bs-target="#loginModal" data-bs-toggle="modal">
-            {button}
-        </button>
+
     </>
 }
 

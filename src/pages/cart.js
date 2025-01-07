@@ -5,6 +5,7 @@ import useEvent from '../zustand/events'
 import { Link } from 'react-router-dom';
 import { TimerContext } from "../components/timerContext";
 import Modal from "../components/modal";
+import useAuth from "../zustand/auth";
 
 
 const Cart = () => {
@@ -15,12 +16,14 @@ const Cart = () => {
     const getCarts = useCart((state) => state.getCarts)
     const formatDate = useEvent((state) => state.formatDate)
     const [login, setLogin] = useState(true)
+    const getToken = useAuth((state) => state.getToken)
+    const authToken = useAuth((state) => state.state.token)
  
     const {stopTimer} = useContext(TimerContext)
 
     useEffect(()=>{
         getCarts()
-
+        getToken()
         if (carts.length === 0) {
             stopTimer()
         }
@@ -85,9 +88,6 @@ const Cart = () => {
               </div>
           </div>
           <div className="col-12 mt-md-0 mt-4">
-              <Modal button={t('proceed_to_payment')} />
-          </div>
-          <div className="col-12 mt-md-0 mt-4">
               <div className="card">
                   <div className="card-body">
                       {
@@ -103,11 +103,21 @@ const Cart = () => {
                                         </tr>
                                       </tbody>
                         </table>
-                        <Link to={'/roadrunning-bot/invoice'} className="btn bg-theme text-white fw-medium w-100">{t('proceed_to_payment')}</Link>
-                      </>
-                    : <>
-                        <h5 className="card-title">{t('empty')}</h5>
-                        <Link to={'/roadrunning-bot/events'}>{t('participate')}</Link>
+                                  {
+                                      authToken ?
+                                          <Link to={'/roadrunning-bot/invoice'}
+                                                className="btn bg-theme text-white fw-medium w-100">{t('proceed_to_payment')}</Link>
+                                          : <button className="btn bg-theme w-100 text-white fw-medium"
+                                                    data-bs-target="#loginModal" data-bs-toggle="modal">
+                                              Login
+                                          </button>
+                                  }
+
+
+                              </>
+                              : <>
+                                  <h5 className="card-title">{t('empty')}</h5>
+                                  <Link to={'/roadrunning-bot/events'}>{t('participate')}</Link>
                       </>
                   }
                   </div>

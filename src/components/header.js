@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import LanguageSwitcher from './languageSwitcher'
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import useCart from '../zustand/cart';
 import Logout from "./logout";
+import useAuth from "../zustand/auth";
 
 
 function Header () {
@@ -12,6 +13,8 @@ function Header () {
     const carts = useCart((state) => state.state.carts)
     const getCarts = useCart((state) => state.getCarts)
     const [allCarts, setAllCarts] = useState([])
+    const authToken = useAuth((state) => state.state.token)
+    const getToken = useAuth((state) => state.getToken)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,6 +34,9 @@ function Header () {
         getCarts()
     }, [allCarts])
 
+    useEffect(()=>{
+        getToken()
+    }, [])
 
     return (
         <div className={headerBg ? 'bg-theme w-100 header-fixed' : ' w-100 header-fixed'}>
@@ -40,7 +46,7 @@ function Header () {
                         <img src={headerBg ? "/roadrunning-bot/assets/images/image.png" : "/roadrunning-bot/assets/images/logo_itog.png"} alt="Logo" width="50"  className="d-inline-block align-text-top" />
                     </Link>
                     <div className='d-flex align-items-center gap-3'>
-                        <Logout />
+                        { authToken && <Logout />}
                         <Link to="/roadrunning-bot/cart" type="button" className="btn border bg-theme-bot text-theme-bot position-relative">
                             <i className={"bi bi-cart-plus"}></i>
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme shadow border">

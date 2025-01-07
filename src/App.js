@@ -15,13 +15,16 @@ import useCart from './zustand/cart';
 import Invoices from './pages/invoices';
 import SingleMarathon from "./pages/singleMarathon";
 import Marathon from "./pages/marathon";
-
+import useAuth from "./zustand/auth";
+import Modal from "./components/modal";
 
 const App = () => {
 
     const { isReady, language } = useTelegram();
     const [loading, setLoading] = useState(true);
     const getCarts = useCart((state) => state.getCarts)
+    const getToken = useAuth((state) => state.getToken)
+    const authToken = useAuth((state) => state.state.token)
 
     useEffect(() => {
         if (isReady && language) {
@@ -30,6 +33,10 @@ const App = () => {
             getCarts()
         }
     }, [isReady, language]);
+
+    useEffect(()=>{
+        getToken()
+    }, [])
 
     if (loading) {
         return <div>Loading the web mini app...</div>;
@@ -49,12 +56,15 @@ const App = () => {
                     <Route path="/roadrunning-bot/events/:id" element={<SingleEvent />} />
                     <Route path="/roadrunning-bot/events" element={<Events />} />
                     <Route path="/roadrunning-bot/participate/:id" element={<Participate />} />
-                    <Route path="/roadrunning-bot/invoice" element={<Invoices />} />
+                    {
+                        authToken && <Route path="/roadrunning-bot/invoice" element={<Invoices />} />
+                    }
                     <Route path="/roadrunning-bot/marathons/:id" element={<SingleMarathon />} />
                     <Route path="/roadrunning-bot/marathons" element={<Marathon />} />
                 </Routes>   
                 <TimerProgress />
                 <Footer />
+                <Modal />
             </div>
         </div>
     );

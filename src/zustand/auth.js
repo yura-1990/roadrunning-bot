@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import axios from "../axios/index";
+import {useNavigate} from "react-router-dom";
 
 const useAuth = create((set) => ({
     state: {
@@ -7,7 +8,8 @@ const useAuth = create((set) => ({
         loading: false,
         error: false,
         message: '',
-        changePassword: false
+        changePassword: false,
+        token: false,
     },
 
     login: async (data) => {
@@ -18,7 +20,7 @@ const useAuth = create((set) => ({
 
             localStorage.setItem('token', response.data.token)
 
-            set({state: {message: response?.data?.message, loading: false, error: false}, });
+            set({state: {message: response?.data?.message, loading: false, error: false, token: !!response.data.token}, });
 
         } catch (err) {
             set({state: {loading: false, error: true, message: err.response.data.message}});
@@ -59,47 +61,28 @@ const useAuth = create((set) => ({
 
             localStorage.setItem('token', response.data.token)
 
-            set({state: {message: response?.data?.message, loading: false, error: false}});
+            set({state: {message: response?.data?.message, loading: false, error: false, token: !!response.data.token}});
         } catch (err) {
             set({state: {loading: false, error: true, message: err.response.data.message}});
         }
     },
 
     logout: async ()=>{
-        set({state: {loading: true, error: false}});
-
         try {
-            const response = await axios.post(`/auth/logout`, {}, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-            })
+            const response = await axios.post(`/friend/logout`, {})
 
-            if (response.status === 200){
-                localStorage.removeItem('token')
-            }
+            localStorage.removeItem('token')
 
-            set({state: {message: response?.data?.message, loading: false, error: false}});
         } catch (err) {
+            localStorage.removeItem('token')
             set({state: {loading: false, error: true, message: err.response.data.message}});
         }
     },
 
-    getMe: async ()=>{
-        try {
-            const response = await axios.post(`/friend/logout`, {}, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-            })
+    getToken: async ()=>{
+        const token = localStorage.getItem('token')
 
-            if (response.data.status){
-                localStorage.removeItem('token')
-            }
-
-        } catch (err) {
-            set({state: {loading: false, error: true, message: err.response.data.message}});
-        }
+        set({ state: { token: token } });
     }
 
 }))
