@@ -105,11 +105,11 @@ const Modal = () => {
     }
 
     return <>
-        <div className="modal fade" id="loginModal" aria-hidden="true" aria-labelledby="loginModalClose" tabIndex="-1">
-            <div className="modal-dialog modal-dialog-centered">
-                <div className="modal-content">
+        <div className="modal fade " id="loginModal" aria-hidden="true" aria-labelledby="loginModalClose" tabIndex="-1">
+            <div className="modal-dialog  modal-dialog-centered">
+                <div className="modal-content bg-theme-bot">
                     <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="loginModalClose">{message ? message : 'Login'}</h1>
+                        <h1 className="modal-title text-theme fs-5" id="loginModalClose">{message ? message : 'Login'}</h1>
                         <button type="button" className="btn-close" ref={closeLogin} data-bs-dismiss="modal" aria-label="Close" ></button>
                     </div>
                     <div className="modal-body">
@@ -118,7 +118,7 @@ const Modal = () => {
                                 <input type="email" onInput={handleEmail} className="form-control" id="floatingLogin" placeholder="name@example.com" required
                                     value={login.email}
                                 />
-                                <label htmlFor="floatingLogin">Email address</label>
+                                <label className="text-theme" htmlFor="floatingLogin">Email address</label>
                             </div>
                             <div className="valid-feedback"> Looks good! </div>
 
@@ -127,7 +127,7 @@ const Modal = () => {
                                        placeholder="Password" required
                                        value={login.password}
                                 />
-                                <label htmlFor="floatingPassword">Password</label>
+                                <label className="text-theme" htmlFor="floatingPassword">Password</label>
 
                                 <div className="password-visibility" onClick={() => setPasswordVisibility(!passwordVisibility)}>
                                     {
@@ -163,9 +163,9 @@ const Modal = () => {
         </div>
         <div className="modal fade" id="passwordForgetModal" aria-hidden="true" aria-labelledby="#passwordForgetModalClose" tabIndex="-1">
             <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
+            <div className="modal-content bg-theme-bot">
                 <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="passwordForgetModalClose">{message ? message : 'Send email'}</h1>
+                    <h1 className="modal-title text-theme fs-5" id="passwordForgetModalClose">{message ? message : 'Send email'}</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
@@ -176,7 +176,7 @@ const Modal = () => {
                                    required
                                    value={changeEmail}
                             />
-                            <label htmlFor="floatingChangeEmail">Email address</label>
+                            <label className="text-theme" htmlFor="floatingChangeEmail">Email address</label>
                         </div>
                         {
                             password && <div>
@@ -188,7 +188,7 @@ const Modal = () => {
                                            required
                                            value={changePassword.password}
                                     />
-                                    <label htmlFor="floatingSetPassword">Password</label>
+                                    <label className="text-theme" htmlFor="floatingSetPassword">Password</label>
                                     <div className="password-visibility"
                                          onClick={() => setPasswordVisibility(!passwordVisibility)}>
                                         {
@@ -205,7 +205,7 @@ const Modal = () => {
                                            required
                                            value={changePassword.passwordRepeat}
                                     />
-                                    <label htmlFor="floatingPasswordReapeat">Repeat Password</label>
+                                    <label className="text-theme" htmlFor="floatingPasswordReapeat">Repeat Password</label>
                                     <div className="password-visibility"
                                          onClick={() => setPasswordVisibilityRepeat(!passwordVisibilityRepeat)}>
                                         {
@@ -232,9 +232,9 @@ const Modal = () => {
         </div>
         <div className="modal fade" id="registerModal" aria-hidden="true" aria-labelledby="#registerModalClose" tabIndex="-1">
             <div className="modal-dialog modal-dialog-centered">
-                <div className="modal-content">
+                <div className="modal-content bg-theme-bot">
                     <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="registerModalClose">{message ? message : 'Register'}</h1>
+                        <h1 className="modal-title text-theme fs-5" id="registerModalClose">{message ? message : 'Register'}</h1>
                         <button type="button" className="btn-close" ref={closeRegister} data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
@@ -245,7 +245,7 @@ const Modal = () => {
                                        placeholder="Habib" required
                                        value={register.name}
                                 />
-                                <label htmlFor="floatingRegisterName">Name</label>
+                                <label className="text-theme" htmlFor="floatingRegisterName">Name</label>
                             </div>
                             <div className="valid-feedback"> Looks good!</div>
                             <div className="form-floating mb-3">
@@ -254,7 +254,7 @@ const Modal = () => {
                                        placeholder="name@example.com" required
                                        value={register.email}
                                 />
-                                <label htmlFor="floatingRegisterEmail">Email address</label>
+                                <label className="text-theme" htmlFor="floatingRegisterEmail">Email address</label>
                             </div>
                             <div className="valid-feedback"> Looks good!</div>
 
@@ -264,7 +264,7 @@ const Modal = () => {
                                        id="floatingRegisterPassword" placeholder="Password" required
                                        value={register.password}
                                 />
-                                <label htmlFor="floatingRegisterPassword">Password</label>
+                                <label className="text-theme" htmlFor="floatingRegisterPassword">Password</label>
                                 <div className="password-visibility"
                                      onClick={() => setPasswordVisibility(!passwordVisibility)}>
                                     {
@@ -283,7 +283,7 @@ const Modal = () => {
                                        placeholder="Repeat Password" required
                                        value={register.passwordRepeat}
                                 />
-                                <label htmlFor="floatingRegisterPasswordRepeat">Repeat Password</label>
+                                <label className="text-theme" htmlFor="floatingRegisterPasswordRepeat">Repeat Password</label>
                                 <div className="password-visibility"
                                      onClick={() => setPasswordVisibilityRepeat(!passwordVisibilityRepeat)}>
                                     {
