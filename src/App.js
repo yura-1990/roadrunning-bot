@@ -21,19 +21,18 @@ import GoBack from "./components/goBack";
 
 const App = () => {
 
-    const { isReady, language } = useTelegram();
+    const { tg, language} = useTelegram();
     const [loading, setLoading] = useState(true);
     const getCarts = useCart((state) => state.getCarts)
     const getToken = useAuth((state) => state.getToken)
     const authToken = useAuth((state) => state.state.token)
 
     useEffect(() => {
-        if (isReady && language) {
-            initI18n(language);
-            setLoading(false);
-            getCarts()
-        }
-    }, [isReady, language]);
+        tg.ready()
+        initI18n(language);
+        setLoading(false);
+        getCarts()
+    }, [language]);
 
     useEffect(()=>{
         getToken()
