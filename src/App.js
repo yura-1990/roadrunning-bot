@@ -17,10 +17,11 @@ import SingleMarathon from "./pages/singleMarathon";
 import Marathon from "./pages/marathon";
 import useAuth from "./zustand/auth";
 import Modal from "./components/modal";
+import GoBack from "./components/goBack";
 
 const App = () => {
 
-    const { isReady, language } = useTelegram();
+    const { isReady, language, user } = useTelegram();
     const [loading, setLoading] = useState(true);
     const getCarts = useCart((state) => state.getCarts)
     const getToken = useAuth((state) => state.getToken)
@@ -36,6 +37,7 @@ const App = () => {
 
     useEffect(()=>{
         getToken()
+
     }, [])
 
     if (loading) {
@@ -57,7 +59,7 @@ const App = () => {
                     <Route path="/roadrunning-bot/events" element={<Events />} />
                     <Route path="/roadrunning-bot/participate/:id" element={<Participate />} />
                     {
-                        authToken && <Route path="/roadrunning-bot/invoice" element={<Invoices />} />
+                        authToken ? <Route path="/roadrunning-bot/invoice" element={<Invoices />} /> : <Route path="/roadrunning-bot/invoice" element={<GoBack />} />
                     }
                     <Route path="/roadrunning-bot/marathons/:id" element={<SingleMarathon />} />
                     <Route path="/roadrunning-bot/marathons" element={<Marathon />} />

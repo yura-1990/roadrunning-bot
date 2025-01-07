@@ -47,7 +47,7 @@ const Cart = () => {
       </div>
 
       <div className="row mt-4">
-          <div className="col-md-8">
+          <div className="col-md-12">
               <div className="list-group">
                 {carts && carts.map((el, i) => <div key={i} className="list-group-item cart-item pb-5 shadow rounded-2 overflow-hidden mb-2">
                     <div onClick={() => destroyCart(i)}
@@ -109,7 +109,7 @@ const Cart = () => {
                                                 className="btn bg-theme text-white fw-medium w-100">{t('proceed_to_payment')}</Link>
                                           : <button className="btn bg-theme w-100 text-white fw-medium"
                                                     data-bs-target="#loginModal" data-bs-toggle="modal">
-                                              Login
+                                              {t('proceed_to_payment')}
                                           </button>
                                   }
 

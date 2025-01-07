@@ -10,7 +10,6 @@ const useCart = create((set, get) => ({
         message: ''
     },
 
-
     getCarts: async () => {
         if (localStorage.getItem('cart')) {
             const getCart = JSON.parse(localStorage.getItem('cart'))

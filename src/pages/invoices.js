@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useTranslation } from 'react-i18next';
+import InputMask from "react-input-mask";
+import useTelegram from "../hooks/useTelegram";
 
 const Invoices = () => {
   const { t } = useTranslation();
@@ -14,6 +16,9 @@ const Invoices = () => {
   const [isExpired, setIsExpired] = useState(false);
   const [showCode, setShowCode] = useState(false)
   const [checkCartForm, setCheckCartForm] = useState(false)
+  const [phone, setPhone] = useState('')
+  const [errorPhone, setErrorPhone] = useState("");
+  const { isReady, language, user } = useTelegram();
 
   useEffect(()=>{
     getCarts()
@@ -46,7 +51,7 @@ const Invoices = () => {
     }
   }, [code]);
 
-  const handlePhoneChange = (event) => {
+  const handleCartChange = (event) => {
     const {value} = event.target;
 
     const digitsCount = value.replace(/\s/g, '').length;
@@ -152,6 +157,18 @@ const Invoices = () => {
     localStorage.removeItem("verificationCode");
   };
 
+  const handlePhoneChange = (event) => {
+    const {value} = event.target;
+    setPhone(value);
+    const isValid = validatePhoneNumber(value);
+    setErrorPhone(isValid ? "" : "Invalid phone number");
+  };
+
+  const validatePhoneNumber = (value) => {
+    const phoneRegex = /^\+\d{3} \(\d{2}\) \d{3} \d{2} \d{2}$/;
+    return phoneRegex.test(value);
+  };
+
   return (
     <div>
       <div className="container my-2">
@@ -162,7 +179,7 @@ const Invoices = () => {
         <div className="row mt-4">
           <div className="col-12 d-flex justify-content-between">
             <h5>{t('bill_to')}</h5>
-            <p>Tg user name</p>
+            <p>{user?.username}</p>
           </div>
 
           <div className="col-12 text-end">
@@ -218,7 +235,7 @@ const Invoices = () => {
                 id="parent_name"
                 placeholder="**** **** **** ****"
                 value={cardNumber}
-                onInput={handlePhoneChange}
+                onInput={handleCartChange}
                 required
               />
               {cardNumberError && <p style={{ color: "red" }}>{cardNumberError}</p>}
@@ -252,6 +269,32 @@ const Invoices = () => {
                 required
               />
             </div>
+
+            <div className="mb-3">
+              <label htmlFor="phone">{t("home_number")}</label>
+              <InputMask
+                  mask="+999 (99) 999 99 99"
+                  placeholder="+000 (00) 000 00 00"
+                  className="form-control"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  required
+              >
+                {(inputProps) => (
+                    <input
+                        {...inputProps}
+                        type="text"
+                    />
+                )}
+              </InputMask>
+
+              {errorPhone && <p style={{color: "red"}}>{errorPhone}</p>}
+              <div className="invalid-feedback">
+                {t('phone_is_required')}
+              </div>
+              <p className="text-theme mt-2"><i className="fa-regular fa-triangle-exclamation"></i> { t('warring') }</p>
+            </div>
+
             <div className='d-flex justify-content-end'>
               <button disabled={showCode} type="submit" className="btn bg-theme text-white">
                 {t("check")}
