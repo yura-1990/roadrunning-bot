@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+const tg = window.Telegram.WebApp;
 
 const useTelegram = () => {
   const [isReady, setIsReady] = useState(false);
@@ -6,15 +7,11 @@ const useTelegram = () => {
   const [user, setUser] = useState(null);
   const [initData, setInitData] = useState(null);
   const [language, setLanguage] = useState('en');
-  const [tgApp, setTgApp] = useState(null);
 
   useEffect(() => {
     if (window.Telegram?.WebApp) {
-      const tg = window.Telegram.WebApp;
-
       tg.ready();
       setIsReady(true);
-      setTgApp(tg)
       setUser(tg.initDataUnsafe?.user || null);
       setInitData(tg.initData);
 
@@ -52,7 +49,7 @@ const useTelegram = () => {
 
   return {
     isReady,
-    tgApp,
+    tg,
     theme,
     user,
     initData,

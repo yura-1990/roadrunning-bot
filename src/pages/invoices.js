@@ -19,10 +19,10 @@ const Invoices = () => {
   const [checkCartForm, setCheckCartForm] = useState(false)
   const [phone, setPhone] = useState('')
   const [errorPhone, setErrorPhone] = useState("");
-  const { tgApp, user } = useTelegram();
+  const { tg, user } = useTelegram();
 
   useEffect(() => {
-    tgApp.ready()
+    tg.ready()
   }, []);
 
   useEffect(()=>{
