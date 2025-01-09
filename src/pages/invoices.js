@@ -1,12 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import InputMask from "react-input-mask";
 import useTelegram from "../hooks/useTelegram";
 import {initI18n} from "../i18n";
+import useCart from "../zustand/cart";
+import useInvoice from "../zustand/invoice";
 
 const Invoices = () => {
   const { t } = useTranslation();
-  const [carts, setCarts] = useState([])
   const [cardNumber, setCardNumber] = useState('');
   const [cardNumberError, setCardNumberError] = useState('');
   const [cardDate, setCardDate] = useState('');
@@ -20,6 +21,13 @@ const Invoices = () => {
   const [phone, setPhone] = useState('')
   const [errorPhone, setErrorPhone] = useState("");
   const { tg, user } = useTelegram();
+  const carts = useCart(state => state.state.carts)
+  const getCarts = useCart(state => state.getCarts)
+  const formatWithSpaces = useCart((state) => state.formatWithSpaces)
+  const createTransaction = useInvoice((state) => state.createTransaction)
+  const paymentStatus = useInvoice((state) => state.state.paymentStatus)
+  const message = useInvoice(state => state.state.message)
+  const checkInvoice = useInvoice(state => state.checkInvoice)
 
   useEffect(() => {
     tg.ready()
@@ -27,7 +35,6 @@ const Invoices = () => {
 
   useEffect(()=>{
     getCarts()
-
 
     const startTime = localStorage.getItem("verificationStartTime");
 
@@ -120,31 +127,48 @@ const Invoices = () => {
     }
   };
 
-  const getCarts = () => {
-    const cart = JSON.parse(localStorage.getItem('cart'))
-
-    setCarts(cart)
-    console.log(cart);
-    
-  }
-
-  const submit=(e)=>{
+  const submit = async(e)=> {
     e.preventDefault() 
     setCheckCartForm(true)
+
+    if (cardNumber !== "" && cardDate !== "" && phone !== ""){
+      const data = {
+        cart_number: cardNumber.toString(),
+        expired_date: cardDate.toString(),
+        total_sum: carts?.reduce((acc, cur)=>cur.description + acc, 0).toString(),
+        phone_number: phone.toString(),
+        type: "Marathone uz"
+      }
+
+      await getCarts()
+      await createTransaction(data)
+    }
+
     if (cardNumberError === "" && cardDateError === "") {
       setShowCode(true)
       setTimer(120)
     }
   }
 
-  const verifyCode = (e) =>{
+  const verifyCode = async (e) =>{
     e.preventDefault() 
 
     const verificationCode = code.join("");
+    const storedValue = localStorage.getItem('invoice_number')
+    const invoiceNumber = storedValue ? JSON.parse(storedValue) : null
+
     if (verificationCode.length < 6) {
       setError(t("enter_verification_code"));
       return;
     }
+
+    const date = {
+      invoice_id: invoiceNumber?.id,
+      code: code.toString(),
+      invoices: carts?.map(el=>({invoice_item_id: el.id})),
+    }
+
+    await checkInvoice(date)
 
     setError("");
   }
@@ -171,7 +195,7 @@ const Invoices = () => {
   };
 
   const validatePhoneNumber = (value) => {
-    const phoneRegex = /^\+\d{3} \(\d{2}\) \d{3} \d{2} \d{2}$/;
+    const phoneRegex = /^\+\d{3} \d{2} \d{3} \d{2} \d{2}$/;
     return phoneRegex.test(value);
   };
 
@@ -187,51 +211,48 @@ const Invoices = () => {
             <h5>{t('bill_to')}</h5>
             <p>{user?.username}</p>
           </div>
-
-          <div className="col-12 text-end">
-            <h5>{t('invoice_details')}</h5>
-            <p>
-              {t('invoice_number')} #: 001<br/>
-              {t('date')}: 2024-11-26<br/>
-            </p>
-          </div>
         </div>
 
         <h4 className="mb-3">{t('purchases')}</h4>
-        
-        <div className="shadow p-2 rounded">
-          <div className='d-flex justify-content-between border-bottom border-theme'>
-            <p className="mb-1 fw-medium">
-              Marathon name 
-              <br />
-              <span className='border px-1 rounded bg-theme text-white'>Marathon type</span>
-            </p>
-            <small className="text-success fw-medium">2 500 000 sum</small>
-          </div>
-          <div className='d-flex justify-content-between border-bottom'>
-            <p className="mb-1 fw-medium">
-              Number name 
-              <br />
-              <span className='border px-1 rounded bg-theme text-white'>Number type</span>
-            </p>
-            <small className="text-success fw-medium">2 500 000 sum</small>
-          </div>
-        </div>
 
         <div className="row">
-            <div className="col-12">
-                <table className="table table-borderless table-summary">
-                    <tbody>
-                        <tr>
-                            <td>{t('total')}:</td>
-                            <td className="text-end">5 000 000 sum</td>
-                        </tr>
-                    </tbody>
+          <div className="col-12">
+            <table className="table table-bordered table-summary">
+              <thead>
+                <tr>
+                  <th>Информация о счете</th>
+                  <th>Стоимость</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  carts?.map(el => <tr>
+                    <td>
+                        <p className="text-end m-0 px-1 rounded text-theme">{el?.marathon?.marathon_type?.name}</p>
+                        <p className="m-0 text-end fw-medium">{el?.participant?.phone}</p>
+                        <p className="m-0 text-end fw-medium">{el?.participant?.name}</p>
+                        <p className="m-0 text-end fw-medium">{el?.participant?.email}</p>
+                        <p className="m-0 text-end fw-medium">{el?.participant?.address}</p>
+                        <p className="m-0 text-end fw-medium m-0 px-1 m-0 px-1 rounded text-theme">{el?.number}</p>
+                        <p className="m-0 text-end fw-medium m-0 px-1 m-0 px-1 rounded text-theme">{el?.participant?.uniform?.size}</p>
+                    </td>
+                    <td>
+                      <p className="m-0 text-center">{ formatWithSpaces(el.description) } UZS</p>
+                    </td>
+                  </tr>)
+                }
+                <tr>
+                  <td>{t('total')}:</td>
+                  <td className="text-end">{ formatWithSpaces(carts?.reduce((acc, cur)=>cur.description + acc, 0)) } UZS</td>
+                </tr>
+              </tbody>
                 </table>
             </div>
         </div>
         
         <div className="payment-form">
+          <h5 className="text-danger">{message?.title}</h5>
+
           <form onSubmit={submit} className={checkCartForm ? "needs-validation was-validated border p-2 rounded" : "needs-validation border p-2 rounded"} noValidate>
             <div className="mb-3">
               <label htmlFor="name">{t('card_number')}</label>
@@ -271,7 +292,7 @@ const Invoices = () => {
                 className="form-control"
                 id="cardDate"
                 placeholder="MM/YY"
-                value={'2 650 000'}
+                value={formatWithSpaces(carts?.reduce((acc, cur)=>cur.description + acc, 0))}
                 required
               />
             </div>
@@ -279,8 +300,8 @@ const Invoices = () => {
             <div className="mb-3">
               <label htmlFor="phone">{t("home_number")}</label>
               <InputMask
-                  mask="+999 (99) 999 99 99"
-                  placeholder="+000 (00) 000 00 00"
+                  mask="+999 99 999 99 99"
+                  placeholder="+000 00 000 00 00"
                   className="form-control"
                   value={phone}
                   onChange={handlePhoneChange}
@@ -309,7 +330,7 @@ const Invoices = () => {
           </form>
 
           {
-            showCode && <form onSubmit={verifyCode} className='mt-5 p-3 border'>
+            paymentStatus && <form onSubmit={verifyCode} className='mt-5 p-3 border'>
               <div className="my-3">
                 <p className='text-center'>{t("verification_code_submitted")}</p>
                 <div className='d-flex justify-content-center'>

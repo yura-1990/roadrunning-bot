@@ -12,8 +12,8 @@ export const TimerProvider = ({ children }) => {
   const [change, setChange] = useState('');
   const intervalRef = useRef(null);
 
-  const handleTimerEnd = useCallback(async () => {
-    await deleteAllCarts()
+  const handleTimerEnd = useCallback(() => {
+    deleteAllCarts()
   }, []);
 
   const startTimer = useCallback(() => {
