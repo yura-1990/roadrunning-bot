@@ -1,15 +1,8 @@
 {
-<<<<<<< HEAD
-  "name": "react-mini-tg-app",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://yura-1990.github.io/roadrunning-bot",
-=======
   "name": "roadrunningbot",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://yura-1990.github.io/",
->>>>>>> b6a5f55 (payment system)
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
