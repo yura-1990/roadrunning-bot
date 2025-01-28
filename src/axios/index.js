@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiUrl = 'https://api.roadrunning.uz/api';
+const apiUrl = 'http://api.roadrunning.uz/api';
 
 const token = localStorage.getItem('token');
 

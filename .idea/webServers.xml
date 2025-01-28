@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="5bc5492f-e9e9-4477-9159-0345e1727c54" name="marathon">
-        <fileTransfer rootFolder="/var/www/marathon-front" accessType="SFTP" host="93.170.6.213" port="20001" sshConfigId="98549f9e-c613-4cf6-9b6b-54f724ace939" sshConfig="root@93.170.6.213:20001 password">
+        <fileTransfer rootFolder="/var/www/roadrunning-bot" accessType="SFTP" host="93.170.6.213" port="20001" sshConfigId="98549f9e-c613-4cf6-9b6b-54f724ace939" sshConfig="root@93.170.6.213:20001 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

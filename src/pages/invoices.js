@@ -164,11 +164,13 @@ const Invoices = () => {
 
     const date = {
       invoice_id: invoiceNumber?.id,
-      code: code.toString(),
+      code: code.toString().replace(/,/g, ''),
       invoices: carts?.map(el=>({invoice_item_id: el.id})),
     }
 
-    await checkInvoice(date)
+    console.log(date)
+
+        await checkInvoice(date)
 
     setError("");
   }
