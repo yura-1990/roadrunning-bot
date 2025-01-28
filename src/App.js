@@ -52,16 +52,16 @@ const App = () => {
                 <Breadcrumb />
 
                 <Routes>
-                    <Route path="/roadrunning-bot" element={<Home />} />
-                    <Route path="/roadrunning-bot/cart" element={<Cart />} />
-                    <Route path="/roadrunning-bot/events/:id" element={<SingleEvent />} />
-                    <Route path="/roadrunning-bot/events" element={<Events />} />
-                    <Route path="/roadrunning-bot/participate/:id" element={<Participate />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/events/:id" element={<SingleEvent />} />
+                    <Route path="/events" element={<Events />} />
+                    <Route path="/participate/:id" element={<Participate />} />
                     {
-                        authToken ? <Route path="/roadrunning-bot/invoice" element={<Invoices />} /> : <Route path="/roadrunning-bot/invoice" element={<GoBack />} />
+                        authToken ? <Route path="/invoice" element={<Invoices />} /> : <Route path="/invoice" element={<GoBack />} />
                     }
-                    <Route path="/roadrunning-bot/marathons/:id" element={<SingleMarathon />} />
-                    <Route path="/roadrunning-bot/marathons" element={<Marathon />} />
+                    <Route path="/marathons/:id" element={<SingleMarathon />} />
+                    <Route path="/marathons" element={<Marathon />} />
                 </Routes>   
                 <TimerProgress />
                 <Footer />

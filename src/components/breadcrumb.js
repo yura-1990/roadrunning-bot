@@ -17,7 +17,7 @@ const Breadcrumb = () => {
                 <ol className="breadcrumb">
                     {urls.map((el, i)=>(
                         <li key={i} className={ urls.length-1 === i ? 'breadcrumb-item text-theme active fw-bold text-uppercase' :  'breadcrumb-item fw-bold text-uppercase'}>
-                            {urls.length-1 === i ? el : <Link to={'roadrunning-bot' === el ? el : '/roadrunning-bot/'+el}>{el}</Link>}
+                            {urls.length-1 === i ? el : <Link to={'/' === el ? el : '/'+el}>{el}</Link>}
                         </li>
                     ))}
                 </ol>

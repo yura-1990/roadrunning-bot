@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  bot:
+    build:
+      context: . 
+      dockerfile: Dockerfile 
+    container_name: bot
+    ports:
+      - "3000:3000" 
+    volumes:
+      - .:/app
+    restart: always 
+

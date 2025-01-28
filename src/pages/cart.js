@@ -105,7 +105,7 @@ const Cart = () => {
                         </table>
                                   {
                                       authToken ?
-                                          <Link to={'/roadrunning-bot/invoice'}
+                                          <Link to={'/invoice'}
                                                 className="btn bg-theme text-white fw-medium w-100">{t('proceed_to_payment')}</Link>
                                           : <button className="btn bg-theme w-100 text-white fw-medium"
                                                     data-bs-target="#loginModal" data-bs-toggle="modal">
@@ -117,7 +117,7 @@ const Cart = () => {
                               </>
                               : <>
                                   <h5 className="card-title">{t('empty')}</h5>
-                                  <Link to={'/roadrunning-bot/events'}>{t('participate')}</Link>
+                                  <Link to={'/events'}>{t('participate')}</Link>
                       </>
                   }
                   </div>

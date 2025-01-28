@@ -34,7 +34,7 @@ const SingleEvent = () => {
           <div key={index}>
             <div className='pb-2 mb-3 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
               <h2 className="">{ formatDate(single.date_event, t) }</h2>
-              <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/marathons'}>{t('all')} <i className="bi bi-arrow-right"></i></Link>
+              <Link className='btn bg-theme text-white float-end shadow' to={'/marathons'}>{t('all')} <i className="bi bi-arrow-right"></i></Link>
             </div>
             <div className="row align-items-md-stretch">
               {
@@ -52,8 +52,8 @@ const SingleEvent = () => {
                         <span className="text-white fw-bold btn btn-outline-success">{t('time')}: {marathon?.datetime_from} - {marathon?.datetime_to}</span>
                         {
                           single?.status
-                              ? <Link className="btn bg-theme text-white  shadow" to={`/roadrunning-bot/participate/${marathon.id}`} type="button">{ t('participate') } <i className="bi bi-arrow-right"></i></Link>
-                              : <Link className="btn bg-theme text-white  shadow" to={`/roadrunning-bot/marathons/${marathon.id}`} type="button">{ t('result') } <i className="bi bi-arrow-right"></i></Link>
+                              ? <Link className="btn bg-theme text-white  shadow" to={`/participate/${marathon.id}`} type="button">{ t('participate') } <i className="bi bi-arrow-right"></i></Link>
+                              : <Link className="btn bg-theme text-white  shadow" to={`/marathons/${marathon.id}`} type="button">{ t('result') } <i className="bi bi-arrow-right"></i></Link>
                         }
                       </div>
                     </div>
