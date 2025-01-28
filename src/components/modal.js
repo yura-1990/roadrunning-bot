@@ -40,7 +40,7 @@ const Modal = () => {
             closeLogin.current.click()
 
             setTimeout(() => {
-                navigate('/roadrunning-bot/invoice')
+                navigate('/invoice')
             }, 200)
 
         } else if (method === 'register'){
@@ -54,7 +54,7 @@ const Modal = () => {
             closeRegister.current.click()
 
             setTimeout(() => {
-                navigate('/roadrunning-bot/invoice')
+                navigate('/invoice')
             }, 200)
 
         } else {

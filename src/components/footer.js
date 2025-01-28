@@ -6,7 +6,7 @@ const Footer=()=>{
   return (
     <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top">
         <div className="col-md-4 d-flex gap-2 align-items-center">
-            <Link className="mb-md-0 text-body-secondary text-decoration-none border rounded-pill" to="/roadrunning-bot">
+            <Link className="mb-md-0 text-body-secondary text-decoration-none border rounded-pill" to="/">
                 <img src="/assets/images/logo_itog.png" alt="Logo" width="50"  className="d-inline-block align-text-top" />
             </Link>
         </div>

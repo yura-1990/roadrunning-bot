@@ -42,7 +42,7 @@ const Events = () => {
                                 </div>
         
                                 <div className='card-footer bg-transparent'>
-                                    <Link to={`/roadrunning-bot/events/${event.id}`} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
+                                    <Link to={`/events/${event.id}`} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
                                 </div>
                             </div> ))
                     }
@@ -64,7 +64,7 @@ const Events = () => {
                                 </div>
         
                                 <div className='card-footer bg-transparent'>
-                                    <Link to={`/roadrunning-bot/events/${event.id}`} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
+                                    <Link to={`/events/${event.id}`} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
                                 </div>
                             </div> ))
                     }                 

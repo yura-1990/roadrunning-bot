@@ -23,7 +23,7 @@ const  Home = () => {
             <div>
                 <div className='pb-2 border-bottom d-flex align-items-center justify-content-between flex-wrap'>
                     <h2 className="">{ t('events') }</h2>
-                    <Link className='btn bg-theme text-white float-end shadow' to={'/roadrunning-bot/events'}>{ t('all') } <i className="bi bi-arrow-right"></i></Link>
+                    <Link className='btn bg-theme text-white float-end shadow' to={'/events'}>{ t('all') } <i className="bi bi-arrow-right"></i></Link>
                 </div>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
@@ -50,7 +50,7 @@ const  Home = () => {
                                 </div>
 
                                 <div className='card-footer bg-transparent'>
-                                    <Link to={`/roadrunning-bot/events/${event.id}`}
+                                    <Link to={`/events/${event.id}`}
                                           className='btn bg-theme text-white float-end shadow'>{ t('more_about') } <i className="bi bi-arrow-right"></i>
                                     </Link>
                                 </div>
@@ -85,7 +85,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/marathon-type/1'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
+                            <Link to={'/marathon-type/1'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -101,7 +101,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/marathon-type/2'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
+                            <Link to={'/marathon-type/2'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -131,7 +131,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/number-type/1'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
+                            <Link to={'/number-type/1'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -147,7 +147,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/marathon-type/2'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
+                            <Link to={'/marathon-type/2'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -163,7 +163,7 @@ const  Home = () => {
                         </div>
 
                         <div className='card-footer bg-transparent'>
-                            <Link to={'/roadrunning-bot/marathon-type/3'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
+                            <Link to={'/marathon-type/3'} className='btn bg-theme text-white float-end'>More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                     </div>
                 </SwiperSlide>

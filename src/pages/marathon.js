@@ -52,7 +52,7 @@ const Marathons = () => {
                                             <span
                                                 className="text-white fw-bold btn btn-outline-success">{t('time')}: {marathon?.datetime_from} - {marathon?.datetime_to}</span>
                                                 <Link className="btn bg-theme text-white  shadow"
-                                                  to={`/roadrunning-bot/participate/${marathon.id}`}
+                                                  to={`/participate/${marathon.id}`}
                                                   type="button"
                                                 >
                                                     {t('participate')}
@@ -90,7 +90,7 @@ const Marathons = () => {
                                         <span
                                             className="text-white fw-bold btn btn-outline-success">{t('time')}: {marathon?.datetime_from} - {marathon?.datetime_to}</span>
                                             <Link className="btn bg-theme text-white shadow"
-                                                  to={`/roadrunning-bot/marathons/${marathon.id}`}
+                                                  to={`/marathons/${marathon.id}`}
                                                   type="button">{t('result')}
                                                 <i className="bi bi-arrow-right"></i>
                                             </Link>
