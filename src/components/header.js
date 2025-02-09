@@ -42,6 +42,7 @@ function Header () {
         <div className={headerBg ? 'bg-theme w-100 header-fixed' : ' w-100 header-fixed'}>
             <div className="bd-header py-3 container ">
                 <div className="d-flex align-items-center justify-content-between">
+
                     <Link className="navbar-brand border rounded-pill" to="/">
                         <img src={headerBg ? "/assets/images/image.png" : "/assets/images/logo_itog.png"} alt="Logo" width="50"  className="d-inline-block align-text-top" />
                     </Link>
