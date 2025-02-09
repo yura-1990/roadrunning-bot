@@ -51,7 +51,7 @@ const Invoices = () => {
   useEffect(() => {
     if (timer > 0) {
       const interval = setInterval(() => setTimer((prev) => prev - 1), 1000);
-      return () => clearInterval(interval); 
+      return () => clearInterval(interval);
     } else {
       setIsExpired(true);
     }
@@ -70,7 +70,7 @@ const Invoices = () => {
     const digitsCount = value.replace(/\s/g, '').length;
     setCardNumberError(digitsCount <= 15 ? t('invalid_card_number') : '')
     setCardNumber(maskCreditCard(value));
-    
+
   };
 
   const maskCreditCard = (value) => {
@@ -128,7 +128,7 @@ const Invoices = () => {
   };
 
   const submit = async(e)=> {
-    e.preventDefault() 
+    e.preventDefault()
     setCheckCartForm(true)
 
     if (cardNumber !== "" && cardDate !== "" && phone !== ""){
@@ -151,7 +151,7 @@ const Invoices = () => {
   }
 
   const verifyCode = async (e) =>{
-    e.preventDefault() 
+    e.preventDefault()
 
     const verificationCode = code.join("");
     const storedValue = localStorage.getItem('invoice_number')
@@ -200,41 +200,41 @@ const Invoices = () => {
   };
 
   return (
-    <div>
-      <div className="container my-2">
-        <div className="text-center p-2 border-bottom border-secondary">
-          <h1 className="invoice-title">{t('invoice_info')}</h1>
-        </div>
-
-        <div className="row mt-4">
-          <div className="col-12 d-flex justify-content-between">
-            <h5>{t('bill_to')}</h5>
-            <p>{user?.username}</p>
+      <div>
+        <div className="container my-2">
+          <div className="text-center p-2 border-bottom border-secondary">
+            <h1 className="invoice-title">{t('invoice_info')}</h1>
           </div>
-        </div>
 
-        <h4 className="mb-3">{t('purchases')}</h4>
+          <div className="row mt-4">
+            <div className="col-12 d-flex justify-content-between">
+              <h5>{t('bill_to')}</h5>
+              <p>{user?.username}</p>
+            </div>
+          </div>
 
-        <div className="row">
-          <div className="col-12">
-            <table className="table table-bordered table-summary">
-              <thead>
+          <h4 className="mb-3">{t('purchases')}</h4>
+
+          <div className="row">
+            <div className="col-12">
+              <table className="table table-bordered table-summary">
+                <thead>
                 <tr>
                   <th>Информация о счете</th>
                   <th>Стоимость</th>
                 </tr>
-              </thead>
-              <tbody>
+                </thead>
+                <tbody>
                 {
                   carts?.map(el => <tr>
                     <td>
-                        <p className="text-end m-0 px-1 rounded text-theme">{el?.marathon?.marathon_type?.name}</p>
-                        <p className="m-0 text-end fw-medium">{el?.participant?.phone}</p>
-                        <p className="m-0 text-end fw-medium">{el?.participant?.name}</p>
-                        <p className="m-0 text-end fw-medium">{el?.participant?.email}</p>
-                        <p className="m-0 text-end fw-medium">{el?.participant?.address}</p>
-                        <p className="m-0 text-end fw-medium m-0 px-1 m-0 px-1 rounded text-theme">{el?.number}</p>
-                        <p className="m-0 text-end fw-medium m-0 px-1 m-0 px-1 rounded text-theme">{el?.participant?.uniform?.size}</p>
+                      <p className="text-end m-0 px-1 rounded text-theme">{el?.marathon?.marathon_type?.name}</p>
+                      <p className="m-0 text-end fw-medium">{el?.participant?.phone}</p>
+                      <p className="m-0 text-end fw-medium">{el?.participant?.name}</p>
+                      <p className="m-0 text-end fw-medium">{el?.participant?.email}</p>
+                      <p className="m-0 text-end fw-medium">{el?.participant?.address}</p>
+                      <p className="m-0 text-end fw-medium m-0 px-1 m-0 px-1 rounded text-theme">{el?.number}</p>
+                      <p className="m-0 text-end fw-medium m-0 px-1 m-0 px-1 rounded text-theme">{el?.participant?.uniform?.size}</p>
                     </td>
                     <td>
                       <p className="m-0 text-center">{ formatWithSpaces(el.description) } UZS</p>
@@ -245,142 +245,142 @@ const Invoices = () => {
                   <td>{t('total')}:</td>
                   <td className="text-end">{ formatWithSpaces(carts?.reduce((acc, cur)=>cur.description + acc, 0)) } UZS</td>
                 </tr>
-              </tbody>
-                </table>
+                </tbody>
+              </table>
             </div>
-        </div>
-        
-        <div className="payment-form">
-          <h5 className="text-danger">{message?.title}</h5>
+          </div>
 
-          <form onSubmit={submit} className={checkCartForm ? "needs-validation was-validated border p-2 rounded" : "needs-validation border p-2 rounded"} noValidate>
-            <div className="mb-3">
-              <label htmlFor="name">{t('card_number')}</label>
-              <input
-                type="text"
-                className="form-control"
-                id="parent_name"
-                placeholder="**** **** **** ****"
-                value={cardNumber}
-                onInput={handleCartChange}
-                required
-              />
-              {cardNumberError && <p style={{ color: "red" }}>{cardNumberError}</p>}
-              <div className="invalid-feedback"> {t('valid_card_number')} </div>
-            </div>
+          <div className="payment-form">
+            <h5 className="text-danger">{message?.title}</h5>
 
-            <div className="mb-3">
-              <label htmlFor="cardDate">{t("expiration_date")}</label>
-              <input
-                type="text"
-                className="form-control"
-                id="cardDate"
-                placeholder="MM/YY"
-                onChange={expirationDateInput}
-                value={cardDate}
-                required
-              />
-              {cardDateError && <p style={{ color: "red" }}>{cardDateError}</p>}
-              <div className="invalid-feedback"> {t('enter_expiration_date')} </div>
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="cardDate">{t("total")}</label>
-              <input
-                readOnly
-                type="text"
-                className="form-control"
-                id="cardDate"
-                placeholder="MM/YY"
-                value={formatWithSpaces(carts?.reduce((acc, cur)=>cur.description + acc, 0))}
-                required
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="phone">{t("home_number")}</label>
-              <InputMask
-                  mask="+999 99 999 99 99"
-                  placeholder="+000 00 000 00 00"
-                  className="form-control"
-                  value={phone}
-                  onChange={handlePhoneChange}
-                  required
-              >
-                {(inputProps) => (
-                    <input
-                        {...inputProps}
-                        type="text"
-                    />
-                )}
-              </InputMask>
-
-              {errorPhone && <p style={{color: "red"}}>{errorPhone}</p>}
-              <div className="invalid-feedback">
-                {t('phone_is_required')}
+            <form onSubmit={submit} className={checkCartForm ? "needs-validation was-validated border p-2 rounded" : "needs-validation border p-2 rounded"} noValidate>
+              <div className="mb-3">
+                <label htmlFor="name">{t('card_number')}</label>
+                <input
+                    type="text"
+                    className="form-control"
+                    id="parent_name"
+                    placeholder="**** **** **** ****"
+                    value={cardNumber}
+                    onInput={handleCartChange}
+                    required
+                />
+                {cardNumberError && <p style={{ color: "red" }}>{cardNumberError}</p>}
+                <div className="invalid-feedback"> {t('valid_card_number')} </div>
               </div>
-              <p className="text-theme mt-2"><i className="fa-regular fa-triangle-exclamation"></i> { t('warring') }</p>
-            </div>
 
-            <div className='d-flex justify-content-end'>
-              <button disabled={showCode} type="submit" className="btn bg-theme text-white">
-                {t("check")}
-              </button>
-            </div>
-          </form>
+              <div className="mb-3">
+                <label htmlFor="cardDate">{t("expiration_date")}</label>
+                <input
+                    type="text"
+                    className="form-control"
+                    id="cardDate"
+                    placeholder="MM/YY"
+                    onChange={expirationDateInput}
+                    value={cardDate}
+                    required
+                />
+                {cardDateError && <p style={{ color: "red" }}>{cardDateError}</p>}
+                <div className="invalid-feedback"> {t('enter_expiration_date')} </div>
+              </div>
 
-          {
-            paymentStatus && <form onSubmit={verifyCode} className='mt-5 p-3 border'>
-              <div className="my-3">
-                <p className='text-center'>{t("verification_code_submitted")}</p>
-                <div className='d-flex justify-content-center'>
-                  {
-                    code.map((digit, index)=> <input
-                      type="text"
-                      key={index}
-                      className="otp-input"
-                      id={`code-input-${index}`}
-                      value={digit}
-                      maxLength="1"
-                      onChange={(e) => handleChange(e, index)}
-                      onKeyDown={(e) => handleKeyDown(e, index)}
-                    />)
-                  }
+              <div className="mb-3">
+                <label htmlFor="cardDate">{t("total")}</label>
+                <input
+                    readOnly
+                    type="text"
+                    className="form-control"
+                    id="cardDate"
+                    placeholder="MM/YY"
+                    value={formatWithSpaces(carts?.reduce((acc, cur)=>cur.description + acc, 0))}
+                    required
+                />
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="phone">{t("home_number")}</label>
+                <InputMask
+                    mask="+999 99 999 99 99"
+                    placeholder="+000 00 000 00 00"
+                    className="form-control"
+                    value={phone}
+                    onChange={handlePhoneChange}
+                    required
+                >
+                  {(inputProps) => (
+                      <input
+                          {...inputProps}
+                          type="text"
+                      />
+                  )}
+                </InputMask>
+
+                {errorPhone && <p style={{color: "red"}}>{errorPhone}</p>}
+                <div className="invalid-feedback">
+                  {t('phone_is_required')}
                 </div>
-                <div className="text-center mt-2">
+                <p className="text-theme mt-2"><i className="fa-regular fa-triangle-exclamation"></i> { t('warring') }</p>
+              </div>
+
+              <div className='d-flex justify-content-end'>
+                <button disabled={showCode} type="submit" className="btn bg-theme text-white">
+                  {t("check")}
+                </button>
+              </div>
+            </form>
+
+            {
+                paymentStatus && <form onSubmit={verifyCode} className='mt-5 p-3 border'>
+                  <div className="my-3">
+                    <p className='text-center'>{t("verification_code_submitted")}</p>
+                    <div className='d-flex justify-content-center'>
+                      {
+                        code.map((digit, index)=> <input
+                            type="text"
+                            key={index}
+                            className="otp-input"
+                            id={`code-input-${index}`}
+                            value={digit}
+                            maxLength="1"
+                            onChange={(e) => handleChange(e, index)}
+                            onKeyDown={(e) => handleKeyDown(e, index)}
+                        />)
+                      }
+                    </div>
+                    <div className="text-center mt-2">
                   <span className="badge bg-theme p-2">
                     Time Remaining: {formatTime()}
                   </span>
-                </div>
-                {error && <p className="text-danger">{error}</p>}
-                
-              </div>
-              {
-                isExpired 
-                  ? <div className="text-center">
-                      <h5 className="text-danger mb-3">Time's Up!</h5>
-                      <button type='button' className="btn btn-warning" onClick={handleReset}>
-                        Reset
-                      </button>
                     </div>
-                  : <div className='d-flex justify-content-end'>
-                      <button type="submit" className="btn bg-theme text-white">
-                        {t("pay")}
-                      </button>
-                    </div>
+                    {error && <p className="text-danger">{error}</p>}
 
-              }
-            </form>
-          }
-          
+                  </div>
+                  {
+                    isExpired
+                        ? <div className="text-center">
+                          <h5 className="text-danger mb-3">Time's Up!</h5>
+                          <button type='button' className="btn btn-warning" onClick={handleReset}>
+                            Reset
+                          </button>
+                        </div>
+                        : <div className='d-flex justify-content-end'>
+                          <button type="submit" className="btn bg-theme text-white">
+                            {t("pay")}
+                          </button>
+                        </div>
 
-        </div>
-        <div className="text-center mt-4">
-          <p>{t('thank_you')}</p>
-          <p>{t('contact_us')}  roadrunning@info.uz</p>
+                  }
+                </form>
+            }
+
+
+          </div>
+          <div className="text-center mt-4">
+            <p>{t('thank_you')}</p>
+            <p>{t('contact_us')}  roadrunning@info.uz</p>
+          </div>
         </div>
       </div>
-    </div>
   )
 }
 

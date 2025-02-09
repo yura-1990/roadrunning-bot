@@ -28,7 +28,7 @@ export const TimerProvider = ({ children }) => {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-    setIsRunning(false); 
+    setIsRunning(false);
     setRemainingTime(15 * 60);
     if (localStorage.getItem('cart')) {
       const getCart = JSON.parse(localStorage.getItem('cart'))
@@ -48,7 +48,7 @@ export const TimerProvider = ({ children }) => {
       const endTime = parseInt(savedEndTime, 10);
       const timeLeft = Math.max((endTime - currentTime) / 1000, 0);
       setRemainingTime(Math.floor(timeLeft));
-      setIsRunning(timeLeft > 0); 
+      setIsRunning(timeLeft > 0);
     }
   }, [change]);
 
@@ -59,10 +59,10 @@ export const TimerProvider = ({ children }) => {
       setRemainingTime((prev) => {
         if (prev <= 1) {
           clearInterval(intervalRef.current);
-          intervalRef.current = null; 
+          intervalRef.current = null;
           handleTimerEnd();
           setIsRunning(false);
-          localStorage.removeItem("timerEndTime"); 
+          localStorage.removeItem("timerEndTime");
           return 0;
         }
 
@@ -72,7 +72,7 @@ export const TimerProvider = ({ children }) => {
 
     return () => {
       clearInterval(intervalRef.current);
-      intervalRef.current = null; 
+      intervalRef.current = null;
     };
   }, [isRunning, handleTimerEnd]);
 
@@ -90,14 +90,14 @@ export const TimerProvider = ({ children }) => {
   };
 
   return (
-    <TimerContext.Provider value={{ 
-      remainingTime, 
-      startTimer, 
-      stopTimer, 
-      isRunning, 
-      getProgressPercentage 
-    }}>
-      {children}
-    </TimerContext.Provider>
+      <TimerContext.Provider value={{
+        remainingTime,
+        startTimer,
+        stopTimer,
+        isRunning,
+        getProgressPercentage
+      }}>
+        {children}
+      </TimerContext.Provider>
   );
 };
