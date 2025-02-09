@@ -28,6 +28,7 @@ const Participate = () => {
   const [numberType, setNumberType] = useState(0);
   const [uniform, setUniform] = useState('');
   const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -54,6 +55,7 @@ const Participate = () => {
         marathon_id: Number(id),
         number_type_id: numberType.id,
         participant_name: name,
+        participant_last_name: lastName,
         participant_email: email,
         participant_phone: phone,
         gender_id: gender.id,
@@ -79,6 +81,7 @@ const Participate = () => {
           setNumber(0)
           setUniform("")
           setName("")
+          setLastName("")
           setEmail("")
           setErrorEmail("")
           setPhone("")
@@ -144,6 +147,23 @@ const Participate = () => {
 
             <div className="invalid-feedback">
               {t('name_is_required')}
+            </div>
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="last_name">{t('last_name')}</label>
+            <input
+                type="text"
+                className="form-control"
+                id="last_name"
+                placeholder="Muslomov"
+                value={lastName}
+                onInput={(e) => setLastName(e.target.value)}
+                required
+            />
+
+            <div className="invalid-feedback">
+              {t('last_name_required')}
             </div>
           </div>
 
@@ -214,11 +234,11 @@ const Participate = () => {
           </div>
 
           <div className="col-12  pb-3">
-            <label htmlFor="regions">{t("regions")}</label>
+            <label htmlFor="regions">{t("country")}</label>
             <select onChange={(e) => setRegion(e.target.value)}
                     className="form-control custom-select" id="regions" required
             >
-              <option hidden className="text-white bg-warning">{ t('choose_a_region') }</option>
+              <option hidden  className="text-white bg-warning">{ t('choose_a_region') }</option>
               {
                 singleMarathon?.regions?.map(item => <option key={item.id} value={item.id}>{item.name}</option>)
               }
@@ -312,7 +332,7 @@ const Participate = () => {
                     }
                 >
                   <div className="border border-theme w-100 h-100 d-flex justify-content-center align-items-center rounded">
-                    <span className="text-theme-bot">{item.type}</span>
+                    {/*<span className="text-theme-bot">{item.type}</span> */}
                     <span className="text-theme-bot">{item.size}</span>
                   </div>
 

@@ -13,7 +13,6 @@ const useCart = create((set, get) => ({
     getCarts: async () => {
         if (localStorage.getItem('cart')) {
             const getCart = JSON.parse(localStorage.getItem('cart'))
-            localStorage.setItem('cart', JSON.stringify(getCart))
             set({ state: { carts: getCart } });    
         } else {
             localStorage.setItem('cart', JSON.stringify([]))
@@ -31,7 +30,6 @@ const useCart = create((set, get) => ({
                 allCardsArray.splice(index, 1);
                 const response = await axios.delete(`/number-status/delete/${card.id}`)
                 localStorage.setItem('cart', JSON.stringify(allCardsArray))
-                console.log(response)
             }
         }
         catch (err){

@@ -4,8 +4,6 @@ import useCart from "../zustand/cart";
 
 export const TimerProvider = ({ children }) => {
   const deleteAllCarts = useCart((state)=>state.deleteAllCarts)
-  const getCarts = useCart((state) => state.getCarts)
-  const carts = useCart((state) => state.state.carts)
 
   const [remainingTime, setRemainingTime] = useState(15 * 60);
   const [isRunning, setIsRunning] = useState(false);
@@ -17,12 +15,11 @@ export const TimerProvider = ({ children }) => {
   }, []);
 
   const startTimer = useCallback(() => {
-    stopTimer(); 
-
+    stopTimer();
     const startTime = Date.now();
     const endTime = startTime + 15 * 60 * 1000;
-    localStorage.setItem("timerEndTime", endTime); 
-    setIsRunning(true); 
+    localStorage.setItem("timerEndTime", endTime);
+    setIsRunning(true);
     setChange(Math.random().toString(36).substring(2, 7));
   }, []);
 
@@ -33,7 +30,14 @@ export const TimerProvider = ({ children }) => {
     }
     setIsRunning(false); 
     setRemainingTime(15 * 60);
-    localStorage.removeItem("timerEndTime");
+    if (localStorage.getItem('cart')) {
+      const getCart = JSON.parse(localStorage.getItem('cart'))
+
+      if (getCart.length === 0) {
+        localStorage.removeItem("timerEndTime");
+      }
+    }
+
   }, []);
 
   useEffect(() => {
@@ -73,12 +77,13 @@ export const TimerProvider = ({ children }) => {
   }, [isRunning, handleTimerEnd]);
 
   useEffect(()=>{
-    getCarts()
-
-    if (carts.length === 0) {
-      stopTimer()
+    if (localStorage.getItem('cart')) {
+      const getCart = JSON.parse(localStorage.getItem('cart'))
+      if (getCart.length === 0) {
+        stopTimer()
+      }
     }
-  }, [])
+  }, [change])
 
   const getProgressPercentage = () => {
     return ((15 * 60 - remainingTime) / (15 * 60)) * 100;

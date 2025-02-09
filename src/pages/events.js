@@ -29,8 +29,13 @@ const Events = () => {
                     {
                         events?.data?.map((event, index)=>(
                             event.status && <div key={index} 
-                                className="card border-0 rounded-3 events-bg overflow-hidden my-3 card-cover h-100"
-                                // style={{backgroundImage: `url(https://api.roadrunning.uz/storage/${event.image})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}
+                                className="card border-0 rounded-3 events-bg single-event-bg overflow-hidden my-3 card-cover h-100"
+                                style={event.image ? {
+                                    backgroundImage: `url(https://api.roadrunning.uz/storage/${event.image})`,
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'center',
+                                    backgroundSize: 'cover'
+                                }: {}}
                             >
                                 <div className='card-header bg-transparent'>
                                     <h2 className='card-title text-white'>{event?.name}</h2>
@@ -38,7 +43,7 @@ const Events = () => {
         
                                 <div className="card-body bg-transparent">
                                     <h2 className='card-title text-white multi-line-ellipsis'>{formatEventDateRange(event.event_has_marathons, t)}</h2>
-                                    <span className="text-white">{t('address')}: {event.address}</span>
+                                    <span className="text-white"><i className="text-danger fa-regular fa-location-dot"></i> {event.address}</span>
                                 </div>
         
                                 <div className='card-footer bg-transparent'>

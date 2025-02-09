@@ -34,30 +34,42 @@ const Marathons = () => {
                 {
                     events?.data?.map((event, index) => (
                         event.status && <div key={event.id}>
-                            <h4 className="my-2">{formatEventDateRange(event.event_has_marathons, t)}</h4>
+                            <h2 className="mt-3 fw-bolder text-theme-bot">{formatEventDateRange(event.event_has_marathons, t)}</h2>
                             {
                                 event?.event_has_marathons.map(eventTime => eventTime?.marathons.map(marathon =>
-                                    <div key={marathon.id} className="h-100 text-white p-3 my-3 marathon-bg overflow-hidden shadow-lg rounded-3">
+                                    <div key={marathon.id} className="h-100 text-white p-3 my-3 marathon-bg overflow-hidden shadow-lg rounded-3"
+                                         style={marathon?.image ? {
+                                             backgroundImage: `url(https://api.roadrunning.uz/storage/${marathon?.image[0]})`,
+                                             backgroundSize: 'cover',
+                                             backgroundRepeat: 'no-repeat',
+                                         } : {}}
+                                    >
                                         <div className='d-flex align-items-center justify-content-between'>
-                                            <h2>{marathon?.marathon_type?.name} </h2>
-                                            <p className='text-white fw-medium '>{new Intl.NumberFormat('fr-FR').format(marathon?.price)} UZS</p>
+                                            <h2 className='card-title text-white'>{ marathon?.marathon_type?.name }</h2>
+                                            <p className='text-white fw-medium '>{ new Intl.NumberFormat('fr-FR').format(marathon?.price) } UZS</p>
                                         </div>
 
-                                        <p className='fw-500'>{t('address')}: <spam
-                                            className="border px-2 rounded border-theme">{marathon?.address}</spam></p>
-                                        <p>{t('gender')}: <span
-                                            className="border px-2 rounded border-theme">{marathon?.gender?.type}</span>
+                                        <p className='fw-500'>
+                                            <i className="text-danger fa-regular fa-location-dot"></i>
+                                            <spam className="px-2 rounded border-theme">{ marathon?.address }</spam>
+                                        </p>
+                                        <p>
+                                            <i className="fa-regular text-info fa-venus-mars"></i>
+                                            <span className="px-2 rounded border-theme">{ marathon?.gender?.type ? marathon?.gender?.type : 'MIX' }</span>
+                                        </p>
+                                        <p>
+                                            <i className="fa-light fa-user-plus"></i>
+                                            <span className="px-2 rounded border-theme"> {marathon?.marathon_type.amount - marathon.participants_count} Left</span>
                                         </p>
                                         <div className='d-flex justify-content-between align-items-center flex-wrap '>
-                                            <span
-                                                className="text-white fw-bold btn btn-outline-success">{t('time')}: {marathon?.datetime_from} - {marathon?.datetime_to}</span>
-                                                <Link className="btn bg-theme text-white  shadow"
-                                                  to={`/participate/${marathon.id}`}
-                                                  type="button"
-                                                >
-                                                    {t('participate')}
-                                                    <i className="bi bi-arrow-right"></i>
-                                                </Link>
+                                            <span className="text-white fw-medium btn btn-outline-success">
+                                              {t('time')}: {marathon?.datetime_from} { marathon?.datetime_to && '- ' + marathon?.datetime_to}
+                                            </span>
+                                            {
+                                                marathon?.status && (marathon?.marathon_type.amount - marathon.participants_count) > 0
+                                                    ? <Link className="btn bg-theme text-white  shadow" to={`/participate/${marathon.id}`} type="button">{ t('participate') } <i className="bi bi-arrow-right"></i></Link>
+                                                    : <Link className="btn bg-theme text-white  shadow" to={`/marathons/${marathon.id}`} type="button">{ t('result') } <i className="bi bi-arrow-right"></i></Link>
+                                            }
                                         </div>
                                     </div>
                                 ))

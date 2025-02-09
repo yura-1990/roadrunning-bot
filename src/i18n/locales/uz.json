@@ -80,6 +80,8 @@
     "parent_name": "Ota-ona ismi",
     "if_child": "Agar bola bo'lsa",
     "name_is_required": "Ism kiritilishi shart.",
+    "last_name_required": "Familiya kiritilishi shart",
+    "last_name": "Familiya",
     "please_select_a_gender": "Iltimos, jinsni tanlang.",
     "email_is_required": "Elektron pochta kiritilishi va to'g'ri to'ldirishi shart.",
     "phone_is_required": "Telefon raqami kiritilishi va to'g'ri to'ldirishi shart.",
@@ -93,7 +95,7 @@
     "birth": "Tug'ilish",
     "city": "Shahar",
     "street": "Ko'cha",
-    "home_number": "Uy raqami",
+    "home_number": "Telefon raqamingiz",
     "organization": "Tashkilot",
     "type_or_choose": "Yozing yoki tanlang ...",
     "category": "Kategoriya",
@@ -143,6 +145,7 @@
     "3rd": "3-chi",
     "participants_list": "Ishtirok etganlar ro'yxati",
     "marathons": "Marafonlar",
-    "choose_a_region": "Hududni tanlang",
-    "warring": "Diqqat! Kartangizga ulangan telefon raqamini kiritishingiz kerak bo‘ladi."
+    "choose_a_region": "Mamlakatni tanlang",
+    "warring": "Diqqat! Kartangizga ulangan telefon raqamini kiritishingiz kerak bo‘ladi.",
+    "country": "Mamlakat"
   }

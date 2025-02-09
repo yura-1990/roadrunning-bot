@@ -28,7 +28,7 @@ const useInvoice = create((set, get) => ({
         catch (error){
             if (axios.isAxiosError(error)) {
                 set({ state:{ loading: false, error: true, message: error.response.data.errors }})
-                console.log(error)
+                console.log(error.response.data.errors)
             } else {
                 set({ state:{ loading: false, error: true, message: 'unknown_error' }})
                 console.log('An unknown error occurred', error);

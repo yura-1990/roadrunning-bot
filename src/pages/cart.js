@@ -4,7 +4,6 @@ import useCart from '../zustand/cart';
 import useEvent from '../zustand/events'
 import { Link } from 'react-router-dom';
 import { TimerContext } from "../components/timerContext";
-import Modal from "../components/modal";
 import useAuth from "../zustand/auth";
 
 
@@ -15,7 +14,6 @@ const Cart = () => {
     const formatWithSpaces = useCart((state) => state.formatWithSpaces)
     const getCarts = useCart((state) => state.getCarts)
     const formatDate = useEvent((state) => state.formatDate)
-    const [login, setLogin] = useState(true)
     const getToken = useAuth((state) => state.getToken)
     const authToken = useAuth((state) => state.state.token)
  
@@ -30,12 +28,17 @@ const Cart = () => {
     }, [])
 
     const destroyCart = async (index)=>{
+
         if (window.confirm(t('are_you_sure_you_want_to_delete'))) {
             await deleteCart(index)
-            await getCarts()
 
-            if (carts.length === 0) {
-                stopTimer()
+            if (localStorage.getItem('cart')) {
+                const getCart = JSON.parse(localStorage.getItem('cart'))
+
+                console.log(getCart)
+                if (getCart.length === 0) {
+                    stopTimer()
+                }
             }
         }
     }
