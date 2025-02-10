@@ -139,7 +139,7 @@ const Participate = () => {
                   type="text"
                   className="form-control"
                   id="name"
-                  placeholder="Habib Muslomov"
+                  placeholder="Habib"
                   value={name}
                   onInput={(e) => setName(e.target.value)}
                   required
