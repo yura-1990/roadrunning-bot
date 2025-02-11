@@ -36,16 +36,14 @@ const Autocomplete = ({ suggestions, getValue, value }) => {
   const handleSelect = (suggestion) => {
     if (suggestion?.hasOwnProperty("type")){
       setSelected(suggestion?.type)
+      getValue(suggestion?.type)
     } else {
       setSelected(suggestion?.name)
+      getValue(suggestion?.name)
     }
-
-    getValue(suggestion?.id.toString())
 
     setShowSuggestions(false);
   };
-
-
 
   return (
     <div className="position-relative z-index-9">

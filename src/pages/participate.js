@@ -68,33 +68,35 @@ const Participate = () => {
         participant_uniform_id: uniform.id,
       };
 
-      if (!ifChild || parent !== "") {
-        await createNumberStatus(data)
+      console.log(data)
 
-        if (!loading && !error){
-          await getSingleMarathon(i18n.language, id)
-          startTimer();
-          setIfChild(false)
-          setParent("")
-          setOrganization("")
-          setCompany("")
-          setNumber(0)
-          setUniform("")
-          setName("")
-          setLastName("")
-          setEmail("")
-          setErrorEmail("")
-          setPhone("")
-          setErrorPhone("")
-          setGender("")
-          setRegion("")
-          setAddress("")
-          setBirth("")
-          setCheckForm(false)
-          setCheck(!check)
-        }
-
-      }
+      // if (!ifChild || parent !== "") {
+      //   await createNumberStatus(data)
+      //
+      //   if (!loading && !error){
+      //     await getSingleMarathon(i18n.language, id)
+      //     startTimer();
+      //     setIfChild(false)
+      //     setParent("")
+      //     setOrganization("")
+      //     setCompany("")
+      //     setNumber(0)
+      //     setUniform("")
+      //     setName("")
+      //     setLastName("")
+      //     setEmail("")
+      //     setErrorEmail("")
+      //     setPhone("")
+      //     setErrorPhone("")
+      //     setGender("")
+      //     setRegion("")
+      //     setAddress("")
+      //     setBirth("")
+      //     setCheckForm(false)
+      //     setCheck(!check)
+      //   }
+      //
+      // }
     }
 
   };
