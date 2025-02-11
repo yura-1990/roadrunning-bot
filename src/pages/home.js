@@ -16,6 +16,8 @@ const  Home = () => {
 
     useEffect(() => {
         getEvents(i18n.language)
+
+        console.log(events)
     }, [i18n.language]);
 
     return (
@@ -31,22 +33,26 @@ const  Home = () => {
                     slidesPerView={1}
                     centeredSlides={true}
                     autoplay={{
-                        delay: 50000,
-                        disableOnInteraction: false,
+                        delay: 5000,
+                        disableOnInteraction: true,
                     }}
                     className='event-swiper'
-                    loop={true}
+                    // loop={true}
                 >
                     {events?.data?.map((event) =>
                         <SwiperSlide>
-                            <div className="card bg-transparent border-0 rounded-3  card-cover h-100">
+                            <div className="card bg-transparent border-0 rounded-3 card-cover event-card h-100"
+                                 style={ event.image ? {
+                                     backgroundImage: `url(https://api.roadrunning.uz/storage/${event?.image})`,
+                                 }:{}}
+                            >
                                 <div className='card-header bg-transparent'>
                                     <h2 className='card-title text-white'>{ event.name }</h2>
                                 </div>
 
                                 <div className="card-body bg-transparent">
                                     <h2 className='card-title text-white multi-line-ellipsis'>{ formatEventDateRange(event.event_has_marathons, t) }</h2>
-                                    <span className="text-white">{t('address')}: { event.address }</span>
+                                    <span className="text-white"><i className="text-danger fa-regular fa-location-dot"></i> { event.address }</span>
                                 </div>
 
                                 <div className='card-footer bg-transparent'>
@@ -56,7 +62,9 @@ const  Home = () => {
                                 </div>
                             </div>
                         </SwiperSlide>
+
                     )}
+
                 </Swiper>
             </div>
 

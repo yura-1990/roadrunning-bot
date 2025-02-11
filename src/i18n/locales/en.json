@@ -80,6 +80,8 @@
     "parent_name": "Parent Name",
     "if_child": "If Child",
     "name_is_required": "Name is required",
+    "last_name_required": "Last name is required",
+    "last_name": "Last name",
     "please_select_a_gender": "Please select a gender.",
     "email_is_required": "Email is required and fill correctly.",
     "phone_is_required": "Phone is required and fill correctly.",
@@ -93,7 +95,7 @@
     "birth": "Birth",
     "city": "City",
     "street": "Street",
-    "home_number": "Home number",
+    "home_number": "Number",
     "organization": "Organization",
     "type_or_choose": "Type or choose ...",
     "category": "Category",
@@ -143,7 +145,7 @@
     "3rd": "3rd",
     "participants_list": "List of participants",
     "marathons": "Marathons",
-    "choose_a_region": "Choose a region",
+    "choose_a_region": "Choose a country",
     "warring": "Attention! You will need to enter the phone number linked to your card.",
-    "account_information": "Account Information"
+    "country": "Country"
 }

@@ -1,5 +1,6 @@
 import { create } from 'zustand'
-import axios from "../axios";
+import axiosInstance from "../axios";
+import axios from 'axios'
 
 const useInvoice = create((set, get) => ({
     state: {
@@ -15,14 +16,7 @@ const useInvoice = create((set, get) => ({
 
     createTransaction: async (data)=>{
         try {
-            const token = localStorage.getItem('token');
-            const response = await axios.post(`/invoice/create`, data, {
-                headers: {
-                    'Content-type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
+            const response = await axiosInstance.post(`/invoice/create`, data)
 
             console.log(response.data)
 
@@ -32,8 +26,13 @@ const useInvoice = create((set, get) => ({
             }
         }
         catch (error){
-            set({ state:{ loading: false, error: true, message: error.response.data.errors }})
-
+            if (axios.isAxiosError(error)) {
+                set({ state:{ loading: false, error: true, message: error.response.data.errors }})
+                console.log(error.response.data.errors)
+            } else {
+                set({ state:{ loading: false, error: true, message: 'unknown_error' }})
+                console.log('An unknown error occurred', error);
+            }
         }
 
 
@@ -41,19 +40,18 @@ const useInvoice = create((set, get) => ({
 
     checkInvoice: async(data)=> {
         try {
-            const token = localStorage.getItem('token');
-            const response = await axios.post(`/invoice/check/code`, data, {
-                headers: {
-                    'Content-type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
+            const response = await axiosInstance.post(`/invoice/check/code`, data)
 
             console.log(response.data)
         }
         catch (error){
-            set({ state:{ loading: false, error: true, message: error.response.data.errors }})
+            if (axios.isAxiosError(error)) {
+                set({ state:{ loading: false, error: true, message: error.response.data.errors }})
+                console.log(error)
+            } else {
+                set({ state:{ loading: false, error: true, message: 'unknown_error' }})
+                console.log('An unknown error occurred', error);
+            }
         }
     }
 }))

@@ -12,7 +12,7 @@ const Events = () => {
     useEffect(()=>{
         getEvents(i18n.language)
 
-      }, [i18n.language])
+    }, [i18n.language])
 
     return (
         <>
@@ -28,19 +28,24 @@ const Events = () => {
                 <div className="tab-pane fade show active" id="life-tab-pane" role="tabpanel" aria-labelledby="life-tab" tabIndex="0">
                     {
                         events?.data?.map((event, index)=>(
-                            event.status && <div key={index} 
-                                className="card border-0 rounded-3 events-bg overflow-hidden my-3 card-cover h-100"
-                                // style={{backgroundImage: `url(https://api.roadrunning.uz/storage/${event.image})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}
+                            event.status && <div key={index}
+                                                 className="card border-0 rounded-3 events-bg single-event-bg overflow-hidden my-3 card-cover h-100"
+                                                 style={event.image ? {
+                                                     backgroundImage: `url(https://api.roadrunning.uz/storage/${event.image})`,
+                                                     backgroundRepeat: 'no-repeat',
+                                                     backgroundPosition: 'center',
+                                                     backgroundSize: 'cover'
+                                                 }: {}}
                             >
                                 <div className='card-header bg-transparent'>
                                     <h2 className='card-title text-white'>{event?.name}</h2>
                                 </div>
-        
+
                                 <div className="card-body bg-transparent">
                                     <h2 className='card-title text-white multi-line-ellipsis'>{formatEventDateRange(event.event_has_marathons, t)}</h2>
-                                    <span className="text-white">{t('address')}: {event.address}</span>
+                                    <span className="text-white"><i className="text-danger fa-regular fa-location-dot"></i> {event.address}</span>
                                 </div>
-        
+
                                 <div className='card-footer bg-transparent'>
                                     <Link to={`/events/${event.id}`} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
                                 </div>
@@ -48,26 +53,26 @@ const Events = () => {
                     }
                 </div>
                 <div className="tab-pane fade" id="archive-tab-pane" role="tabpanel" aria-labelledby="archive-tab" tabIndex="0">
-                {
+                    {
                         events?.data?.map((event, index)=>(
-                            !event.status && <div key={index} 
-                                className="card border-0 rounded-3 events-bg overflow-hidden my-3 card-cover h-100"
+                            !event.status && <div key={index}
+                                                  className="card border-0 rounded-3 events-bg overflow-hidden my-3 card-cover h-100"
                                 // style={{backgroundImage: `url(https://api.roadrunning.uz/storage/${event.image})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}
                             >
                                 <div className='card-header bg-transparent'>
                                     <h2 className='card-title text-white'>{event?.name}</h2>
                                 </div>
-        
+
                                 <div className="card-body bg-transparent">
                                     <h2 className='card-title text-white multi-line-ellipsis'>{formatEventDateRange(event.event_has_marathons, t)}</h2>
                                     <span className="text-white">{t('address')}: {event.address}</span>
                                 </div>
-        
+
                                 <div className='card-footer bg-transparent'>
                                     <Link to={`/events/${event.id}`} className='btn bg-theme text-white float-end shadow'>More <i className="bi bi-arrow-right"></i></Link>
                                 </div>
                             </div> ))
-                    }                 
+                    }
                 </div>
             </div>
         </>

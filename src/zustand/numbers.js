@@ -19,6 +19,8 @@ const useNumber = create((set) => ({
                 getCart.push(response.data)
 
                 localStorage.setItem('cart', JSON.stringify(getCart))
+
+                console.log(getCart)
             } else {
                 localStorage.setItem('cart', JSON.stringify([response.data]))
             }
