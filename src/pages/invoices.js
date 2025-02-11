@@ -222,8 +222,8 @@ const Invoices = () => {
             <table className="table table-bordered table-summary">
               <thead>
                 <tr>
-                  <th>Информация о счете</th>
-                  <th>Стоимость</th>
+                  <th>{t('account_information')}</th>
+                  <th>{t('cost')}</th>
                 </tr>
               </thead>
               <tbody>
