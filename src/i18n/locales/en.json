@@ -147,5 +147,6 @@
     "marathons": "Marathons",
     "choose_a_region": "Choose a country",
     "warring": "Attention! You will need to enter the phone number linked to your card.",
-    "country": "Country"
+    "country": "Country",
+    "payment_success": "Your payment was successfully completed"
 }

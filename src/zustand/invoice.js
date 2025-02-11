@@ -11,14 +11,18 @@ const useInvoice = create((set, get) => ({
         error: '',
         invoiceStatus: [],
         errorCode: '',
-        invoices: []
+        invoices: [],
+        success: false,
     },
 
     createTransaction: async (data)=>{
+        const token = localStorage.getItem('token');
         try {
-            const response = await axiosInstance.post(`/invoice/create`, data)
-
-            console.log(response.data)
+            const response = await axiosInstance.post(`/invoice/create`, data, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
 
             if (response.status === 200){
                 localStorage.setItem('invoice_number', JSON.stringify(response.data))
@@ -39,8 +43,17 @@ const useInvoice = create((set, get) => ({
     },
 
     checkInvoice: async(data)=> {
+        const token = localStorage.getItem('token');
         try {
-            const response = await axiosInstance.post(`/invoice/check/code`, data)
+            const response = await axiosInstance.post(`/invoice/check/code`, data, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+
+            if (response.status === 200){
+                set({ state: { paymentStatus: false, success: true } });
+            }
 
             console.log(response.data)
         }
@@ -52,7 +65,12 @@ const useInvoice = create((set, get) => ({
                 set({ state:{ loading: false, error: true, message: 'unknown_error' }})
                 console.log('An unknown error occurred', error);
             }
+            set({ state: { success: false } });
         }
+    },
+
+    remove: ()=> {
+        set({ state: { success: false } });
     }
 }))
 

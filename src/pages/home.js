@@ -16,8 +16,6 @@ const  Home = () => {
 
     useEffect(() => {
         getEvents(i18n.language)
-
-        console.log(events)
     }, [i18n.language]);
 
     return (

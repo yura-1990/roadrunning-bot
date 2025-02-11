@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useCallback, useRef } from "react";
 export const TimerContext = createContext();
 import useCart from "../zustand/cart";
+import useInvoice from "../zustand/invoice";
 
 export const TimerProvider = ({ children }) => {
   const deleteAllCarts = useCart((state)=>state.deleteAllCarts)
@@ -9,6 +10,7 @@ export const TimerProvider = ({ children }) => {
   const [isRunning, setIsRunning] = useState(false);
   const [change, setChange] = useState('');
   const intervalRef = useRef(null);
+  const remove = useInvoice(state => state.remove)
 
   const handleTimerEnd = useCallback(() => {
     deleteAllCarts()
@@ -81,6 +83,7 @@ export const TimerProvider = ({ children }) => {
       const getCart = JSON.parse(localStorage.getItem('cart'))
       if (getCart.length === 0) {
         stopTimer()
+        remove()
       }
     }
   }, [change])
