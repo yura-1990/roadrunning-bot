@@ -13,6 +13,7 @@ const useInvoice = create((set, get) => ({
         errorCode: '',
         invoices: [],
         success: false,
+        invoiceItems: []
     },
 
     createTransaction: async (data)=>{
@@ -58,6 +59,31 @@ const useInvoice = create((set, get) => ({
             console.log(response.data)
         }
         catch (error){
+            if (axios.isAxiosError(error)) {
+                set({ state:{ loading: false, error: true, message: error.response.data.errors }})
+                console.log(error)
+            } else {
+                set({ state:{ loading: false, error: true, message: 'unknown_error' }})
+                console.log('An unknown error occurred', error);
+            }
+            set({ state: { success: false } });
+        }
+    },
+
+    getInvoiceItems: async(language)=> {
+        const token = localStorage.getItem('token');
+        try {
+            const response = await axiosInstance.get(`/invoice/all`, {
+                params: { language },
+                headers: { 'Authorization': `Bearer ${token}` }
+            })
+
+            if (response.status === 200){
+                set({ state: { invoiceItems: response.data } });
+            }
+
+            console.log(response.data)
+        } catch (error){
             if (axios.isAxiosError(error)) {
                 set({ state:{ loading: false, error: true, message: error.response.data.errors }})
                 console.log(error)

@@ -466,4 +466,14 @@ body{
 
 }
 
+@media (max-width: 575px){
+  .nav-custom-link{
+    flex-grow: 1 !important;
+  }
+}
+
+.qrcode-image{
+  width: max-content;
+  padding-bottom: 0;
+}
 

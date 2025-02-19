@@ -18,6 +18,7 @@ import Marathon from "./pages/marathon";
 import useAuth from "./zustand/auth";
 import Modal from "./components/modal";
 import GoBack from "./components/goBack";
+import InvoiceItem from "./pages/invoiceItems";
 
 const App = () => {
 
@@ -62,7 +63,8 @@ const App = () => {
                     }
                     <Route path="/marathons/:id" element={<SingleMarathon />} />
                     <Route path="/marathons" element={<Marathon />} />
-                </Routes>   
+                    <Route path="/invoice-items" element={<InvoiceItem />} />
+                </Routes>
                 <TimerProgress />
                 <Footer />
                 <Modal />
